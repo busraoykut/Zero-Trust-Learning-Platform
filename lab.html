@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+
+<head>
+
+    <!-- Türkçe karakterleri düzgün göstermek için -->
+    <meta charset="UTF-8">
+
+    <!-- Mobil cihazlarda sayfanın düzgün ölçeklenmesini sağlar -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Tarayıcı sekmesinde görünecek başlık -->
+    <title>Zero Trust Lab | Uygulama Laboratuvarı</title>
+
+    <!-- Ana CSS dosyamızı bağlıyoruz -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+
+    <!--
+        NAVBAR
+
+        Ana sayfa ve Öğren sayfasında kullandığımız
+        menü yapısını burada da aynı şekilde kullanıyoruz.
+
+        Böylece bütün site tutarlı görünür.
+    -->
+    <header class="navbar">
+
+        <div class="logo">
+            Zero Trust Lab
+        </div>
+
+
+        <nav>
+
+            <a href="index.html">
+                Ana Sayfa
+            </a>
+
+            <a href="learn.html">
+                Öğren
+            </a>
+
+            <a href="lab.html">
+                Lab
+            </a>
+
+            <a href="#">
+                Oyunlar
+            </a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!--
+        Lab sayfasının ana içeriği
+    -->
+    <main class="lab-page">
+
+
+        <!--
+            LAB SAYFASI BAŞLIĞI
+        -->
+        <section class="lab-header">
+
+            <p class="hero-label">
+                ZERO TRUST LAB
+            </p>
+
+            <h1>
+                Uygulama Laboratuvarı
+            </h1>
+
+            <p>
+                Sıfır Güven Mimarisi'nde öğrendiğin kavramları
+                interaktif simülasyonlar ve erişim senaryoları
+                üzerinde uygula.
+            </p>
+
+        </section>
+
+
+
+        <!--
+            Lab araçlarının bulunduğu bölüm.
+
+            Burada üç farklı laboratuvar özelliğini
+            kart halinde göstereceğiz.
+        -->
+        <section class="lab-tools">
+
+
+            <!-- POLICY ENGINE SIMULATOR -->
+            <div class="lab-tool-card">
+
+                <div class="lab-tool-icon">
+                    ⚙️
+                </div>
+
+                <span class="lab-tool-label">
+                    LAB 01
+                </span>
+
+                <h2>
+                    Politika Motoru Simülatörü
+                    (Policy Engine Simulator)
+                </h2>
+
+                <p>
+                    Kullanıcı, cihaz, kaynak, kimlik doğrulama
+                    ve risk bilgilerini değiştirerek Politika Motorunun
+                    erişim kararını nasıl verdiğini incele.
+                </p>
+
+                <button class="lab-tool-button">
+                    Simülatörü Aç
+                </button>
+
+            </div>
+
+
+
+            <!-- POLICY BUILDER -->
+            <div class="lab-tool-card">
+
+                <div class="lab-tool-icon">
+                    📋
+                </div>
+
+                <span class="lab-tool-label">
+                    LAB 02
+                </span>
+
+                <h2>
+                    Politika Oluşturucu
+                    (Policy Builder)
+                </h2>
+
+                <p>
+                    Kendi erişim politikalarını oluştur ve
+                    farklı kullanıcı ve kaynak koşullarında
+                    nasıl sonuç verdiğini test et.
+                </p>
+
+                <button class="lab-tool-button">
+                    Politika Oluştur
+                </button>
+
+            </div>
+
+
+
+            <!-- ACCESS SCENARIO -->
+            <div class="lab-tool-card">
+
+                <div class="lab-tool-icon">
+                    🔐
+                </div>
+
+                <span class="lab-tool-label">
+                    LAB 03
+                </span>
+
+                <h2>
+                    Erişim Senaryoları
+                    (Access Scenarios)
+                </h2>
+
+                <p>
+                    Gerçek hayata benzer erişim isteklerini analiz et
+                    ve erişime izin verilmesi veya reddedilmesi
+                    gerektiğine karar ver.
+                </p>
+
+                <button class="lab-tool-button">
+                    Senaryoları Aç
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!--
+            Lab'ın nasıl kullanılacağını anlatan
+            kısa bilgi bölümü.
+        -->
+        <section class="lab-info">
+
+            <span class="lab-tool-label">
+                NASIL ÇALIŞIR?
+            </span>
+
+            <h2>
+                Öğren → Uygula → Analiz Et
+            </h2>
+
+
+            <div class="lab-process">
+
+
+                <div class="lab-process-step">
+
+                    <span>
+                        01
+                    </span>
+
+                    <h3>
+                        Koşulları Belirle
+                    </h3>
+
+                    <p>
+                        Kullanıcı, cihaz, kaynak ve erişim
+                        koşullarını seç.
+                    </p>
+
+                </div>
+
+
+
+                <div class="lab-process-arrow">
+                    →
+                </div>
+
+
+
+                <div class="lab-process-step">
+
+                    <span>
+                        02
+                    </span>
+
+                    <h3>
+                        Politikayı Uygula
+                    </h3>
+
+                    <p>
+                        Politika Motorunun erişim isteğini
+                        nasıl değerlendirdiğini incele.
+                    </p>
+
+                </div>
+
+
+
+                <div class="lab-process-arrow">
+                    →
+                </div>
+
+
+
+                <div class="lab-process-step">
+
+                    <span>
+                        03
+                    </span>
+
+                    <h3>
+                        Kararı Analiz Et
+                    </h3>
+
+                    <p>
+                        Erişimin neden verildiğini veya
+                        reddedildiğini öğren.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!--
+        JavaScript dosyamızı bağlıyoruz.
+
+        Henüz bu sayfada JavaScript kullanmıyoruz.
+        Fakat birazdan Policy Engine Simulator
+        eklediğimizde bu bağlantıya ihtiyacımız olacak.
+    -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
