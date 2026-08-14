@@ -125,6 +125,11 @@
                 10. Politika Motorunun Bilgi Kaynakları
                  </a>
 
+                 <!-- Modül 11 bağlantısı -->
+                <a href="#access-decision">
+                11. Erişim Kararı Nasıl Verilir?
+                </a>
+
 
             </aside>
 
@@ -1263,6 +1268,246 @@
             Politika Motoru bütün bu sistemlerin yerine geçmez.
             Bu sistemlerden gelen bilgileri, kurumun erişim politikalarıyla
             birlikte değerlendirerek erişim kararının verilmesine yardımcı olur.
+        </p>
+
+    </div>
+
+</article>
+
+<!-- MODÜL 11 -->
+<article id="access-decision" class="lesson-card">
+
+    <span class="lesson-number">
+        MODÜL 11
+    </span>
+
+    <h2>
+        Erişim Kararı Nasıl Verilir?
+    </h2>
+
+    <p>
+        Sıfır Güven yaklaşımında bir erişim isteği tek bir bilgiye
+        bakılarak değerlendirilmez.
+    </p>
+
+    <p>
+        Politika Motoru (Policy Engine - PE), erişim isteğiyle ilgili
+        farklı bilgileri ve kurumun erişim politikalarını birlikte
+        değerlendirerek bir karar verir.
+    </p>
+
+
+    <!--
+        Bu bölümde erişim kararının hangi aşamalardan
+        geçtiğini adım adım gösteriyoruz.
+    -->
+    <div class="access-decision-flow">
+
+
+        <!-- 1. Adım -->
+        <div class="access-step">
+
+            <span class="access-step-number">
+                1
+            </span>
+
+            <div>
+
+                <h3>
+                    Erişim İsteği Oluşur
+                </h3>
+
+                <p>
+                    Bir kullanıcı veya sistem, korunan bir kaynağa
+                    erişmek ister.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="decision-arrow">
+            ↓
+        </div>
+
+
+        <!-- 2. Adım -->
+        <div class="access-step">
+
+            <span class="access-step-number">
+                2
+            </span>
+
+            <div>
+
+                <h3>
+                    Bilgiler Toplanır
+                </h3>
+
+                <p>
+                    Kullanıcı kimliği, cihaz durumu, kaynak bilgisi,
+                    kimlik doğrulama sonucu, risk ve diğer bağlamsal
+                    bilgiler değerlendirme için kullanılabilir.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="decision-arrow">
+            ↓
+        </div>
+
+
+        <!-- 3. Adım -->
+        <div class="access-step">
+
+            <span class="access-step-number">
+                3
+            </span>
+
+            <div>
+
+                <h3>
+                    Politikalar Değerlendirilir
+                </h3>
+
+                <p>
+                    Politika Motoru, toplanan bilgileri kurum tarafından
+                    tanımlanan erişim politikalarıyla karşılaştırır.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="decision-arrow">
+            ↓
+        </div>
+
+
+        <!-- 4. Adım -->
+        <div class="access-step access-step-engine">
+
+            <span class="access-step-number">
+                4
+            </span>
+
+            <div>
+
+                <h3>
+                    Politika Motoru Karar Verir
+                </h3>
+
+                <p>
+                    Yapılan değerlendirme sonucunda erişim isteği için
+                    uygun karar oluşturulur.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="decision-arrow">
+            ↓
+        </div>
+
+
+        <!-- Karar sonuçları -->
+        <div class="decision-results">
+
+            <div class="decision-allow">
+                ✓ ERİŞİME İZİN VER
+                <small>ALLOW</small>
+            </div>
+
+            <div class="decision-deny">
+                ✕ ERİŞİMİ REDDET
+                <small>DENY</small>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!--
+        Teorik bilgiyi küçük bir senaryo ile
+        daha anlaşılır hale getiriyoruz.
+    -->
+    <div class="example-scenario">
+
+        <h3>
+            Örnek Erişim İsteği
+        </h3>
+
+        <div class="scenario-information">
+
+            <div>
+                <span>Kullanıcı</span>
+                <strong>Ayşe</strong>
+            </div>
+
+            <div>
+                <span>Rol</span>
+                <strong>Finans Çalışanı</strong>
+            </div>
+
+            <div>
+                <span>MFA</span>
+                <strong>Başarılı</strong>
+            </div>
+
+            <div>
+                <span>Cihaz</span>
+                <strong>Kurumsal ve Güncel</strong>
+            </div>
+
+            <div>
+                <span>Kaynak</span>
+                <strong>Finans Uygulaması</strong>
+            </div>
+
+            <div>
+                <span>Risk</span>
+                <strong>Düşük</strong>
+            </div>
+
+        </div>
+
+
+        <div class="concept-box">
+
+            <strong>
+                Değerlendirme:
+            </strong>
+
+            <p>
+                Eğer kurumun erişim politikası Finans Çalışanı rolüne,
+                uygun güvenlik koşullarını sağlayan bir cihazdan Finans
+                Uygulamasına erişim izni veriyorsa Politika Motoru
+                erişime izin verme kararı oluşturabilir.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="concept-box">
+
+        <strong>
+            Unutma:
+        </strong>
+
+        <p>
+            Erişim kararının nasıl verileceği kurumun tanımladığı
+            politikalara ve erişim isteği hakkında elde edilen bilgilere
+            bağlıdır.
         </p>
 
     </div>

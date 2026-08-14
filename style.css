@@ -1433,3 +1433,208 @@ body {
     }
 
 }
+
+/*
+    MODÜL 11
+    Erişim kararının adımlarını gösteren alan.
+*/
+.access-decision-flow {
+
+    background-color: #081525;
+
+    border: 1px solid #243a58;
+
+    border-radius: 14px;
+
+    padding: 30px;
+
+    margin-top: 30px;
+}
+
+
+/*
+    Erişim kararındaki her aşama.
+*/
+.access-step {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    max-width: 700px;
+
+    margin: 0 auto;
+
+    padding: 20px;
+
+    background-color: #101f34;
+
+    border: 1px solid #243a58;
+
+    border-radius: 12px;
+
+    text-align: left;
+}
+
+
+/*
+    1, 2, 3, 4 şeklindeki
+    adım numaraları.
+*/
+.access-step-number {
+
+    /*
+        flex-shrink: 0 sayesinde
+        sayı kutusunun küçülmesini engelliyoruz.
+    */
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 45px;
+
+    height: 45px;
+
+    border-radius: 50%;
+
+    background-color: #14263d;
+
+    border: 1px solid #2563eb;
+
+    color: #6eb1ff;
+
+    font-weight: bold;
+}
+
+
+/*
+    Adım başlıkları.
+*/
+.access-step h3 {
+
+    margin: 0 0 8px;
+
+    font-size: 18px;
+}
+
+
+/*
+    Adımların açıklamaları.
+*/
+.access-step p {
+
+    margin: 0;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/*
+    Politika Motorunun karar verdiği
+    adımı biraz daha belirgin gösteriyoruz.
+*/
+.access-step-engine {
+
+    border-color: #2563eb;
+
+    background-color: #0d2038;
+}
+
+
+/*
+    Örnek senaryo alanı.
+*/
+.example-scenario {
+
+    margin-top: 35px;
+
+    padding: 25px;
+
+    background-color: #081525;
+
+    border: 1px solid #243a58;
+
+    border-radius: 14px;
+}
+
+
+/*
+    Senaryodaki kullanıcı, rol, MFA
+    gibi bilgileri kartlar halinde gösteriyoruz.
+*/
+.scenario-information {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 15px;
+
+    margin-top: 20px;
+}
+
+
+/*
+    Her senaryo bilgisinin kutusu.
+*/
+.scenario-information div {
+
+    background-color: #101f34;
+
+    border: 1px solid #243a58;
+
+    border-radius: 10px;
+
+    padding: 16px;
+}
+
+
+/*
+    Kullanıcı, Rol, MFA gibi
+    küçük başlıklar.
+*/
+.scenario-information span {
+
+    display: block;
+
+    color: #7f91aa;
+
+    font-size: 12px;
+
+    margin-bottom: 7px;
+}
+
+
+/*
+   Senaryo için 
+   gerçek değerler.
+*/
+.scenario-information strong {
+
+    color: white;
+
+    font-size: 14px;
+}
+
+
+/*
+    Küçük ekranlarda senaryo bilgilerini
+    tek sütuna indiriyoruz.
+*/
+@media (max-width: 850px) {
+
+    .scenario-information {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
