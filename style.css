@@ -1,0 +1,1435 @@
+/*
+    Bu dosya web sitemizin tasarımını kontrol eder.
+
+    CSS ile:
+    - renkleri
+    - yazı tiplerini
+    - boyutları
+    - boşlukları
+    - butonları
+    - sayfa yerleşimini
+
+    değiştirebiliriz.
+*/
+
+
+/*
+    body = sayfanın tamamı.
+
+    Burada bütün sayfanın temel görünümünü değiştiriyoruz.
+*/
+body {
+
+    /*
+        Tarayıcının varsayılan kenar boşluğunu kaldırıyoruz.
+    */
+    margin: 0;
+
+    /*
+        Yazı tipi belirliyoruz.
+    */
+    font-family: Arial, sans-serif;
+
+    /*
+        Arka plan rengini koyu yapıyoruz.
+    */
+    background-color: #0b1120;
+
+    /*
+        Yazı rengini beyaz yapıyoruz.
+    */
+    color: white;
+
+    /*
+        Yazıları ortalıyoruz.
+    */
+    text-align: center;
+}
+
+
+/*
+    Ana başlığımızın görünümü.
+*/
+h1 {
+
+    /*
+        Başlığın yazı boyutu.
+    */
+    font-size: 50px;
+
+    /*
+        Üstten biraz boşluk bırakıyoruz.
+    */
+    margin-top: 150px;
+}
+
+
+/*
+    Paragraf tasarımı.
+*/
+p {
+
+    /*
+        Normal yazıdan biraz daha büyük.
+    */
+    font-size: 20px;
+
+    /*
+        Açık gri bir renk.
+    */
+    color: #b6c2d9;
+}
+
+
+/*
+    Bütün button etiketlerini etkiler.
+*/
+button {
+
+    /*
+        Butonun içindeki boşluk.
+    */
+    padding: 15px 30px;
+
+    /*
+        Yazı büyüklüğü.
+    */
+    font-size: 18px;
+
+    /*
+        Buton arka planı.
+    */
+    background-color: #2563eb;
+
+    /*
+        Buton yazısı beyaz.
+    */
+    color: white;
+
+    /*
+        Varsayılan çerçeveyi kaldırıyoruz.
+    */
+    border: none;
+
+    /*
+        Köşeleri yuvarlatıyoruz.
+    */
+    border-radius: 8px;
+
+    /*
+        Mouse butonun üzerine gelince
+        el işareti görünür.
+    */
+    cursor: pointer;
+}
+
+/*
+    Tüm elementlerde boyut hesaplamasını
+    daha düzenli hale getirir.
+*/
+* {
+    box-sizing: border-box;
+}
+
+
+/*
+    Sayfanın genel ayarları
+*/
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #07111f;
+    color: white;
+}
+
+
+/*
+    Üst menü
+*/
+.navbar {
+
+    /*
+        İçindeki elemanları yatay hizalar.
+    */
+    display: flex;
+
+    /*
+        Logo solda,
+        menü sağda olur.
+    */
+    justify-content: space-between;
+
+    /*
+        Dikey olarak ortalar.
+    */
+    align-items: center;
+
+    /*
+        İç boşluk.
+    */
+    padding: 20px 70px;
+
+    /*
+        Hafif koyu arka plan.
+    */
+    background-color: #0b1729;
+
+    /*
+        Altına ince çizgi.
+    */
+    border-bottom: 1px solid #1c2d45;
+}
+
+
+/*
+    Logo yazısı
+*/
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #4da3ff;
+}
+
+
+/*
+    Menü linkleri
+*/
+.navbar nav a {
+
+    /*
+        Linklerin altındaki varsayılan çizgiyi kaldırır.
+    */
+    text-decoration: none;
+
+    color: #c7d2e3;
+
+    /*
+        Linklerin arasında boşluk bırakır.
+    */
+    margin-left: 30px;
+
+    font-size: 15px;
+}
+
+
+/*
+    Mouse linkin üzerine geldiğinde
+*/
+.navbar nav a:hover {
+    color: #4da3ff;
+}
+
+
+/*
+    Ana giriş alanı
+*/
+.hero {
+
+    /*
+        İçeriği ortalar.
+    */
+    text-align: center;
+
+    /*
+        Üst-alt boşluk.
+    */
+    padding: 100px 20px 70px;
+}
+
+
+/*
+    Küçük NIST etiketi
+*/
+.hero-label {
+    color: #4da3ff;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 14px;
+}
+
+
+/*
+    Büyük başlık
+*/
+.hero h1 {
+    font-size: 58px;
+    margin: 15px 0;
+}
+
+
+/*
+    Ana açıklama
+*/
+.hero-description {
+
+    /*
+        Yazının çok fazla genişlemesini engeller.
+    */
+    max-width: 650px;
+
+    /*
+        Ortalar.
+    */
+    margin: 0 auto;
+
+    font-size: 19px;
+    line-height: 1.6;
+    color: #aebbd0;
+}
+
+
+/*
+    Ana başlama butonu
+*/
+.start-button {
+    margin-top: 35px;
+    padding: 15px 30px;
+    font-size: 17px;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+
+/*
+    Mouse buton üzerine gelince
+*/
+.start-button:hover {
+    background-color: #1d4ed8;
+}
+
+
+/*
+    Kartların bulunduğu alan
+*/
+.cards {
+
+    /*
+        Kartları yan yana getirir.
+    */
+    display: flex;
+
+    /*
+        Kartlar arasına boşluk koyar.
+    */
+    gap: 25px;
+
+    /*
+        Ortalar.
+    */
+    justify-content: center;
+
+    /*
+        Sayfanın kenarlarına boşluk verir.
+    */
+    padding: 20px 60px 80px;
+}
+
+
+/*
+    Her bir kart
+*/
+.card {
+    width: 300px;
+    background-color: #0d1b2e;
+    border: 1px solid #1d3553;
+    border-radius: 14px;
+    padding: 30px;
+    text-align: left;
+
+    /*
+        Geçiş efekti.
+        Hover sırasında hareket daha yumuşak olur.
+    */
+    transition: 0.3s;
+}
+
+
+/*
+    Mouse kartın üzerine gelince
+*/
+.card:hover {
+
+    /*
+        Kartı biraz yukarı kaldırır.
+    */
+    transform: translateY(-8px);
+
+    border-color: #2563eb;
+}
+
+
+/*
+    Kart başlıkları
+*/
+.card h2 {
+    margin-top: 0;
+    font-size: 24px;
+}
+
+
+/*
+    Kart açıklaması
+*/
+.card p {
+    color: #aebbd0;
+    line-height: 1.6;
+}
+
+
+/*
+    Kartların içindeki butonlar
+*/
+.card button {
+    margin-top: 15px;
+    padding: 10px 18px;
+    background-color: transparent;
+    color: #4da3ff;
+    border: 1px solid #2563eb;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+
+/*
+    Kart butonlarında hover
+*/
+.card button:hover {
+    background-color: #2563eb;
+    color: white;
+}
+
+/*
+    Öğren sayfasının ana alanı
+*/
+.learn-page {
+    padding-bottom: 80px;
+}
+
+
+/*
+    Öğren sayfasının başlığı
+*/
+.learn-header {
+    text-align: center;
+    padding: 70px 20px 50px;
+}
+
+
+/*
+    Başlık boyutu
+*/
+.learn-header h1 {
+    font-size: 42px;
+    margin: 10px 0;
+}
+
+
+/*
+    Başlığın altındaki açıklama
+*/
+.learn-header > p:last-child {
+    color: #aebbd0;
+    font-size: 18px;
+}
+
+
+/*
+    Sol menü + sağ içerik alanı
+*/
+.learn-container {
+    display: flex;
+
+    /*
+        İçeriğin çok geniş olmasını engelliyoruz.
+    */
+    max-width: 1200px;
+
+    /*
+        margin auto ile ekranın ortasına getiriyoruz.
+    */
+    margin: 0 auto;
+
+    gap: 30px;
+
+    padding: 0 30px;
+}
+
+
+/*
+    Sol taraftaki eğitim menüsü
+*/
+.lesson-menu {
+    width: 250px;
+
+    /*
+        İçerik aşağı doğru uzasa bile
+        menünün üstte kalmasını sağlar.
+    */
+    position: sticky;
+
+    top: 20px;
+
+    /*
+        Sticky özelliğinin düzgün çalışması için
+        kendi yüksekliği kadar yer kaplamasını istiyoruz.
+    */
+    align-self: flex-start;
+
+    background-color: #0d1b2e;
+
+    border: 1px solid #1d3553;
+
+    border-radius: 12px;
+
+    padding: 20px;
+}
+
+
+/*
+    Sol menü başlığı
+*/
+.lesson-menu h3 {
+    margin-top: 0;
+    color: white;
+}
+
+
+/*
+    Sol menü bağlantıları
+*/
+.lesson-menu a {
+    display: block;
+
+    text-decoration: none;
+
+    color: #aebbd0;
+
+    padding: 12px 10px;
+
+    border-radius: 7px;
+
+    margin-bottom: 5px;
+}
+
+
+/*
+    Mouse ile üzerine gelince
+*/
+.lesson-menu a:hover {
+    background-color: #14263d;
+
+    color: #4da3ff;
+}
+
+
+/*
+    Sağ taraftaki ders alanı
+*/
+.lesson-content {
+    flex: 1;
+}
+
+
+/*
+    Her ders bölümü
+*/
+.lesson-card {
+    background-color: #0d1b2e;
+
+    border: 1px solid #1d3553;
+
+    border-radius: 14px;
+
+    padding: 35px;
+
+    margin-bottom: 25px;
+}
+
+
+/*
+    MODÜL 01 gibi küçük yazılar
+*/
+.lesson-number {
+    color: #4da3ff;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 1.5px;
+}
+
+
+/*
+    Ders başlığı
+*/
+.lesson-card h2 {
+    font-size: 28px;
+
+    margin-top: 10px;
+}
+
+
+/*
+    Ders paragrafları
+*/
+.lesson-card p {
+    color: #b6c2d9;
+
+    line-height: 1.7;
+
+    font-size: 16px;
+}
+
+
+/*
+    Önemli kavram kutuları
+*/
+.concept-box {
+    background-color: #101f34;
+
+    border-left: 4px solid #2563eb;
+
+    border-radius: 8px;
+
+    padding: 20px;
+
+    margin-top: 20px;
+}
+
+
+/*
+    Karşılaştırma alanı
+*/
+.comparison {
+    display: flex;
+
+    gap: 20px;
+
+    margin-top: 25px;
+}
+
+
+/*
+    Karşılaştırma kutuları
+*/
+.comparison-box {
+    flex: 1;
+
+    background-color: #101f34;
+
+    border: 1px solid #243a58;
+
+    border-radius: 10px;
+
+    padding: 20px;
+}
+
+
+/*
+    Temel prensipler için grid sistemi
+*/
+.principle-grid {
+    display: grid;
+
+    /*
+        İki sütun oluşturuyoruz.
+    */
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+
+    margin-top: 25px;
+}
+
+
+/*
+    Her prensip kutusu
+*/
+.principle-item {
+    background-color: #101f34;
+
+    border: 1px solid #243a58;
+
+    border-radius: 10px;
+
+    padding: 20px;
+}
+
+
+/*
+    Mimari akış
+*/
+.architecture-flow {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    margin-top: 30px;
+}
+
+
+/*
+    PE → PA → PEP kontrol akışı
+*/
+.architecture-control {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 35px;
+}
+
+
+/*
+    Mimari kutular
+*/
+.architecture-item {
+    background-color: #14263d;
+
+    border: 1px solid #2a405f;
+
+    border-radius: 9px;
+
+    padding: 15px 22px;
+
+    font-weight: bold;
+}
+
+
+/*
+    Önemli bileşenleri biraz farklı gösteriyoruz.
+*/
+.architecture-item.highlight {
+    border-color: #2563eb;
+
+    color: #6eb1ff;
+}
+
+
+/*
+    Ok işaretleri
+*/
+.arrow {
+    font-size: 25px;
+
+    color: #4da3ff;
+}
+
+
+/*
+    Küçük ekranlar için responsive tasarım.
+*/
+@media (max-width: 850px) {
+
+    /*
+        Sol menü ve ders içeriğini
+        alt alta getiriyoruz.
+    */
+    .learn-container {
+        flex-direction: column;
+    }
+
+
+    /*
+        Menü artık ekranın tamamına yakın genişlikte.
+    */
+    .lesson-menu {
+        width: 100%;
+
+        position: static;
+    }
+
+
+    /*
+        Prensipleri tek sütuna indiriyoruz.
+    */
+    .principle-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /*
+        Karşılaştırma kutularını alt alta getiriyoruz.
+    */
+    .comparison {
+        flex-direction: column;
+    }
+
+
+    /*
+        Mimari akışı da küçük ekranlarda
+        dikey hale getiriyoruz.
+    */
+    .architecture-flow {
+        flex-direction: column;
+    }
+}
+
+/*
+    7 temel ilkenin bulunduğu grid alanı
+*/
+.tenet-grid {
+
+    /*
+        Kartları iki sütun halinde gösteriyoruz.
+    */
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+
+    margin-top: 30px;
+}
+
+
+/*
+    Her temel ilkenin kartı
+*/
+.tenet-card {
+
+    background-color: #101f34;
+
+    border: 1px solid #243a58;
+
+    border-radius: 12px;
+
+    padding: 25px;
+
+    /*
+        Mouse üzerine geldiğinde yapılacak
+        hareket için yumuşak geçiş sağlar.
+    */
+    transition: 0.3s;
+}
+
+
+/*
+    Mouse kartın üzerine geldiğinde
+*/
+.tenet-card:hover {
+
+    /*
+        Kart biraz yukarı hareket eder.
+    */
+    transform: translateY(-6px);
+
+    /*
+        Kenarlık mavi olur.
+    */
+    border-color: #2563eb;
+}
+
+
+/*
+    Kartların içindeki 01, 02, 03 gibi numaralar
+*/
+.tenet-number {
+
+    color: #4da3ff;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 12px;
+}
+
+
+/*
+    Kart başlıkları
+*/
+.tenet-card h3 {
+
+    font-size: 19px;
+
+    line-height: 1.4;
+
+    margin-top: 0;
+}
+
+
+/*
+    Kart açıklamaları
+*/
+.tenet-card p {
+
+    font-size: 15px;
+
+    line-height: 1.6;
+
+    color: #aebbd0;
+}
+
+
+/*
+    Küçük ekranlarda kartları
+    tek sütun haline getiriyoruz.
+*/
+@media (max-width: 850px) {
+
+    .tenet-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+/*
+    Hızlı kontrol sorusunun ana kutusu
+*/
+.quick-check {
+    margin-top: 35px;
+
+    background-color: #0a1829;
+
+    border: 1px solid #2563eb;
+
+    border-radius: 12px;
+
+    padding: 25px;
+}
+
+
+/*
+    Hızlı kontrol başlığı
+*/
+.quick-check h3 {
+    margin-top: 0;
+
+    color: #6eb1ff;
+}
+
+
+/*
+    Cevap butonlarının bulunduğu alan
+*/
+.answer-buttons {
+    display: flex;
+
+    gap: 15px;
+
+    margin-top: 20px;
+}
+
+
+/*
+    Evet / Hayır butonları
+*/
+.answer-buttons button {
+    padding: 12px 25px;
+
+    background-color: #14263d;
+
+    color: white;
+
+    border: 1px solid #2563eb;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+    transition: 0.3s;
+}
+
+
+/*
+    Mouse butonların üzerine geldiğinde
+*/
+.answer-buttons button:hover {
+    background-color: #2563eb;
+}
+
+
+/*
+    JavaScript tarafından oluşturulan
+    sonuç kutusunun genel tasarımı.
+*/
+.result {
+    margin-top: 20px;
+
+    padding: 20px;
+
+    border-radius: 10px;
+}
+
+
+/*
+    Doğru cevap verilirse kullanılacak tasarım.
+*/
+.result.correct {
+    background-color: rgba(34, 197, 94, 0.10);
+
+    border: 1px solid #22c55e;
+}
+
+
+/*
+    Doğru cevabın başlığı
+*/
+.result.correct strong {
+    color: #4ade80;
+}
+
+
+/*
+    Yanlış cevap verilirse kullanılacak tasarım.
+*/
+.result.wrong {
+    background-color: rgba(239, 68, 68, 0.10);
+
+    border: 1px solid #ef4444;
+}
+
+
+/*
+    Yanlış cevabın başlığı
+*/
+.result.wrong > strong {
+    color: #f87171;
+}
+
+/*
+    Güven algoritmasında kullanılan
+    bilgi kartlarının bulunduğu alan.
+*/
+.trust-inputs {
+
+    /*
+        CSS Grid kullanıyoruz.
+        Üç eşit sütun oluşturur.
+    */
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 18px;
+
+    margin-top: 30px;
+
+    margin-bottom: 35px;
+}
+
+
+/*
+    Kullanıcı, cihaz, kaynak vb.
+    her bilgi türünün kartı.
+*/
+.trust-input-card {
+
+    background-color: #101f34;
+
+    border: 1px solid #243a58;
+
+    border-radius: 12px;
+
+    padding: 22px;
+
+    transition: 0.3s;
+}
+
+
+/*
+    Mouse kartın üzerine geldiğinde
+    küçük bir hareket oluşturuyoruz.
+*/
+.trust-input-card:hover {
+
+    transform: translateY(-5px);
+
+    border-color: #2563eb;
+}
+
+
+/*
+    Kartların üstündeki ikonlar.
+*/
+.trust-icon {
+
+    font-size: 28px;
+
+    display: block;
+
+    margin-bottom: 12px;
+}
+
+
+/*
+    Kart başlıkları.
+*/
+.trust-input-card h3 {
+
+    margin-top: 0;
+
+    font-size: 18px;
+}
+
+
+/*
+    Kart açıklamaları.
+*/
+.trust-input-card p {
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/*
+    Erişim kararının görsel olarak
+    gösterildiği ana kutu.
+*/
+.decision-flow {
+
+    background-color: #081525;
+
+    border: 1px solid #243a58;
+
+    border-radius: 14px;
+
+    padding: 30px;
+
+    margin-top: 30px;
+
+    text-align: center;
+}
+
+
+/*
+    Erişim karar akışındaki her adım.
+*/
+.decision-step {
+
+    max-width: 550px;
+
+    margin: 0 auto;
+
+    background-color: #14263d;
+
+    border: 1px solid #2a405f;
+
+    border-radius: 9px;
+
+    padding: 15px;
+
+    font-weight: bold;
+}
+
+
+/*
+    Politika Motorunu diğer adımlardan
+    biraz daha belirgin gösteriyoruz.
+*/
+.decision-engine {
+
+    border-color: #2563eb;
+
+    color: #6eb1ff;
+}
+
+
+/*
+    Aşağı yönlü oklar.
+*/
+.decision-arrow {
+
+    color: #4da3ff;
+
+    font-size: 25px;
+
+    margin: 8px 0;
+}
+
+
+/*
+    İzin ve reddet sonuçlarını
+    yan yana yerleştiriyoruz.
+*/
+.decision-results {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 20px;
+
+    margin-top: 10px;
+}
+
+
+/*
+    İzin ver sonucu.
+*/
+.decision-allow {
+
+    flex: 1;
+
+    max-width: 260px;
+
+    padding: 18px;
+
+    border-radius: 9px;
+
+    border: 1px solid #22c55e;
+
+    background-color: rgba(34, 197, 94, 0.10);
+
+    color: #4ade80;
+
+    font-weight: bold;
+}
+
+
+/*
+    Reddet sonucu.
+*/
+.decision-deny {
+
+    flex: 1;
+
+    max-width: 260px;
+
+    padding: 18px;
+
+    border-radius: 9px;
+
+    border: 1px solid #ef4444;
+
+    background-color: rgba(239, 68, 68, 0.10);
+
+    color: #f87171;
+
+    font-weight: bold;
+}
+
+
+/*
+    ALLOW ve DENY yazılarını
+    alt satırda daha küçük gösteriyoruz.
+*/
+.decision-results small {
+
+    display: block;
+
+    margin-top: 5px;
+
+    font-size: 11px;
+}
+
+
+/*
+    Tablet ve telefonlarda üç sütun
+    fazla sıkışacağı için tek sütun yapıyoruz.
+*/
+@media (max-width: 850px) {
+
+    .trust-inputs {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .decision-results {
+
+        flex-direction: column;
+
+        align-items: center;
+
+    }
+
+}
+
+/*
+    MODÜL 10
+    Politika Motorunun bilgi kaynakları
+*/
+
+
+/*
+    Tüm bilgi kaynağı kartlarını
+    içerisinde tutan ana grid alanı.
+*/
+.source-grid {
+
+    /*
+        CSS Grid kullanıyoruz.
+
+        repeat(2, 1fr):
+        alanı iki eşit sütuna böler.
+    */
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    /*
+        Kartlar arasındaki boşluk.
+    */
+    gap: 18px;
+
+    margin-top: 30px;
+
+    margin-bottom: 35px;
+}
+
+
+/*
+    Her bir bilgi kaynağının kartı.
+*/
+.source-card {
+
+    background-color: #101f34;
+
+    border: 1px solid #243a58;
+
+    border-radius: 12px;
+
+    padding: 22px;
+
+    /*
+        Hover efektinin yumuşak
+        gerçekleşmesini sağlar.
+    */
+    transition: 0.3s;
+}
+
+
+/*
+    Mouse kartın üzerine geldiğinde
+    küçük bir hareket oluşturuyoruz.
+*/
+.source-card:hover {
+
+    transform: translateY(-5px);
+
+    border-color: #2563eb;
+}
+
+
+/*
+    Kartların üstündeki ikonlar.
+*/
+.source-icon {
+
+    display: block;
+
+    font-size: 30px;
+
+    margin-bottom: 12px;
+}
+
+
+/*
+    Bilgi kaynağı başlıkları.
+*/
+.source-card h3 {
+
+    margin-top: 0;
+
+    font-size: 18px;
+
+    line-height: 1.5;
+}
+
+
+/*
+    Bilgi kaynağı açıklamaları.
+*/
+.source-card p {
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/*
+    Bilgi kaynaklarının Politika Motoruna
+    ulaştığı akış kutusu.
+*/
+.source-flow {
+
+    background-color: #081525;
+
+    border: 1px solid #243a58;
+
+    border-radius: 14px;
+
+    padding: 30px;
+
+    margin-top: 30px;
+
+    text-align: center;
+}
+
+
+/*
+    CDM, Kimlik, SIEM gibi küçük
+    bilgi kaynağı kutularını tutar.
+*/
+.source-flow-inputs {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    margin-top: 25px;
+}
+
+
+/*
+    Akış içerisindeki her küçük
+    bilgi kaynağı etiketi.
+*/
+.source-flow-inputs span {
+
+    background-color: #14263d;
+
+    border: 1px solid #2a405f;
+
+    border-radius: 8px;
+
+    padding: 10px 15px;
+
+    color: #b6c2d9;
+
+    font-size: 13px;
+}
+
+
+/*
+    Küçük ekranlarda iki sütun
+    fazla dar olacağı için kartları
+    tek sütuna indiriyoruz.
+*/
+@media (max-width: 850px) {
+
+    .source-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
