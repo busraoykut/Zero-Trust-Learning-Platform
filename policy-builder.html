@@ -181,6 +181,227 @@
             </div>
 
         </section>
+        <!--
+    =====================================================
+    POLİTİKA OLUŞTURMA FORMU
+    =====================================================
+
+    Kullanıcı eğitim amaçlı erişim politikasının
+    koşullarını bu form üzerinden belirleyecek.
+-->
+<section class="simulator-container">
+
+
+    <!--
+        LAB 01'de kullandığımız form kartı
+        tasarımını burada tekrar kullanıyoruz.
+    -->
+    <div class="simulator-form-card">
+
+        <h2>
+            Yeni Politika Oluştur
+        </h2>
+
+        <p>
+            Politikanın hangi kullanıcı rolü ve kaynak için
+            geçerli olacağını, gerekli güvenlik koşullarını
+            ve erişim kararını belirle.
+        </p>
+
+
+        <!--
+            Bütün politika alanlarını tek bir form
+            içerisinde topluyoruz.
+        -->
+        <form id="policy-builder-form">
+
+
+            <!--
+                =================================================
+                POLİTİKA ADI
+                =================================================
+            -->
+            <div class="form-group">
+
+                <label for="policy-name">
+                    Politika Adı
+                </label>
+
+                <!--
+                    type="text":
+                    Kullanıcının serbest metin yazmasını sağlar.
+
+                    placeholder:
+                    Kutunun içinde örnek bir açıklama gösterir.
+                -->
+                <input
+                    type="text"
+                    id="policy-name"
+                    placeholder="Örn: Çalışan Dosya Erişimi"
+                >
+
+            </div>
+
+
+            <!--
+                =================================================
+                KULLANICI ROLÜ
+                =================================================
+            -->
+            <div class="form-group">
+
+                <label for="builder-user-role">
+                    Kullanıcı Rolü
+                </label>
+
+                <select id="builder-user-role">
+
+                    <option value="employee">
+                        Çalışan
+                    </option>
+
+                    <option value="admin">
+                        Yönetici
+                    </option>
+
+                    <option value="guest">
+                        Harici Kullanıcı (Guest)
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!--
+                =================================================
+                KAYNAK
+                =================================================
+            -->
+            <div class="form-group">
+
+                <label for="builder-resource">
+                    Kaynak
+                </label>
+
+                <select id="builder-resource">
+
+                    <option value="intranet">
+                        Kurum İçi Portal
+                    </option>
+
+                    <option value="file-server">
+                        Dosya Sunucusu
+                    </option>
+
+                    <option value="admin-panel">
+                        Yönetim Paneli
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!--
+                =================================================
+                MFA GEREKSİNİMİ
+                =================================================
+            -->
+            <div class="form-group">
+
+                <label for="builder-mfa">
+                    Çok Faktörlü Kimlik Doğrulama (MFA) Gereksinimi
+                </label>
+
+                <select id="builder-mfa">
+
+                    <option value="required">
+                        Başarılı olmalı
+                    </option>
+
+                    <option value="not-required">
+                        Zorunlu değil
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!--
+                =================================================
+                CİHAZ GEREKSİNİMİ
+                =================================================
+            -->
+            <div class="form-group">
+
+                <label for="builder-device">
+                    Cihaz Güvenliği Gereksinimi
+                </label>
+
+                <select id="builder-device">
+
+                    <option value="required">
+                        Güvenli olmalı
+                    </option>
+
+                    <option value="not-required">
+                        Zorunlu değil
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!--
+                =================================================
+                POLİTİKA KARARI
+                =================================================
+            -->
+            <div class="form-group">
+
+                <label for="builder-decision">
+                    Politika Kararı
+                </label>
+
+                <select id="builder-decision">
+
+                    <option value="allow">
+                        ALLOW - Erişime İzin Ver
+                    </option>
+
+                    <option value="deny">
+                        DENY - Erişimi Reddet
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!--
+                Şimdilik yalnızca HTML butonunu oluşturuyoruz.
+
+                JavaScript fonksiyonunu bir sonraki aşamada
+                bağlayacağız.
+            -->
+            <button
+                type="button"
+                id="create-policy-button"
+            >
+                Politikayı Oluştur
+            </button>
+
+
+        </form>
+
+
+    </div>
+
+
+</section>
 
 
     </main>

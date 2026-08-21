@@ -2701,3 +2701,77 @@ body {
     color: #aebbd0;
 }
 
+
+/*
+    =====================================================
+    LAB 02 - POLİTİKA OLUŞTURUCU FORMU
+    =====================================================
+*/
+
+
+/*
+    Politika adı için kullandığımız
+    metin kutusunun görünümü.
+*/
+.form-group input {
+
+    /*
+        Form kartının kullanılabilir bütün
+        genişliğini kaplar.
+    */
+    width: 100%;
+
+    /*
+        Kutunun içindeki yazıyla kenarlar
+        arasında boşluk oluşturur.
+    */
+    padding: 13px 14px;
+
+    /*
+        LAB 01 seçim kutularıyla aynı
+        koyu arka plan rengini kullanıyoruz.
+    */
+    background-color: #101f34;
+
+    color: white;
+
+    border: 1px solid #2a405f;
+
+    border-radius: 8px;
+
+    font-size: 15px;
+}
+
+
+/*
+    Kullanıcı input alanına tıkladığında
+    kenarlığı mavi hale getiriyoruz.
+*/
+.form-group input:focus {
+
+    outline: none;
+
+    border-color: #4da3ff;
+}
+
+
+/*
+    Politika oluşturma butonu.
+*/
+#create-policy-button {
+
+    width: 100%;
+
+    margin-top: 28px;
+
+    background-color: #2563eb;
+}
+
+
+/*
+    Mouse butonun üzerine geldiğinde.
+*/
+#create-policy-button:hover {
+
+    background-color: #1d4ed8;
+}
