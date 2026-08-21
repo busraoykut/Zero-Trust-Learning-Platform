@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+
+<head>
+
+    <!-- Türkçe karakterlerin düzgün görünmesini sağlar -->
+    <meta charset="UTF-8">
+
+    <!-- Mobil cihazlarda sayfanın düzgün ölçeklenmesini sağlar -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Tarayıcı sekmesinde görünecek başlık -->
+    <title>Politika Oluşturucu | Zero Trust Lab</title>
+
+    <!-- Ortak tasarım dosyamızı bağlıyoruz -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+
+    <!--
+        =====================================================
+        ÜST MENÜ
+        =====================================================
+
+        Diğer sayfalardaki navbar yapısını burada da
+        kullanıyoruz. Böylece bütün site aynı tasarım
+        dilini koruyor.
+    -->
+    <header class="navbar">
+
+        <div class="logo">
+            Zero Trust Lab
+        </div>
+
+        <nav>
+
+            <a href="index.html">
+                Ana Sayfa
+            </a>
+
+            <a href="learn.html">
+                Öğren
+            </a>
+
+            <a href="lab.html">
+                Lab
+            </a>
+
+            <a href="#">
+                Oyunlar
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!--
+        =====================================================
+        LAB 02 ANA İÇERİĞİ
+        =====================================================
+    -->
+    <main class="policy-builder-page">
+
+
+        <!--
+            =================================================
+            SAYFA BAŞLIĞI
+            =================================================
+        -->
+        <section class="policy-builder-header">
+
+            <p class="hero-label">
+                LAB 02
+            </p>
+
+            <h1>
+                Politika Oluşturucu
+                (Policy Builder)
+            </h1>
+
+            <p>
+                Kullanıcı rolü, erişilmek istenen kaynak
+                ve güvenlik gereksinimlerini belirleyerek
+                eğitim amaçlı bir erişim politikası oluştur.
+            </p>
+
+        </section>
+
+
+        <!--
+            =================================================
+            LAB KULLANIM REHBERİ
+            =================================================
+
+            LAB 01'de kullandığımız rehber yapısını
+            burada tekrar kullanıyoruz.
+        -->
+        <section class="lab-guide">
+
+            <span class="lab-tool-label">
+                NASIL KULLANILIR?
+            </span>
+
+            <h2>
+                Erişim Politikasını 3 Adımda Oluştur
+            </h2>
+
+            <p class="lab-guide-description">
+                Politika Motorunun hangi kurallara göre
+                karar vereceğini anlamak için önce kendi
+                örnek erişim politikanı tanımla.
+            </p>
+
+
+            <div class="lab-guide-steps">
+
+
+                <!-- 1. ADIM -->
+                <div class="lab-guide-step">
+
+                    <span class="guide-number">
+                        01
+                    </span>
+
+                    <h3>
+                        Politika Koşullarını Belirle
+                    </h3>
+
+                    <p>
+                        Kullanıcı rolünü, kaynağı, MFA
+                        gereksinimini ve cihaz güvenliği
+                        koşulunu belirle.
+                    </p>
+
+                </div>
+
+
+                <!-- 2. ADIM -->
+                <div class="lab-guide-step">
+
+                    <span class="guide-number">
+                        02
+                    </span>
+
+                    <h3>
+                        Politika Kararını Seç
+                    </h3>
+
+                    <p>
+                        Belirlediğin koşullar için erişimin
+                        ALLOW veya DENY ile sonuçlanacağını seç.
+                    </p>
+
+                </div>
+
+
+                <!-- 3. ADIM -->
+                <div class="lab-guide-step">
+
+                    <span class="guide-number">
+                        03
+                    </span>
+
+                    <h3>
+                        Politikayı İncele
+                    </h3>
+
+                    <p>
+                        Oluşturduğun politikanın koşullarını
+                        ve erişim kararını sonuç kartında incele.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+</body>
+
+</html>
