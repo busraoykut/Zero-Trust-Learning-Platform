@@ -2339,3 +2339,137 @@ body {
 
     color: white;
 }
+
+/*
+    =====================================================
+    POLİTİKA MOTORU - KULLANIM REHBERİ
+    =====================================================
+*/
+
+
+/*
+    Rehber bölümünün ana kutusu.
+*/
+.lab-guide {
+
+    max-width: 1000px;
+
+    margin: 0 auto 35px;
+
+    padding: 30px;
+
+    background-color: #0d1b2e;
+
+    border: 1px solid #1d3553;
+
+    border-radius: 14px;
+
+    text-align: left;
+}
+
+
+/*
+    Rehber ana başlığı.
+*/
+.lab-guide h2 {
+
+    margin-top: 10px;
+
+    margin-bottom: 10px;
+
+    font-size: 26px;
+}
+
+
+/*
+    Başlığın altındaki açıklama.
+*/
+.lab-guide-description {
+
+    font-size: 15px;
+
+    line-height: 1.6;
+
+    margin-bottom: 25px;
+}
+
+
+/*
+    Üç adımı yan yana gösteriyoruz.
+*/
+.lab-guide-steps {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 18px;
+}
+
+
+/*
+    Her bir rehber adımı.
+*/
+.lab-guide-step {
+
+    background-color: #101f34;
+
+    border: 1px solid #243a58;
+
+    border-radius: 10px;
+
+    padding: 20px;
+}
+
+
+/*
+    01, 02, 03 numaraları.
+*/
+.guide-number {
+
+    color: #4da3ff;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+
+/*
+    Adım başlıkları.
+*/
+.lab-guide-step h3 {
+
+    margin: 10px 0;
+
+    font-size: 18px;
+}
+
+
+/*
+    Adım açıklamaları.
+*/
+.lab-guide-step p {
+
+    margin: 0;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/*
+    Küçük ekranlarda adımları
+    alt alta gösteriyoruz.
+*/
+@media (max-width: 850px) {
+
+    .lab-guide-steps {
+
+        grid-template-columns: 1fr;
+    }
+
+}
