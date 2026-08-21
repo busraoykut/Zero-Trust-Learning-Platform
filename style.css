@@ -2892,3 +2892,19 @@ body {
     font-size: 17px;
 }
 
+/* LAB 02 - Seçenekleri sıfırlama butonu */
+#reset-policy-button {
+    margin-top: 10px;
+    padding: 12px 20px;
+    border: 1px solid #64748b;
+    border-radius: 8px;
+    background-color: transparent;
+    color: #cbd5e1;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+/* Fare butonun üzerine geldiğinde görünümü değiştirir. */
+#reset-policy-button:hover {
+    background-color: #334155;
+}

@@ -876,3 +876,24 @@ sonucAlani.innerHTML = `
 `;
 
 }
+
+/*
+    =====================================================
+    LAB 02 - POLİTİKA FORMUNU SIFIRLAMA
+    =====================================================
+*/
+function politikaFormunuSifirla() {
+
+    /*
+        Formu ilk açıldığı durumuna döndürüyoruz.
+        Metin alanı temizlenir ve select alanları
+        başlangıç seçeneklerine geri döner.
+    */
+    document.getElementById("policy-builder-form").reset();
+
+    /*
+        Daha önce oluşturulmuş politika kartını
+        sonuç alanından kaldırıyoruz.
+    */
+    document.getElementById("created-policy-result").innerHTML = "";
+}
