@@ -391,13 +391,32 @@
 
 </div>
 
-<button
-    type="button"
-    id="evaluate-button"
-    onclick="erisimiDegerlendir()"
->
-    Erişim İsteğini Değerlendir
-</button> 
+<!--
+    Form işlemlerinde kullanacağımız
+    iki butonu aynı alanda topluyoruz.
+-->
+<div class="form-action-buttons">
+
+    <!-- Politika Motorunu çalıştırır -->
+    <button
+        type="button"
+        id="evaluate-button"
+        onclick="erisimiDegerlendir()"
+    >
+        Erişim İsteğini Değerlendir
+    </button>
+
+
+    <!-- Formu başlangıç durumuna döndürür -->
+    <button
+        type="button"
+        id="reset-button"
+        onclick="formuSifirla()"
+    >
+        Seçenekleri Sıfırla
+    </button>
+
+</div>
 
 <!--
     JavaScript tarafından oluşturulan

@@ -2574,3 +2574,60 @@ body {
 
     background-color: #19304d;
 }
+
+/*
+    =====================================================
+    FORM İŞLEM BUTONLARI
+    =====================================================
+*/
+
+
+/*
+    Değerlendir ve Sıfırla butonlarını
+    aynı satırda göstermek için kullanıyoruz.
+*/
+.form-action-buttons {
+
+    display: flex;
+
+    gap: 12px;
+
+    margin-top: 20px;
+}
+
+/*
+    Formu Sıfırla butonu.
+
+    Ana işlem butonundan daha az dikkat çekmesi
+    için koyu ve sade bir tasarım kullanıyoruz.
+*/
+#reset-button {
+
+    background-color: #14263d;
+
+    color: #cbd5e1;
+
+    border: 1px solid #2a405f;
+}
+
+
+/*
+    Mouse üzerine geldiğinde.
+*/
+#reset-button:hover {
+
+    background-color: #1b304a;
+
+    border-color: #4da3ff;
+
+    color: white;
+}
+
+@media (max-width: 600px) {
+
+    .form-action-buttons {
+
+        flex-direction: column;
+    }
+
+}

@@ -487,39 +487,27 @@ if (riskSeviyesi === "low") {
 */
 function guvenliCalisanSenaryosu() {
 
-    /*
-        Kullanıcı rolünü Çalışan yapıyoruz.
-    */
     document.getElementById("user-role").value =
         "employee";
 
-
-    /*
-        MFA başarılı.
-    */
     document.getElementById("mfa-status").value =
         "success";
 
-
-    /*
-        Cihaz güvenli.
-    */
     document.getElementById("device-status").value =
         "secure";
 
-
-    /*
-        Çalışanın erişebildiği Dosya Sunucusunu seçiyoruz.
-    */
     document.getElementById("resource").value =
         "file-server";
 
-
-    /*
-        Örnek risk seviyesini düşük yapıyoruz.
-    */
     document.getElementById("risk-level").value =
         "low";
+
+
+    /*
+        Önceki bir senaryodan kalan
+        ALLOW / DENY sonucunu temizliyoruz.
+    */
+    document.getElementById("policy-result").innerHTML = "";
 
 }
 
@@ -567,6 +555,13 @@ function yetkisizYonetimSenaryosu() {
     */
     document.getElementById("risk-level").value =
         "low";
+
+         /*
+        Eski değerlendirme sonucunu temizliyoruz.
+    */
+    document.getElementById("policy-result").innerHTML = "";
+
+
 
 }
 
@@ -616,6 +611,28 @@ function riskliHariciSenaryosu() {
     */
     document.getElementById("risk-level").value =
         "high";
+
+         document.getElementById("policy-result").innerHTML = "";
+
+}
+
+/*
+
+    Kullanıcı "Formu Sıfırla" butonuna bastığında
+    formu başlangıç değerlerine döndürür
+    ve eski değerlendirme sonucunu temizler.
+*/
+function formuSifirla() {
+
+  
+    document.getElementById("policy-form").reset();
+
+
+    /*
+        Daha önce gösterilmiş bir
+        ALLOW / DENY sonucu varsa siliyoruz.
+    */
+    document.getElementById("policy-result").innerHTML = "";
 
 }
 
