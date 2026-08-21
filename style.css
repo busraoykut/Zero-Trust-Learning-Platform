@@ -2256,3 +2256,86 @@ body {
     */
     line-height: 1.5;
 }
+
+/*
+    =====================================================
+    POLİTİKA MOTORU SONUÇ DETAYLARI
+    =====================================================
+*/
+
+
+/*
+    Sonuç kutusundaki ana başlık.
+*/
+#policy-result h3 {
+
+    margin-top: 0;
+
+    margin-bottom: 18px;
+
+    font-size: 16px;
+
+    letter-spacing: 1.5px;
+
+    color: #cbd5e1;
+}
+
+
+/*
+    Kullanıcının seçtiği erişim bilgilerinin
+    bulunduğu bölüm.
+*/
+.decision-details {
+
+    margin-top: 20px;
+
+    padding: 18px;
+
+    background-color: rgba(0, 0, 0, 0.15);
+
+    border-radius: 8px;
+}
+
+
+/*
+    Detay bölümündeki her satır.
+*/
+.decision-details p {
+
+    margin: 8px 0;
+
+    font-size: 14px;
+}
+
+
+/*
+    Kullanıcı Rolü, MFA, Cihaz gibi
+    başlıkların daha belirgin görünmesini sağlar.
+*/
+.decision-details p strong {
+
+    color: white;
+}
+
+
+/*
+    Kararın nedenini gösterdiğimiz bölüm.
+*/
+.decision-reason {
+
+    margin-top: 20px;
+}
+
+
+/*
+    "Karar Nedeni" ve "Reddetme Nedenleri"
+    başlıklarının görünümü.
+*/
+.decision-reason h4 {
+
+    margin-bottom: 10px;
+
+    font-size: 15px;
+
+    color: white;
+}

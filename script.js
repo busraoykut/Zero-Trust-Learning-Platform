@@ -141,6 +141,110 @@ const cihazGuvenli = cihazDurumu === "secure";
     const sonucAlani =
         document.getElementById("policy-result");
 
+        /*
+    =====================================================
+    SONUÇ EKRANINDA GÖSTERİLECEK TÜRKÇE DEĞERLER
+    =====================================================
+*/
+
+
+/*
+
+    let kullanıyoruz çünkü aşağıdaki if yapısında
+    bu değişkenin değerini değiştireceğiz.
+*/
+let kullaniciRoluMetni = "";
+
+
+/*
+    Seçilen role göre Türkçe karşılığı belirliyoruz.
+*/
+if (kullaniciRolu === "admin") {
+
+    kullaniciRoluMetni = "Yönetici";
+
+} else if (kullaniciRolu === "employee") {
+
+    kullaniciRoluMetni = "Çalışan";
+
+} else {
+
+    kullaniciRoluMetni = "Harici Kullanıcı (Guest)";
+
+}
+
+
+/*
+    MFA bilgisinin ekranda gösterilecek metni.
+*/
+let mfaMetni = "";
+
+if (mfaDurumu === "success") {
+
+    mfaMetni = "Başarılı";
+
+} else {
+
+    mfaMetni = "Başarısız";
+
+}
+
+
+/*
+    Cihaz durumunun ekranda gösterilecek metni.
+*/
+let cihazMetni = "";
+
+if (cihazDurumu === "secure") {
+
+    cihazMetni = "Güvenli";
+
+} else {
+
+    cihazMetni = "Güvenli Değil";
+
+}
+
+
+/*
+    Kaynağın ekranda gösterilecek metni.
+*/
+let kaynakMetni = "";
+
+if (kaynak === "intranet") {
+
+    kaynakMetni = "Kurum İçi Portal";
+
+} else if (kaynak === "file-server") {
+
+    kaynakMetni = "Dosya Sunucusu";
+
+} else {
+
+    kaynakMetni = "Yönetim Paneli";
+
+}
+
+
+/*
+    Risk seviyesinin ekranda gösterilecek metni.
+*/
+let riskMetni = "";
+
+if (riskSeviyesi === "low") {
+
+    riskMetni = "Düşük";
+
+} else if (riskSeviyesi === "medium") {
+
+    riskMetni = "Orta";
+
+} else {
+
+    riskMetni = "Yüksek";
+
+}
+
 
  
 
@@ -244,24 +348,63 @@ const cihazGuvenli = cihazDurumu === "secure";
     */
     if (hataMesaji !== "") {
 
-        sonucAlani.innerHTML = `
-            <div class="result wrong">
+    sonucAlani.innerHTML = `
+        <div class="result wrong">
 
-                <strong>
-                    ✕ DENY - Erişim Reddedildi
-                </strong>
+            <h3>
+                POLİTİKA MOTORU KARARI
+            </h3>
+
+            <strong>
+                ✕ DENY - Erişim Reddedildi
+            </strong>
+
+
+            <!-- Kullanıcının oluşturduğu erişim isteği -->
+            <div class="decision-details">
 
                 <p>
-                    Erişim isteği aşağıdaki nedenlerden
-                    dolayı reddedildi:
+                    <strong>Kullanıcı Rolü:</strong>
+                    ${kullaniciRoluMetni}
                 </p>
+
+                <p>
+                    <strong>MFA:</strong>
+                    ${mfaMetni}
+                </p>
+
+                <p>
+                    <strong>Cihaz:</strong>
+                    ${cihazMetni}
+                </p>
+
+                <p>
+                    <strong>Kaynak:</strong>
+                    ${kaynakMetni}
+                </p>
+
+                <p>
+                    <strong>Risk Seviyesi:</strong>
+                    ${riskMetni}
+                </p>
+
+            </div>
+
+
+            <div class="decision-reason">
+
+                <h4>
+                    Reddetme Nedenleri
+                </h4>
 
                 ${hataMesaji}
 
             </div>
-        `;
 
-    }
+        </div>
+    `;
+
+}
 
 
     /*
@@ -270,24 +413,67 @@ const cihazGuvenli = cihazDurumu === "secure";
     */
     else {
 
-        sonucAlani.innerHTML = `
-            <div class="result correct">
+    sonucAlani.innerHTML = `
+        <div class="result correct">
 
-                <strong>
-                    ✓ ALLOW - Erişime İzin Verildi
-                </strong>
+            <h3>
+                POLİTİKA MOTORU KARARI
+            </h3>
+
+            <strong>
+                ✓ ALLOW - Erişime İzin Verildi
+            </strong>
+
+
+            <!-- Kullanıcının oluşturduğu erişim isteği -->
+            <div class="decision-details">
 
                 <p>
-                    MFA başarılı, cihaz güvenli,
-                    risk kabul edilebilir seviyede
-                    ve kullanıcının rolü seçilen kaynak
+                    <strong>Kullanıcı Rolü:</strong>
+                    ${kullaniciRoluMetni}
+                </p>
+
+                <p>
+                    <strong>MFA:</strong>
+                    ${mfaMetni}
+                </p>
+
+                <p>
+                    <strong>Cihaz:</strong>
+                    ${cihazMetni}
+                </p>
+
+                <p>
+                    <strong>Kaynak:</strong>
+                    ${kaynakMetni}
+                </p>
+
+                <p>
+                    <strong>Risk Seviyesi:</strong>
+                    ${riskMetni}
+                </p>
+
+            </div>
+
+
+            <div class="decision-reason">
+
+                <h4>
+                    Karar Nedeni
+                </h4>
+
+                <p>
+                    Gerekli erişim koşulları sağlandı.
+                    Kullanıcının rolü seçilen kaynağa erişim
                     için örnek kurum politikasına uygundur.
                 </p>
 
             </div>
-        `;
 
-    }
+        </div>
+    `;
+
+}
 
 }
 
