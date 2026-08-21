@@ -381,18 +381,24 @@
             </div>
 
 
-            <!--
-                Şimdilik yalnızca HTML butonunu oluşturuyoruz.
-
-                JavaScript fonksiyonunu bir sonraki aşamada
-                bağlayacağız.
+             <!--
+                Kullanıcı butona bastığında
+                politikaOlustur() JavaScript fonksiyonu çalışır.
             -->
             <button
                 type="button"
                 id="create-policy-button"
+                onclick="politikaOlustur()"
             >
                 Politikayı Oluştur
             </button>
+
+            <!--
+                JavaScript tarafından oluşturulan
+             politika kartı bu alanın içine yazılacak.
+            -->
+
+        <div id="created-policy-result"></div>
 
 
         </form>
@@ -406,7 +412,7 @@
 
     </main>
 
-
+<script src="script.js"></script>
 </body>
 
 </html>

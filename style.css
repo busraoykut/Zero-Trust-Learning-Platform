@@ -2775,3 +2775,120 @@ body {
 
     background-color: #1d4ed8;
 }
+
+
+/*
+    =====================================================
+    LAB 02 - OLUŞTURULAN POLİTİKA KARTI
+    =====================================================
+*/
+
+
+/*
+    JavaScript tarafından oluşturulan
+    politika kartının ana görünümü.
+*/
+.created-policy-card {
+
+    margin-top: 30px;
+
+    padding: 25px;
+
+    background-color: #101f34;
+
+    border: 1px solid #2a405f;
+
+    border-radius: 10px;
+}
+
+
+/*
+    "OLUŞTURULAN POLİTİKA" küçük etiketi.
+*/
+.created-policy-label {
+
+    margin: 0;
+
+    color: #4da3ff;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 1.5px;
+}
+
+
+/*
+    Kullanıcının verdiği politika adı.
+*/
+.created-policy-card h3 {
+
+    margin-top: 10px;
+
+    margin-bottom: 20px;
+
+    font-size: 23px;
+
+    color: white;
+}
+
+
+/*
+    Politikanın MFA ve cihaz koşullarının
+    bulunduğu bölüm.
+*/
+.policy-conditions {
+
+    margin-top: 20px;
+
+    padding: 18px;
+
+    background-color: rgba(0, 0, 0, 0.15);
+
+    border-radius: 8px;
+}
+
+
+.policy-conditions h4 {
+
+    margin-top: 0;
+
+    margin-bottom: 12px;
+
+    color: white;
+}
+
+
+.policy-conditions p {
+
+    margin: 8px 0;
+
+    font-size: 14px;
+}
+
+
+/*
+    Politika kararının bulunduğu bölüm.
+*/
+.policy-decision {
+
+    margin-top: 20px;
+}
+
+
+.policy-decision h4 {
+
+    margin-bottom: 10px;
+
+    color: white;
+}
+
+
+.policy-decision strong {
+
+    color: #6eb1ff;
+
+    font-size: 17px;
+}
+

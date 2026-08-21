@@ -637,3 +637,230 @@ function formuSifirla() {
 }
 
 
+/*
+    =====================================================
+    LAB 02 - POLİTİKA OLUŞTURUCU
+    =====================================================
+
+    Kullanıcı "Politikayı Oluştur" butonuna bastığında
+    bu fonksiyon çalışacak.
+*/
+function politikaOlustur() {
+
+    /*
+    Kullanıcının Politika Adı alanına yazdığı metni alıyoruz.
+    .value: Form alanının mevcut değerini verir.
+*/
+const politikaAdi =
+    document.getElementById("policy-name").value;
+
+    /*
+    Politikanın hangi kullanıcı rolü için tanımlandığını alıyoruz.
+*/
+const kullaniciRolu =
+    document.getElementById("builder-user-role").value;
+    
+    /*
+    Politikanın geçerli olacağı kaynağı alıyoruz.
+*/
+const kaynak =
+    document.getElementById("builder-resource").value;
+
+
+/*
+    MFA gereksinimini alıyoruz.
+*/
+const mfaGereksinimi =
+    document.getElementById("builder-mfa").value;
+
+
+/*
+    Cihaz güvenliği gereksinimini alıyoruz.
+*/
+const cihazGereksinimi =
+    document.getElementById("builder-device").value;
+
+
+/*
+    Kullanıcının politika için belirlediği
+    ALLOW / DENY kararını alıyoruz.
+*/
+const politikaKarari =
+    document.getElementById("builder-decision").value;
+
+    /*
+    Oluşturulan politika kartını göstereceğimiz
+    HTML alanını buluyoruz.
+*/
+const sonucAlani =
+    document.getElementById("created-policy-result");
+
+    /*
+    =====================================================
+    EKRANDA GÖSTERİLECEK TÜRKÇE DEĞERLER
+    =====================================================
+*/
+
+
+/*
+    Kullanıcı rolünün ekranda gösterilecek
+    Türkçe karşılığını hazırlıyoruz.
+
+    let kullanıyoruz çünkü aşağıdaki
+    if yapılarında değer değişecek.
+*/
+let kullaniciRoluMetni = "";
+
+
+if (kullaniciRolu === "employee") {
+
+    kullaniciRoluMetni = "Çalışan";
+
+} else if (kullaniciRolu === "admin") {
+
+    kullaniciRoluMetni = "Yönetici";
+
+} else {
+
+    kullaniciRoluMetni = "Harici Kullanıcı (Guest)";
+
+}
+
+/*
+    Kaynak değerini kullanıcıya gösterilecek
+    metne çeviriyoruz.
+*/
+let kaynakMetni = "";
+
+
+if (kaynak === "intranet") {
+
+    kaynakMetni = "Kurum İçi Portal";
+
+} else if (kaynak === "file-server") {
+
+    kaynakMetni = "Dosya Sunucusu";
+
+} else {
+
+    kaynakMetni = "Yönetim Paneli";
+
+}
+
+/*
+    MFA gereksiniminin ekranda
+    gösterilecek açıklamasını belirliyoruz.
+*/
+let mfaMetni = "";
+
+
+if (mfaGereksinimi === "required") {
+
+    mfaMetni = "MFA başarılı olmalı";
+
+} else {
+
+    mfaMetni = "MFA zorunlu değil";
+
+}
+
+/*
+    Cihaz güvenliği gereksiniminin
+    ekranda gösterilecek açıklamasını belirliyoruz.
+*/
+let cihazMetni = "";
+
+
+if (cihazGereksinimi === "required") {
+
+    cihazMetni = "Cihaz güvenli olmalı";
+
+} else {
+
+    cihazMetni = "Cihaz güvenliği zorunlu değil";
+
+}
+
+/*
+    Politika kararının kullanıcıya
+    gösterilecek metnini hazırlıyoruz.
+*/
+let kararMetni = "";
+
+
+if (politikaKarari === "allow") {
+
+    kararMetni = "ALLOW - Erişime İzin Ver";
+
+} else {
+
+    kararMetni = "DENY - Erişimi Reddet";
+
+}
+    
+/*
+    Hazırladığımız bütün bilgileri
+    sonuç alanının içerisine HTML olarak yazıyoruz.
+*/
+sonucAlani.innerHTML = `
+
+    <div class="created-policy-card">
+
+        <p class="created-policy-label">
+            OLUŞTURULAN POLİTİKA
+        </p>
+
+        <h3>
+            ${politikaAdi}
+        </h3>
+
+
+        <div class="decision-details">
+
+            <p>
+                <strong>Rol:</strong>
+                ${kullaniciRoluMetni}
+            </p>
+
+            <p>
+                <strong>Kaynak:</strong>
+                ${kaynakMetni}
+            </p>
+
+        </div>
+
+
+        <div class="policy-conditions">
+
+            <h4>
+                Koşullar
+            </h4>
+
+            <p>
+                ✓ ${mfaMetni}
+            </p>
+
+            <p>
+                ✓ ${cihazMetni}
+            </p>
+
+        </div>
+
+
+        <div class="policy-decision">
+
+            <h4>
+                Politika Kararı
+            </h4>
+
+            <strong>
+                ${kararMetni}
+            </strong>
+
+        </div>
+
+    </div>
+
+`;
+
+}
