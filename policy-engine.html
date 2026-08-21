@@ -128,7 +128,7 @@
                     </option>
 
                     <option value="guest">
-                        Misafir
+                    Harici Kullanıcı (Guest)
                     </option>
 
                 </select>
@@ -231,12 +231,22 @@
 </div>
 
 
-<button type="button" id="evaluate-button">
+<button
+    type="button"
+    id="evaluate-button"
+    onclick="erisimiDegerlendir()"
+>
     Erişim İsteğini Değerlendir
-</button>
+</button> 
 
+<!--
+    JavaScript tarafından oluşturulan
+    değerlendirme sonucu burada gösterilecek.
+-->
+<div id="policy-result"></div>
 
         </form>
+
 
         <!--
     Simülatörde kullanacağımız kuralların
