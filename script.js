@@ -651,6 +651,7 @@ function politikaOlustur() {
     Kullanıcının Politika Adı alanına yazdığı metni alıyoruz.
     .value: Form alanının mevcut değerini verir.
 */
+
 const politikaAdi =
     document.getElementById("policy-name").value;
 
@@ -782,8 +783,7 @@ if (cihazGereksinimi === "required") {
 }
 
 /*
-    Politika kararının kullanıcıya
-    gösterilecek metnini hazırlıyoruz.
+    Politika kararının kullanıcıya gösterilecek metnini hazırlıyoruz.
 */
 let kararMetni = "";
 
@@ -797,10 +797,22 @@ if (politikaKarari === "allow") {
     kararMetni = "DENY - Erişimi Reddet";
 
 }
+
+    /*
+        Politika adı boş bırakılmışsa politika oluşturmuyoruz.
+    */
+    if (politikaAdi.trim() === "") {
+
+        sonucAlani.innerHTML =
+            "<p>Lütfen politika adını girin.</p>";
+
+        return;
+    }
+
+    
     
 /*
-    Hazırladığımız bütün bilgileri
-    sonuç alanının içerisine HTML olarak yazıyoruz.
+    Hazırladığımız bütün bilgileri sonuç alanının içerisine HTML olarak yazıyoruz.
 */
 sonucAlani.innerHTML = `
 
