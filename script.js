@@ -144,97 +144,106 @@ const cihazGuvenli = cihazDurumu === "secure";
 
  
 
+     /*
+        hataMesaji başlangıçta boş.
+
+        Bir erişim problemi buldukça
+        bu metnin sonuna yeni açıklama ekleyeceğiz.
+    */
+    let hataMesaji = "";
+
+
+    /*
+        MFA başarısızsa hata mesajına ekle.
+    */
     if (mfaBasarili === false) {
 
-        sonucAlani.innerHTML = `
-            <div class="result wrong">
-
-                <strong>
-                    ✕ DENY - Erişim Reddedildi
-                </strong>
-
-                <p>
-                    Çok Faktörlü Kimlik Doğrulama (MFA)
-                    başarısız olduğu için erişim reddedildi.
-                </p>
-
-            </div>
-        `;
-
-
-   
-    
-    } else if (cihazGuvenli === false) {
-
-        sonucAlani.innerHTML = `
-            <div class="result wrong">
-
-                <strong>
-                    ✕ DENY - Erişim Reddedildi
-                </strong>
-
-                <p>
-                    Cihaz kurumun örnek güvenlik politikasına
-                    uygun olmadığı için erişim reddedildi.
-                </p>
-
-            </div>
-        `;
-
-
-    
-    } else if (riskSeviyesi === "high") {
-
-        sonucAlani.innerHTML = `
-            <div class="result wrong">
-
-                <strong>
-                    ✕ DENY - Erişim Reddedildi
-                </strong>
-
-                <p>
-                    Erişim isteğinin risk seviyesi yüksek
-                    olduğu için erişim reddedildi.
-                </p>
-
-            </div>
-        `;
-
-
-   
-    
-    } else if (
-    kullaniciRolu === "guest" &&
-    (
-        kaynak === "file-server" ||
-        kaynak === "admin-panel"
-    )
-) {
-
-    sonucAlani.innerHTML = `
-        <div class="result wrong">
-
-            <strong>
-                ✕ DENY - Erişim Reddedildi
-            </strong>
-
+        hataMesaji += `
             <p>
-                Harici Kullanıcı (Guest) rolünün
-                Dosya Sunucusu veya Yönetim Paneline
-                erişmesine bu örnek kurum politikası
-                izin vermemektedir.
+                • Çok Faktörlü Kimlik Doğrulama (MFA)
+                başarısız.
             </p>
+        `;
 
-        </div>
-    `;
+    }
 
 
-   
-    } else if (
+    /*
+        Cihaz güvenli değilse
+        ayrı olarak kontrol ediyoruz.
+    */
+    if (cihazGuvenli === false) {
+
+        hataMesaji += `
+            <p>
+                • Cihaz örnek kurum güvenlik
+                politikasına uygun değil.
+            </p>
+        `;
+
+    }
+
+
+    /*
+        Risk yüksekse hata mesajına ekle.
+    */
+    if (riskSeviyesi === "high") {
+
+        hataMesaji += `
+            <p>
+                • Erişim isteğinin risk seviyesi yüksek.
+            </p>
+        `;
+
+    }
+
+
+    /*
+        Harici Kullanıcı (Guest),
+        Dosya Sunucusu veya Yönetim Paneline erişemez.
+    */
+    if (
+        kullaniciRolu === "guest" &&
+        (
+            kaynak === "file-server" ||
+            kaynak === "admin-panel"
+        )
+    ) {
+
+        hataMesaji += `
+            <p>
+                • Harici Kullanıcı (Guest) rolünün
+                seçilen kaynağa erişim yetkisi bulunmuyor.
+            </p>
+        `;
+
+    }
+
+
+    /*
+        Çalışan Yönetim Paneline erişemez.
+    */
+    if (
         kullaniciRolu === "employee" &&
         kaynak === "admin-panel"
     ) {
 
+        hataMesaji += `
+            <p>
+                • Çalışan rolünün Yönetim Paneline
+                erişim yetkisi bulunmuyor.
+            </p>
+        `;
+
+    }
+
+
+    /*
+        hataMesaji boş değilse en az bir
+        güvenlik problemi bulunmuş demektir.
+    */
+    if (hataMesaji !== "") {
+
         sonucAlani.innerHTML = `
             <div class="result wrong">
 
@@ -243,17 +252,23 @@ const cihazGuvenli = cihazDurumu === "secure";
                 </strong>
 
                 <p>
-                    Yönetim Paneli yalnızca Yönetici
-                    rolündeki kullanıcılar için tanımlandığı
-                    için erişim reddedildi.
+                    Erişim isteği aşağıdaki nedenlerden
+                    dolayı reddedildi:
                 </p>
+
+                ${hataMesaji}
 
             </div>
         `;
 
+    }
 
- 
-    } else {
+
+    /*
+        Hiçbir problem bulunmadıysa
+        erişime izin veriyoruz.
+    */
+    else {
 
         sonucAlani.innerHTML = `
             <div class="result correct">
@@ -271,6 +286,7 @@ const cihazGuvenli = cihazDurumu === "secure";
 
             </div>
         `;
+
     }
 
 }

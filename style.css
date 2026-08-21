@@ -2226,3 +2226,33 @@ body {
 
     line-height: 1.6;
 }
+
+/*
+    Form alanlarının altında gösterilen
+    küçük açıklama metinleri.
+*/
+.form-help-text {
+
+    /*
+        Normal form yazısından daha küçük
+        görünmesini sağlıyoruz.
+    */
+    font-size: 13px;
+
+    /*
+        Açık gri renk kullanıyoruz.
+        Böylece ana form etiketinden daha az dikkat çeker.
+    */
+    color: #8fa3bf;
+
+    /*
+        Select kutusu ile açıklama arasında
+        biraz boşluk bırakıyoruz.
+    */
+    margin-top: 8px;
+
+    /*
+        Satırlar çok sıkışmasın.
+    */
+    line-height: 1.5;
+}
