@@ -2473,3 +2473,104 @@ body {
     }
 
 }
+
+/*
+    =====================================================
+    HAZIR TEST SENARYOLARI
+    =====================================================
+*/
+
+
+/*
+    Hazır senaryoların bulunduğu ana alan.
+*/
+.preset-scenarios {
+
+    max-width: 1000px;
+
+    margin: 0 auto 35px;
+
+    padding: 30px;
+
+    background-color: #0d1b2e;
+
+    border: 1px solid #1d3553;
+
+    border-radius: 14px;
+
+    text-align: left;
+}
+
+
+/*
+    Hazır senaryo bölümünün başlığı.
+*/
+.preset-scenarios h2 {
+
+    margin-top: 10px;
+
+    margin-bottom: 10px;
+
+    font-size: 26px;
+}
+
+
+/*
+    Başlığın altındaki kısa açıklama.
+*/
+.preset-description {
+
+    font-size: 15px;
+
+    line-height: 1.6;
+
+    margin-bottom: 22px;
+}
+
+
+/*
+    Senaryo butonlarını yan yana getiriyoruz.
+*/
+.preset-scenario-buttons {
+
+    display: flex;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+/*
+    Hazır senaryo butonları.
+*/
+.preset-scenario-buttons button {
+
+    padding: 11px 16px;
+
+    background-color: #14263d;
+
+    color: #cbd5e1;
+
+    border: 1px solid #2a405f;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+/*
+    Mouse butonun üzerine geldiğinde.
+*/
+.preset-scenario-buttons button:hover {
+
+    border-color: #2563eb;
+
+    color: white;
+
+    background-color: #19304d;
+}

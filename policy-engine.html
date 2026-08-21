@@ -169,6 +169,64 @@
 
 </section>
 
+<!--
+    =====================================================
+    HAZIR TEST SENARYOLARI
+    =====================================================
+
+    Kullanıcı isterse formu tek tek doldurmak yerine
+    aşağıdaki hazır senaryolardan birini seçebilir.
+-->
+<section class="preset-scenarios">
+
+    <span class="lab-tool-label">
+        HAZIR TEST SENARYOLARI
+    </span>
+
+    <h2>
+        Bir Senaryo Seç ve Test Et
+    </h2>
+
+    <p class="preset-description">
+        Aşağıdaki örneklerden birini seçerek erişim
+        koşullarını otomatik doldurabilir veya formu
+        kendin manuel olarak değiştirebilirsin.
+    </p>
+
+
+    <div class="preset-scenario-buttons">
+
+        <!-- Güvenli ve normal erişim örneği -->
+        <button
+            type="button"
+            onclick="guvenliCalisanSenaryosu()"
+        >
+            Güvenli Çalışan
+        </button>
+
+
+        <!-- Çalışanın yetkisi olmayan kaynağa erişim örneği -->
+        <button
+            type="button"
+            onclick="yetkisizYonetimSenaryosu()"
+        >
+            Yetkisiz Yönetim Erişimi
+        </button>
+
+
+        <!-- Birden fazla güvenlik sorunu bulunan örnek -->
+        <button
+            type="button"
+            onclick="riskliHariciSenaryosu()"
+        >
+            Riskli Harici Erişim
+        </button>
+
+    </div>
+
+</section>
+
+
         <!--
     =====================================================
     ERİŞİM İSTEĞİ FORMU

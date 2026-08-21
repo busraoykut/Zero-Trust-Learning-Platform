@@ -477,5 +477,146 @@ if (riskSeviyesi === "low") {
 
 }
 
+/*
+    =====================================================
+    HAZIR SENARYO 1 - GÜVENLİ ÇALIŞAN
+    =====================================================
+
+    Form alanlarını normal ve izin verilebilir
+    bir erişim isteğine göre otomatik doldurur.
+*/
+function guvenliCalisanSenaryosu() {
+
+    /*
+        Kullanıcı rolünü Çalışan yapıyoruz.
+    */
+    document.getElementById("user-role").value =
+        "employee";
+
+
+    /*
+        MFA başarılı.
+    */
+    document.getElementById("mfa-status").value =
+        "success";
+
+
+    /*
+        Cihaz güvenli.
+    */
+    document.getElementById("device-status").value =
+        "secure";
+
+
+    /*
+        Çalışanın erişebildiği Dosya Sunucusunu seçiyoruz.
+    */
+    document.getElementById("resource").value =
+        "file-server";
+
+
+    /*
+        Örnek risk seviyesini düşük yapıyoruz.
+    */
+    document.getElementById("risk-level").value =
+        "low";
+
+}
+
+/*
+    =====================================================
+    HAZIR SENARYO 2 - YETKİSİZ YÖNETİM ERİŞİMİ
+    =====================================================
+
+    Çalışan kullanıcının Yönetim Paneline
+    erişmeye çalıştığı örnek senaryo.
+*/
+function yetkisizYonetimSenaryosu() {
+
+    /*
+        Kullanıcı rolü Çalışan.
+    */
+    document.getElementById("user-role").value =
+        "employee";
+
+
+    /*
+        Kimlik doğrulama başarılı.
+    */
+    document.getElementById("mfa-status").value =
+        "success";
+
+
+    /*
+        Cihaz güvenli.
+    */
+    document.getElementById("device-status").value =
+        "secure";
+
+
+    /*
+        Ancak kullanıcı Yönetim Paneline
+        erişmeye çalışıyor.
+    */
+    document.getElementById("resource").value =
+        "admin-panel";
+
+
+    /*
+        Risk düşük.
+    */
+    document.getElementById("risk-level").value =
+        "low";
+
+}
+
+
+/*
+    =====================================================
+    HAZIR SENARYO 3 - RİSKLİ HARİCİ ERİŞİM
+    =====================================================
+
+    Birden fazla güvenlik probleminin
+    aynı erişim isteğinde bulunabileceğini gösterir.
+*/
+function riskliHariciSenaryosu() {
+
+    /*
+        Harici Kullanıcı (Guest)
+    */
+    document.getElementById("user-role").value =
+        "guest";
+
+
+    /*
+        MFA başarısız.
+    */
+    document.getElementById("mfa-status").value =
+        "failed";
+
+
+    /*
+        Cihaz güvenli değil.
+    */
+    document.getElementById("device-status").value =
+        "unsafe";
+
+
+    /*
+        Harici kullanıcının erişmesine izin vermediğimiz
+        Dosya Sunucusunu seçiyoruz.
+    */
+    document.getElementById("resource").value =
+        "file-server";
+
+
+    /*
+        Güvenlik sistemi tarafından belirlenmiş
+        örnek risk seviyesi yüksek.
+    */
+    document.getElementById("risk-level").value =
+        "high";
+
+}
 
 
