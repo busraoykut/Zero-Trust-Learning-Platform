@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+
+<head>
+
+    <!-- Türkçe karakterlerin düzgün görünmesini sağlar -->
+    <meta charset="UTF-8">
+
+    <!-- Mobil cihazlarda sayfanın düzgün ölçeklenmesini sağlar -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Tarayıcı sekmesinde görünen başlık -->
+    <title>Politika Motoru Simülatörü | Zero Trust Lab</title>
+
+    <!-- Mevcut ortak tasarım dosyamızı bağlıyoruz -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+
+    <!--
+        ÜST MENÜ
+
+        Diğer sayfalardaki navbar yapısını burada da
+        kullanıyoruz. Böylece site tasarımı tutarlı kalır.
+    -->
+    <header class="navbar">
+
+        <div class="logo">
+            Zero Trust Lab
+        </div>
+
+        <nav>
+
+            <a href="index.html">
+                Ana Sayfa
+            </a>
+
+            <a href="learn.html">
+                Öğren
+            </a>
+
+            <a href="lab.html">
+                Lab
+            </a>
+
+            <a href="#">
+                Oyunlar
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- Politika Motoru Simülatörünün ana içeriği -->
+    <main class="policy-engine-page">
+
+
+        <!-- SAYFA BAŞLIĞI -->
+        <section class="policy-engine-header">
+
+            <p class="hero-label">
+                LAB 01
+            </p>
+
+            <h1>
+                Politika Motoru Simülatörü
+                (Policy Engine Simulator)
+            </h1>
+
+            <p>
+                Kullanıcı, cihaz, kaynak, kimlik doğrulama
+                ve risk bilgilerini değiştirerek bir erişim
+                isteğinin nasıl değerlendirilebileceğini incele.
+            </p>
+
+        </section>
+        <!--
+    =====================================================
+    ERİŞİM İSTEĞİ FORMU
+    =====================================================
+
+    Kullanıcı Politika Motoruna gönderilecek
+    erişim koşullarını burada belirleyecek.
+-->
+<section class="simulator-container">
+
+    <div class="simulator-form-card">
+
+        <h2>
+            Erişim İsteği
+        </h2>
+
+        <p>
+            Politika Motorunun değerlendireceği
+            bilgileri aşağıdan seç.
+        </p>
+
+
+        <!--
+            FORM
+
+            Kullanıcıdan aldığımız bütün seçimleri
+            tek bir form içerisinde topluyoruz.
+        -->
+        <form id="policy-form">
+
+
+            <!-- KULLANICI ROLÜ -->
+            <div class="form-group">
+
+                <label for="user-role">
+                    Kullanıcı Rolü
+                </label>
+
+                <select id="user-role">
+
+                    <option value="employee">
+                        Çalışan
+                    </option>
+
+                    <option value="admin">
+                        Yönetici
+                    </option>
+
+                    <option value="guest">
+                        Misafir
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- MFA DURUMU -->
+            <div class="form-group">
+
+                <label for="mfa-status">
+                    Çok Faktörlü Kimlik Doğrulama (MFA) Durumu
+                </label>
+
+                <select id="mfa-status">
+
+                    <option value="success">
+                        Başarılı
+                    </option>
+
+                    <option value="failed">
+                        Başarısız
+                    </option>
+
+                </select>
+
+            </div>
+
+            <!-- CİHAZ GÜVENLİĞİ -->
+<div class="form-group">
+
+    <label for="device-status">
+        Cihaz Güvenliği
+    </label>
+
+    <select id="device-status">
+
+        <option value="secure">
+            Güvenli
+        </option>
+
+        <option value="unsafe">
+            Güvenli Değil
+        </option>
+
+    </select>
+
+</div>
+
+
+<!-- ERİŞİLMEK İSTENEN KAYNAK -->
+<div class="form-group">
+
+    <label for="resource">
+        Erişilmek İstenen Kaynak
+    </label>
+
+    <select id="resource">
+
+        <option value="intranet">
+            Kurum İçi Portal
+        </option>
+
+        <option value="file-server">
+            Dosya Sunucusu
+        </option>
+
+        <option value="admin-panel">
+            Yönetim Paneli
+        </option>
+
+    </select>
+
+</div>
+
+
+<!-- RİSK SEVİYESİ -->
+<div class="form-group">
+
+    <label for="risk-level">
+        Risk Seviyesi
+    </label>
+
+    <select id="risk-level">
+
+        <option value="low">
+            Düşük
+        </option>
+
+        <option value="medium">
+            Orta
+        </option>
+
+        <option value="high">
+            Yüksek
+        </option>
+
+    </select>
+
+</div>
+
+
+<button type="button" id="evaluate-button">
+    Erişim İsteğini Değerlendir
+</button>
+
+
+        </form>
+
+        <!--
+    Simülatörde kullanacağımız kuralların
+    NIST'in zorunlu kuralları olmadığını açıkça belirtiyoruz.
+-->
+<div class="simulator-note">
+
+    <strong>
+        Eğitim Amaçlı Politika
+    </strong>
+
+    <p>
+        Bu simülatörde kullanılacak erişim kuralları,
+        NIST SP 800-207 tarafından zorunlu tutulmuş
+        sabit kurallar değildir.
+    </p>
+
+    <p>
+        Kurallar, Politika Motorunun
+        (Policy Engine - PE) erişim kararlarını nasıl
+        değerlendirebileceğini göstermek amacıyla hazırlanmış
+        örnek kurum politikalarıdır.
+    </p>
+
+</div>
+
+
+    </div>
+
+</section>
+
+
+    </main>
+
+
+    <!-- JavaScript dosyamızı bağlıyoruz -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>

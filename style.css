@@ -1,23 +1,7 @@
-/*
-    Bu dosya web sitemizin tasarımını kontrol eder.
-
-    CSS ile:
-    - renkleri
-    - yazı tiplerini
-    - boyutları
-    - boşlukları
-    - butonları
-    - sayfa yerleşimini
-
-    değiştirebiliriz.
-*/
 
 
-/*
-    body = sayfanın tamamı.
 
-    Burada bütün sayfanın temel görünümünü değiştiriyoruz.
-*/
+
 body {
 
     /*
@@ -1639,11 +1623,6 @@ body {
 
 }
 
-/*
-    ========================================
-    LAB SAYFASI
-    ========================================
-*/
 
 
 /*
@@ -1998,4 +1977,252 @@ body {
         width: 100%;
     }
 
+}
+
+/*
+    =====================================================
+    POLICY ENGINE SIMULATOR
+    =====================================================
+*/
+
+
+/*
+    Politika Motoru sayfasının genel alanı.
+*/
+.policy-engine-page {
+
+    /*
+        Sayfanın en altında biraz boşluk bırakıyoruz.
+    */
+    padding-bottom: 80px;
+}
+
+
+/*
+    Simülatör sayfasının üst başlık alanı.
+*/
+.policy-engine-header {
+
+    text-align: center;
+
+    padding: 70px 20px 40px;
+}
+
+
+/*
+    Sayfanın ana başlığı.
+*/
+.policy-engine-header h1 {
+
+    /*
+        Genel h1 kuralımızdan bağımsız olarak
+        bu sayfadaki başlığın boyutunu belirliyoruz.
+    */
+    font-size: 42px;
+
+    margin: 10px 0;
+}
+
+
+/*
+    Başlığın altındaki açıklama.
+*/
+.policy-engine-header > p:last-child {
+
+    max-width: 750px;
+
+    margin: 0 auto;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    color: #aebbd0;
+}
+
+
+/*
+    Simülatör formunun bulunduğu ana bölüm.
+*/
+.simulator-container {
+
+    /*
+        İçeriğin ekranın tamamına yayılmasını engelliyoruz.
+    */
+    max-width: 850px;
+
+    /*
+        Sağ ve soldaki auto değeri kutuyu ortalar.
+    */
+    margin: 0 auto;
+
+    padding: 0 30px;
+}
+
+
+/*
+    Formu tuttuğumuz ana kart.
+*/
+.simulator-form-card {
+
+    background-color: #0d1b2e;
+
+    border: 1px solid #1d3553;
+
+    border-radius: 14px;
+
+    padding: 35px;
+
+    text-align: left;
+}
+
+
+/*
+    Form kartının ana başlığı.
+*/
+.simulator-form-card h2 {
+
+    margin-top: 0;
+
+    font-size: 27px;
+}
+
+
+/*
+    Form kartının açıklaması.
+*/
+.simulator-form-card > p {
+
+    font-size: 16px;
+
+    line-height: 1.6;
+}
+
+
+/*
+    Her label + select grubunun
+    kendi alanı.
+*/
+.form-group {
+
+    /*
+        Grupların arasında boşluk bırakıyoruz.
+    */
+    margin-top: 22px;
+}
+
+
+/*
+    Form alanlarının başlıkları.
+*/
+.form-group label {
+
+    /*
+        Label normalde satır içi elementtir.
+        block yaptığımızda kendi satırını kaplar.
+    */
+    display: block;
+
+    margin-bottom: 9px;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    color: #dbe7f7;
+}
+
+
+/*
+    Açılır seçim kutuları.
+*/
+.form-group select {
+
+    width: 100%;
+
+    padding: 13px 14px;
+
+    background-color: #101f34;
+
+    color: white;
+
+    border: 1px solid #2a405f;
+
+    border-radius: 8px;
+
+    font-size: 15px;
+
+    cursor: pointer;
+}
+
+
+/*
+    Kullanıcı seçim kutusuna tıkladığında
+    kenarlığını belirgin hale getiriyoruz.
+*/
+.form-group select:focus {
+
+    outline: none;
+
+    border-color: #4da3ff;
+}
+
+
+/*
+    Değerlendirme butonu.
+*/
+#evaluate-button {
+
+    width: 100%;
+
+    margin-top: 28px;
+
+    background-color: #2563eb;
+}
+
+
+/*
+    Butonun üzerine gelindiğinde.
+*/
+#evaluate-button:hover {
+
+    background-color: #1d4ed8;
+}
+
+
+/*
+    NIST ile örnek kurum politikalarını
+    birbirinden ayıran bilgi kutusu.
+*/
+.simulator-note {
+
+    margin-top: 30px;
+
+    padding: 20px;
+
+    background-color: #101f34;
+
+    border-left: 4px solid #4da3ff;
+
+    border-radius: 8px;
+}
+
+
+/*
+    Bilgi kutusunun başlığı.
+*/
+.simulator-note strong {
+
+    color: #6eb1ff;
+}
+
+
+/*
+    Bilgi kutusundaki paragraflar.
+*/
+.simulator-note p {
+
+    font-size: 14px;
+
+    line-height: 1.6;
 }
