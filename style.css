@@ -3107,3 +3107,54 @@ body {
 
     font-size: 16px;
 }
+
+
+/*
+    =====================================================
+    LAB 03 - SENARYO SONUÇLARINI SIFIRLAMA
+    =====================================================
+*/
+
+
+/*
+    Sıfırlama butonunun bulunduğu alan.
+*/
+.scenario-reset-area {
+
+    text-align: center;
+
+    margin-top: 35px;
+}
+
+
+/*
+    Sıfırlama butonu.
+*/
+.scenario-reset-area button {
+
+    background-color: transparent;
+
+    color: #4da3ff;
+
+    border: 1px solid #2563eb;
+
+    padding: 12px 22px;
+
+    font-size: 15px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+}
+
+
+/*
+    Mouse butonun üzerine geldiğinde
+    arka plan rengini değiştiriyoruz.
+*/
+.scenario-reset-area button:hover {
+
+    background-color: #2563eb;
+
+    color: white;
+}

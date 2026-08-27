@@ -903,40 +903,21 @@ function politikaFormunuSifirla() {
     LAB 03 - ERİŞİM SENARYOLARI
     SENARYO 01
     =====================================================
-
-    Kullanıcı Senaryo 01 için ALLOW veya DENY
-    butonuna bastığında bu fonksiyon çalışır.
-
-    kullaniciKarari parametresi:
-    "allow" → Kullanıcı erişime izin verdi.
-    "deny"  → Kullanıcı erişimi reddetti.
 */
 function senaryoBirKontrol(kullaniciKarari) {
 
 
     /*
-        HTML içerisinde id="scenario-1-result"
-        olan sonuç alanını buluyoruz.
-
-        Sonucu birazdan bu alanın içine yazacağız.
+        HTML içerisinde id="scenario-1-result" olan sonuç alanını buluyoruz.
     */
     const sonucAlani =
         document.getElementById("scenario-1-result");
 
 
-    /*
-        =================================================
-        SENARYONUN DOĞRU KARARI
-        =================================================
 
-    */
     if (kullaniciKarari === "allow") {
 
 
-        /*
-            Kullanıcı doğru karar verdiyse
-            olumlu sonuç kartını gösteriyoruz.
-        */
         sonucAlani.innerHTML = `
 
             <div class="result correct">
@@ -962,11 +943,6 @@ function senaryoBirKontrol(kullaniciKarari) {
 
     }
 
-
-    /*
-        Kullanıcı DENY seçtiyse
-        bu senaryo için yanlış karar vermiştir.
-    */
     else {
 
 
@@ -1007,8 +983,7 @@ function senaryoIkiKontrol(kullaniciKarari) {
 
 
     /*
-        Senaryo 02 için sonucu göstereceğimiz
-        HTML alanını buluyoruz.
+        Senaryo 02 için sonucu göstereceğimiz HTML alanını buluyoruz.
     */
     const sonucAlani =
         document.getElementById("scenario-2-result");
@@ -1181,5 +1156,24 @@ function senaryoUcKontrol(kullaniciKarari) {
         `;
 
     }
+
+}
+
+/*
+    =====================================================
+    LAB 03 - SENARYO SONUÇLARINI SIFIRLAMA
+    =====================================================
+
+*/
+function senaryoSonuclariniSifirla() {
+
+
+    document.getElementById("scenario-1-result").innerHTML = "";
+
+
+    document.getElementById("scenario-2-result").innerHTML = "";
+
+
+    document.getElementById("scenario-3-result").innerHTML = "";
 
 }

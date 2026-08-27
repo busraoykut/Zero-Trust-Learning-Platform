@@ -281,36 +281,47 @@
        <div class="scenario-buttons">
 
     <!--
-        Kullanıcı ALLOW butonuna bastığında senaryoBirKontrol() fonksiyonuna
+        Kullanıcı ALLOW butonuna bastığında
+        senaryoBirKontrol() fonksiyonuna
         "allow" değerini gönderiyoruz.
     -->
-        <button
-            type="button"
-            onclick="senaryoBirKontrol('allow')"
-        >
-            ALLOW - İzin Ver
-        </button>
-
-
-        <!--
-            Kullanıcı DENY butonuna bastığında aynı fonksiyona "deny" değerini gönderiyoruz.
-        -->
-        <button
-            type="button"
-            onclick="senaryoBirKontrol('deny')"
-        >
-            DENY - Reddet
-        </button>
-
-    </div>
+    <button
+        type="button"
+        onclick="senaryoBirKontrol('allow')"
+    >
+        ALLOW - İzin Ver
+    </button>
 
 
     <!--
-        JavaScript tarafından oluşturulan doğru / yanlış sonucu burada gösterilecek.
+        Kullanıcı DENY butonuna bastığında
+        aynı fonksiyona "deny" değerini gönderiyoruz.
     -->
-    <div id="scenario-1-result"></div>
+    <button
+        type="button"
+        onclick="senaryoBirKontrol('deny')"
+    >
+        DENY - Reddet
+    </button>
 
-    <!-- =================================================
+</div>
+
+
+<!--
+    JavaScript tarafından oluşturulan
+    doğru / yanlış sonucu burada gösterilecek.
+-->
+<div id="scenario-1-result"></div>
+
+
+</div>
+<!-- scenario-question burada kapanıyor -->
+
+
+</div>
+<!-- access-scenario-card burada kapanıyor -->
+
+<!-- =================================================
      SENARYO 02 - GÜVENSİZ CİHAZDAN ERİŞİM
      ================================================= -->
 
@@ -389,12 +400,15 @@
 
 
     <!--
-        Senaryo 02 sonucu
-        JavaScript tarafından buraya yazılacak.
+        JavaScript sonucu buraya yazacak.
     -->
     <div id="scenario-2-result"></div>
 
-    <!-- =================================================
+
+</div>
+<!-- Senaryo 02 kartı burada kapanıyor -->
+
+<!-- =================================================
      SENARYO 03 - YETKİSİZ YÖNETİM PANELİ ERİŞİMİ
      ================================================= -->
 
@@ -473,22 +487,42 @@
 
 
     <!--
-        Senaryo 03 sonucu
-        JavaScript tarafından bu alana yazılacak.
+        JavaScript sonucu buraya yazacak.
     -->
     <div id="scenario-3-result"></div>
 
-</div>
 
 </div>
+<!-- Senaryo 03 kartı burada kapanıyor -->
 
+
+
+<!-- =================================================
+     SENARYO SONUÇLARINI SIFIRLAMA
+     ================================================= -->
+
+<div class="scenario-reset-area">
+
+    <!--
+        Kullanıcı bu butona bastığında
+        üç senaryonun da sonuç alanı temizlenir.
+    -->
+    <button
+        type="button"
+        onclick="senaryoSonuclariniSifirla()"
+    >
+        Senaryo Sonuçlarını Sıfırla
+    </button>
 
 </div>
 
-        </section>
+
+</section>
+
+        
 
 
-    </main>
+</main>
 
 
     <!-- JavaScript dosyamızı bağlıyoruz -->
