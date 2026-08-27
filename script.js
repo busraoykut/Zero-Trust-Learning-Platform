@@ -1894,3 +1894,462 @@ function quizTekrarBaslat() {
     sonrakiSoruButonu.classList.remove("show");
 
 }
+
+/*
+    =====================================================
+    OYUN 02 - BİLEŞENLERİ EŞLEŞTİR
+    =====================================================
+*/
+
+
+/*
+    Kullanıcının hangi bileşeni sürüklediğini geçici olarak saklamak için değişken oluşturuyoruz.
+*/
+let suruklenenBilesen = "";
+
+/*
+    Sürüklenen HTML kartının kendisini geçici olarak saklayacağız.
+*/
+let suruklenenKart = null;
+
+/*
+    Kullanıcının kaç doğru eşleştirme yaptığını takip etmek için sayaç oluşturuyoruz.
+*/
+let dogruEslesmeSayisi = 0;
+
+/*
+    Kullanıcının toplam kaç eşleştirme yaptığını
+    takip ediyoruz.
+
+    Doğru veya yanlış olması önemli değil.
+*/
+let toplamEslesmeSayisi = 0;
+
+
+function suruklemeyiBaslat(event, bilesen, kart) {
+
+    /*
+        Hangi bileşenin sürüklendiğini saklıyoruz.
+    */
+    suruklenenBilesen = bilesen;
+
+    /*
+    Sürüklenen kartın HTML elemanını daha sonra kullanabilmek için saklıyoruz.
+*/
+suruklenenKart = kart;
+
+
+    /*
+        Sürükleme sırasında göstereceğimiz
+        geçici küçük kutuyu oluşturuyoruz.
+    */
+    const suruklemeGoruntusu = document.createElement("div");
+
+
+    /*
+        Bileşene göre kısa isim gösteriyoruz.
+    */
+    if (bilesen === "pe") {
+
+        suruklemeGoruntusu.innerText = "Politika Motoru - PE";
+
+    } else if (bilesen === "pa") {
+
+        suruklemeGoruntusu.innerText = "Politika Yöneticisi - PA";
+
+    } else {
+
+        suruklemeGoruntusu.innerText = "Politika Uygulama Noktası - PEP";
+
+    }
+
+
+    /*
+        Bu geçici elemana CSS sınıfı veriyoruz.
+    */
+    suruklemeGoruntusu.classList.add("custom-drag-image");
+
+
+    /*
+        Tarayıcının bu elemanı görebilmesi için
+        geçici olarak sayfaya ekliyoruz.
+    */
+    document.body.appendChild(suruklemeGoruntusu);
+
+
+    /*
+        Artık varsayılan büyük kart yerine
+        bu küçük özel kutuyu gösteriyoruz.
+    */
+    event.dataTransfer.setDragImage(
+        suruklemeGoruntusu,
+        90,
+        25
+    );
+
+
+    /*
+        Tarayıcı sürükleme görüntüsünü aldıktan sonra
+        geçici elemanı sayfadan kaldırıyoruz.
+    */
+    setTimeout(function () {
+
+        suruklemeGoruntusu.remove();
+
+    }, 0);
+
+}
+
+/*
+    Kullanıcı kartı sürüklemeyi bıraktığında
+    bu fonksiyon çalışır.
+*/
+function suruklemeyiBitir(kart) {
+
+    /*
+        Sürükleme görünümünü kaldırıyoruz.
+    */
+    kart.classList.remove("dragging");
+
+}
+
+
+/*
+    Sürüklenen kart bir bırakma alanının üzerine geldiğinde bu fonksiyon çalışır.
+*/
+function birakmayaIzinVer(event) {
+
+    /*
+        Tarayıcının varsayılan davranışını engelliyoruz.
+
+        Bu sayede sürüklenen kartın bu alan üzerine bırakılmasına izin veriyoruz.
+    */
+    event.preventDefault();
+
+}
+
+
+/*
+    Kullanıcı bir bileşeni görev kutusuna  bıraktığında bu fonksiyon çalışır.
+    dogruBilesen:Bu görev kutusunun doğru bileşeni.
+    sonucAlaniId:Doğru / yanlış sonucunun yazılacağı HTML alanının id bilgisidir.
+*/
+
+/*
+    Kullanıcı bir bileşeni görev kutusuna
+    bıraktığında bu fonksiyon çalışır.
+*/
+/*
+    Kullanıcı bir bileşeni görev kutusuna
+    bıraktığında bu fonksiyon çalışır.
+*/
+function bileseniBirak(dogruBilesen, sonucAlaniId, gorevAlaniId) {
+
+    /*
+        Sonucun gösterileceği alanı buluyoruz.
+    */
+    const sonucAlani =
+        document.getElementById(sonucAlaniId);
+
+
+    /*
+        Kartın bırakıldığı görev kutusunu buluyoruz.
+    */
+    const gorevAlani =
+        document.getElementById(gorevAlaniId);
+
+
+    /*
+        Sürükleme sırasında oluşan
+        mavi vurguyu kaldırıyoruz.
+    */
+    gorevAlani.classList.remove("drag-over");
+
+
+    /*
+        Bu görev alanında daha önce eşleştirme
+        yapılmadıysa toplam eşleştirme sayısını artırıyoruz.
+
+        Böylece aynı görev kutusuna tekrar tekrar
+        kart bırakılması sayacı artırmaz.
+    */
+    if (gorevAlani.dataset.eslestirildi !== "true") {
+
+        toplamEslesmeSayisi++;
+
+        /*
+            Bu görev alanının artık kullanıldığını
+            işaretliyoruz.
+        */
+        gorevAlani.dataset.eslestirildi = "true";
+    }
+
+
+    /*
+        Kullanıcının sürüklediği bileşen ile
+        görev kutusunun doğru bileşenini karşılaştırıyoruz.
+    */
+    if (suruklenenBilesen === dogruBilesen) {
+
+        /*
+            Önceki yanlış görünümü kaldırıyoruz.
+        */
+        gorevAlani.classList.remove("wrong-match");
+
+
+        /*
+            Doğru eşleşme görünümünü ekliyoruz.
+        */
+        gorevAlani.classList.add("correct-match");
+
+
+        /*
+            Doğru kartı görev kutusunun içine taşıyoruz.
+        */
+        gorevAlani.appendChild(suruklenenKart);
+
+
+        /*
+            Doğru eşleşen kart artık tekrar
+            sürüklenemez.
+        */
+        suruklenenKart.draggable = false;
+
+
+        /*
+            Doğru eşleşme sayısını artırıyoruz.
+        */
+        dogruEslesmeSayisi++;
+
+
+        /*
+            Doğru eşleştirme mesajını gösteriyoruz.
+        */
+        sonucAlani.innerHTML = `
+            <div class="result correct">
+
+                <strong>✓ Doğru Eşleştirme!</strong>
+
+                <p>
+                    Bileşeni doğru görevle eşleştirdin.
+                </p>
+
+            </div>
+        `;
+
+
+        /*
+            Doğru eşleşmeden sonra
+            sıradaki görevi görünür hale getiriyoruz.
+        */
+        setTimeout(function () {
+
+            if (dogruBilesen === "pe") {
+
+                document
+                    .getElementById("matching-zone-2")
+                    .scrollIntoView({
+                        behavior: "smooth",
+                        block: "center"
+                    });
+
+            } else if (dogruBilesen === "pa") {
+
+                document
+                    .getElementById("matching-zone-3")
+                    .scrollIntoView({
+                        behavior: "smooth",
+                        block: "center"
+                    });
+
+            }
+
+        }, 150);
+
+    }
+
+
+    /*
+        Eğer sürüklenen bileşen
+        doğru bileşen değilse burası çalışır.
+    */
+    else {
+
+        /*
+            Doğru görünümü kaldırıyoruz.
+        */
+        gorevAlani.classList.remove("correct-match");
+
+
+        /*
+            Yanlış eşleştirme görünümünü ekliyoruz.
+        */
+        gorevAlani.classList.add("wrong-match");
+
+
+        /*
+            Yanlış eşleştirme mesajını gösteriyoruz.
+        */
+        sonucAlani.innerHTML = `
+            <div class="result wrong">
+
+                <strong>✕ Yanlış Eşleştirme</strong>
+
+                <p>
+                    Seçtiğin bileşen bu göreve ait değil.
+                    Tekrar deneyebilirsin.
+                </p>
+
+            </div>
+        `;
+
+    }
+
+
+    /*
+        =================================================
+        OYUN TAMAMLANDI KONTROLÜ
+        =================================================
+
+        Üç farklı görev alanının tamamında
+        eşleştirme yapıldıysa tekrar başlat
+        butonunu gösteriyoruz.
+
+        Burada doğru veya yanlış olması önemli değildir.
+    */
+    if (toplamEslesmeSayisi === 3) {
+
+        const tekrarBaslatButonu =
+            document.getElementById("matching-restart-button");
+
+        tekrarBaslatButonu.style.display = "block";
+
+    }
+
+}
+
+/*
+    =====================================================
+    OYUN 02 - OYUNU TEKRAR BAŞLAT
+    =====================================================
+*/
+
+function eslestirmeOyununuTekrarBaslat() {
+
+    /*
+        Bileşen kartlarının bulunduğu
+        sol alanı buluyoruz.
+    */
+    const bilesenAlani =
+        document.querySelector(".matching-components");
+
+
+    /*
+        Üç görev kutusunu buluyoruz.
+    */
+    const gorevBir =
+        document.getElementById("matching-zone-1");
+
+    const gorevIki =
+        document.getElementById("matching-zone-2");
+
+    const gorevUc =
+        document.getElementById("matching-zone-3");
+
+
+    /*
+        Üç bileşen kartını buluyoruz.
+
+        Burada matching-card sınıfına sahip
+        bütün kartları alıyoruz.
+    */
+    const kartlar =
+        document.querySelectorAll(".matching-card");
+
+
+    /*
+        Her kartı tekrar sol taraftaki
+        bileşen alanına taşıyoruz.
+    */
+    kartlar.forEach(function (kart) {
+
+        bilesenAlani.appendChild(kart);
+
+        /*
+            Kartları tekrar sürüklenebilir yapıyoruz.
+        */
+        kart.draggable = true;
+
+        /*
+            Sürükleme sırasında kalmış olabilecek
+            görünüm sınıfını temizliyoruz.
+        */
+        kart.classList.remove("dragging");
+
+    });
+
+
+    /*
+        Görev kutularındaki doğru / yanlış
+        renklerini temizliyoruz.
+    */
+    gorevBir.classList.remove(
+        "correct-match",
+        "wrong-match",
+        "drag-over"
+    );
+
+    gorevIki.classList.remove(
+        "correct-match",
+        "wrong-match",
+        "drag-over"
+    );
+
+    gorevUc.classList.remove(
+        "correct-match",
+        "wrong-match",
+        "drag-over"
+    );
+
+
+    /*
+        Görev kutularının daha önce kullanıldığını
+        belirten bilgileri siliyoruz.
+    */
+    delete gorevBir.dataset.eslestirildi;
+    delete gorevIki.dataset.eslestirildi;
+    delete gorevUc.dataset.eslestirildi;
+
+
+    /*
+        Doğru / yanlış mesajlarını temizliyoruz.
+    */
+    document.getElementById("matching-result-1").innerHTML = "";
+    document.getElementById("matching-result-2").innerHTML = "";
+    document.getElementById("matching-result-3").innerHTML = "";
+
+
+    /*
+        Sayaçları başlangıç değerlerine döndürüyoruz.
+    */
+    dogruEslesmeSayisi = 0;
+    toplamEslesmeSayisi = 0;
+
+
+    /*
+        Sürükleme bilgilerini de temizliyoruz.
+    */
+    suruklenenBilesen = "";
+    suruklenenKart = null;
+
+
+    /*
+        Oyun yeniden başladığı için
+        tekrar başlat butonunu gizliyoruz.
+    */
+    document.getElementById(
+        "matching-restart-button"
+    ).style.display = "none";
+
+}
+

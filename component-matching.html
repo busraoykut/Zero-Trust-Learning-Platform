@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+
+<head>
+
+    <!-- Türkçe karakterlerin düzgün görünmesini sağlar -->
+    <meta charset="UTF-8">
+
+    <!-- Sayfanın mobil cihazlarda düzgün ölçeklenmesini sağlar -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Tarayıcı sekmesinde görünecek başlık -->
+    <title>Bileşenleri Eşleştir | Zero Trust Lab</title>
+
+    <!-- Projenin ortak CSS dosyasını bağlıyoruz -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         ÜST MENÜ
+         ===================================================== -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            Zero Trust Lab
+        </div>
+
+        <nav>
+
+            <a href="index.html">
+                Ana Sayfa
+            </a>
+
+            <a href="learn.html">
+                Öğren
+            </a>
+
+            <a href="lab.html">
+                Lab
+            </a>
+
+            <a href="games.html">
+                Oyunlar
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =====================================================
+         OYUN 02 ANA İÇERİĞİ
+         ===================================================== -->
+
+    <main>
+
+        <!-- Oyun sayfasının başlık alanı -->
+        <section>
+
+            <p class="hero-label">
+                OYUN 02
+            </p>
+
+            <h1>
+                Bileşenleri Eşleştir
+            </h1>
+
+            <p>
+                Sıfır Güven Mimarisi'nin temel bileşenlerini
+                doğru görevlerle eşleştir.
+            </p>
+
+        </section>
+
+
+        <!-- =====================================================
+     EŞLEŞTİRME OYUN ALANI
+     ===================================================== -->
+
+
+   <!-- =====================================================
+     OYUN 02 KULLANIM REHBERİ
+     ===================================================== -->
+
+<section class="matching-game-info">
+
+    <span class="lab-tool-label">
+        NASIL OYNANIR?
+    </span>
+
+    <h2>
+        Bileşenleri 3 Adımda Eşleştir
+    </h2>
+
+    <p class="matching-guide-description">
+        Soldaki Sıfır Güven bileşenlerini incele
+        ve doğru görev alanlarına sürükleyerek eşleştir.
+    </p>
+
+
+    <!-- Üç adımlı oyun rehberi -->
+    <div class="matching-guide-steps">
+
+
+        <!-- 1. ADIM -->
+        <div class="matching-guide-step">
+
+            <span class="matching-guide-number">
+                01
+            </span>
+
+            <h3>
+                Bileşeni Sürükle
+            </h3>
+
+            <p>
+                PE, PA veya PEP kartlarından
+                birini  tut.
+            </p>
+
+        </div>
+
+
+        <!-- Adımlar arasındaki ok -->
+        <div class="matching-guide-arrow">
+            →
+        </div>
+
+
+        <!-- 2. ADIM -->
+        <div class="matching-guide-step">
+
+            <span class="matching-guide-number">
+                02
+            </span>
+
+            <h3>
+                Göreve Bırak
+            </h3>
+
+            <p>
+                Seçtiğin bileşeni ait olduğunu
+                düşündüğün görev kutusuna bırak.
+            </p>
+
+        </div>
+
+
+        <!-- Adımlar arasındaki ok -->
+        <div class="matching-guide-arrow">
+            →
+        </div>
+
+
+        <!-- 3. ADIM -->
+        <div class="matching-guide-step">
+
+            <span class="matching-guide-number">
+                03
+            </span>
+
+            <h3>
+                Sonucu Kontrol Et
+            </h3>
+
+            <p>
+                Eşleştirmenin doğru veya yanlış
+                olduğunu ekrandaki sonuçtan incele.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+   <!-- Oyun tamamlandığında gösterilecek tekrar başlat butonu -->
+    <div class="matching-restart-area">
+
+    <button
+        type="button"
+        id="matching-restart-button"
+        onclick="eslestirmeOyununuTekrarBaslat()"
+    >
+        Oyunu Tekrar Başlat
+    </button>
+
+</div>
+
+
+<section class="matching-game-container">
+
+    
+    <!-- =================================================
+         BİLEŞENLER
+         ================================================= -->
+
+  <div class="matching-components">
+
+    <h3>
+        Bileşenler
+    </h3>
+
+
+    <!-- Politika Motoru -->
+    <div
+        class="matching-card"
+        draggable="true"
+       ondragstart="suruklemeyiBaslat(event, 'pe', this)"
+        ondragend="suruklemeyiBitir(this)"
+    >
+        <strong>
+            Politika Motoru
+            (Policy Engine - PE)
+        </strong>
+    </div>
+
+
+    <!-- Politika Yöneticisi -->
+    <div
+        class="matching-card"
+        draggable="true"
+        ondragstart="suruklemeyiBaslat(event, 'pa', this)"
+        ondragend="suruklemeyiBitir(this)"
+    >
+        <strong>
+            Politika Yöneticisi
+            (Policy Administrator - PA)
+        </strong>
+    </div>
+
+
+    <!-- Politika Uygulama Noktası -->
+    <div
+        class="matching-card"
+        draggable="true"
+        ondragstart="suruklemeyiBaslat(event, 'pep', this)"
+        ondragend="suruklemeyiBitir(this)"
+    >
+        <strong>
+            Politika Uygulama Noktası
+            (Policy Enforcement Point - PEP)
+        </strong>
+    </div>
+
+
+</div>
+
+<!-- matching-components TAM BURADA kapanmalı -->
+
+
+<!-- =================================================
+     GÖREVLER
+     ================================================= -->
+
+<div class="matching-tasks">
+
+    <h3>
+        Görevler
+    </h3>
+            
+
+        <!-- Görev 1 - Politika Motoru (PE) -->
+         <div
+    id="matching-zone-1"
+    class="matching-drop-zone"
+    ondragover="birakmayaIzinVer(event)"
+    ondragenter="birakmaAlaniniVurgula('matching-zone-1')"
+    ondragleave="birakmaAlaniVurgusunuKaldir('matching-zone-1')"
+    ondrop="bileseniBirak('pe', 'matching-result-1', 'matching-zone-1')"
+>
+
+            <p>
+                Erişim isteğini değerlendirir
+                ve erişim kararını verir.
+            </p>
+
+        </div>
+
+        <!-- Görev 1 sonucu -->
+         <div id="matching-result-1"></div>
+
+
+       <div
+    id="matching-zone-2"
+    class="matching-drop-zone"
+    ondragover="birakmayaIzinVer(event)"
+    ondragenter="birakmaAlaniniVurgula('matching-zone-2')"
+    ondragleave="birakmaAlaniVurgusunuKaldir('matching-zone-2')"
+    ondrop="bileseniBirak('pa', 'matching-result-2', 'matching-zone-2')"
+>
+
+            <p>
+                Politika Motorunun kararını uygulamak için
+                gerekli işlemleri yönetir.
+            </p>
+
+        </div>
+
+        <!-- Görev 2 sonucu -->
+        <div id="matching-result-2"></div>
+
+
+                <!-- Görev 3 - Politika Uygulama Noktası (PEP) -->
+        <div
+    id="matching-zone-3"
+    class="matching-drop-zone"
+    ondragover="birakmayaIzinVer(event)"
+    ondragenter="birakmaAlaniniVurgula('matching-zone-3')"
+    ondragleave="birakmaAlaniVurgusunuKaldir('matching-zone-3')"
+    ondrop="bileseniBirak('pep', 'matching-result-3', 'matching-zone-3')"
+>
+
+            <p>
+                Kullanıcı ile kaynak arasındaki erişimi
+                açar, kapatır veya engeller.
+            </p>
+
+        </div>
+
+        <!-- Görev 3 sonucu -->
+        <div id="matching-result-3"></div>
+
+    </div>
+
+
+</section>
+
+    </main>
+
+
+    <!-- Ortak JavaScript dosyamızı bağlıyoruz -->
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>

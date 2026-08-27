@@ -3767,3 +3767,608 @@ body {
 
     font-size: 16px;
 }
+
+
+/*
+    =====================================================
+    OYUN 02 - ANA EŞLEŞTİRME ALANI
+    =====================================================
+*/
+.matching-game-container {
+
+    /*
+        Grid kullanarak oyun alanını
+        iki sütuna ayırıyoruz.
+    */
+    display: grid;
+
+    /*
+        İki eşit genişlikte sütun oluşturuyoruz.
+
+        1fr = kullanılabilir alanın bir parçası.
+        1fr 1fr = alanı iki eşit parçaya böl.
+    */
+    grid-template-columns: 1fr 1fr;
+
+    /*
+        Bileşenler ile görevler arasındaki boşluk.
+    */
+    gap: 40px;
+
+    /*
+        Oyun alanının aşırı genişlemesini engelliyoruz.
+    */
+    max-width: 1100px;
+
+    /*
+        Alanı sayfanın ortasına getiriyoruz.
+    */
+    margin: 0 auto;
+
+    /*
+        Kenarlardan ve alttan boşluk.
+    */
+     padding: 20px 40px 80px;
+}
+
+
+/*
+    =====================================================
+    OYUN 02 - BİLEŞEN KARTLARI
+    =====================================================
+*/
+
+
+/*
+    Sürüklenecek bileşen kartlarının görünümü.
+*/
+.matching-card {
+
+    /*
+        Koyu kart arka planı.
+    */
+    background-color: #0d1b2e;
+
+    /*
+        Kartın etrafına ince çerçeve ekliyoruz.
+    */
+    border: 1px solid #2563eb;
+
+    /*
+        Köşeleri yuvarlatıyoruz.
+    */
+    border-radius: 10px;
+
+    /*
+        Kartın içindeki yazı ile kenarlar
+        arasında boşluk bırakıyoruz.
+    */
+    padding: 20px;
+
+    /*
+        Kartların birbirine yapışmasını engeller.
+    */
+    margin-bottom: 15px;
+
+    /*
+        Yazıyı ortalıyoruz.
+    */
+    text-align: center;
+}
+
+
+/*
+    =====================================================
+    OYUN 02 - BIRAKMA ALANLARI
+    =====================================================
+*/
+
+
+/*
+    Kullanıcının bileşenleri bırakacağı alanlar.
+*/
+.matching-drop-zone {
+
+    /*
+        Bırakma alanını kartlardan biraz farklı
+        göstermek için daha koyu arka plan kullanıyoruz.
+    */
+    background-color: #0b1729;
+
+    /*
+        Kesikli çerçeve, buranın bir bırakma alanı
+        olduğunu görsel olarak anlatır.
+    */
+    border: 2px dashed #4da3ff;
+
+    /*
+        Köşeleri yuvarlatıyoruz.
+    */
+    border-radius: 10px;
+
+    /*
+        İçeride boşluk oluşturuyoruz.
+    */
+    padding: 20px;
+
+    /*
+        Alanların birbirine yapışmasını engelliyoruz.
+    */
+   margin-bottom: 30px;
+
+    /*
+        Bırakma alanlarının çok küçük görünmesini engeller.
+    */
+    min-height: 90px;
+
+    /*
+        İçeriği dikey olarak daha dengeli göstermek için.
+    */
+    display: flex;
+
+    /*
+        İçeriği dikey eksende ortalar.
+    */
+    align-items: center;
+
+    /*
+        İçeriği yatay eksende ortalar.
+    */
+    justify-content: center;
+}
+
+
+
+/*
+    Bileşenler ve Görevler başlıkları.
+*/
+.matching-components h3,
+.matching-tasks h3 {
+
+    margin-bottom: 20px;
+
+    color: #4da3ff;
+
+    font-size: 22px;
+}
+
+
+
+/*
+    Kart bir bırakma alanının üzerine geldiğinde
+    alanı görsel olarak vurguluyoruz.
+*/
+.matching-drop-zone.drag-over {
+
+    border-color: #60a5fa;
+
+    background-color: #10294a;
+
+    /*
+        Alanı çok hafif büyüterek
+        kullanıcıya görsel geri bildirim veriyoruz.
+    */
+    transform: scale(1.02);
+
+}
+
+
+
+
+/*
+    Kart sürüklenirken kullanılan görünüm.
+*/
+.matching-card.dragging {
+
+    opacity: 0.85;
+
+}
+
+
+/*
+    Sürükleme sırasında görünen
+    özel küçük kart.
+*/
+.custom-drag-image {
+
+    position: absolute;
+
+    top: -1000px;
+
+    left: -1000px;
+
+    padding: 12px 20px;
+
+    background-color: #0d1b2e;
+
+    border: 1px solid #4da3ff;
+
+    border-radius: 8px;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    white-space: nowrap;
+}
+
+/*
+    Doğru eşleşmeden sonra görev kutusunun içindeki
+    görev metni ve bileşen kartını alt alta düzenliyoruz.
+*/
+.matching-drop-zone.correct-match {
+
+    /*
+        İçerikleri alt alta göstermek için flex kullanıyoruz.
+    */
+    display: flex;
+
+    /*
+        Elemanları dikey sıraya koyuyoruz.
+    */
+    flex-direction: column;
+
+    /*
+        İçerikler arasına boşluk ekliyoruz.
+    */
+    gap: 15px;
+
+    /*
+        İçeriği ortalıyoruz.
+    */
+    align-items: center;
+
+    /*
+        Dikey ortalamayı koruyoruz.
+    */
+    justify-content: center;
+
+    /*
+        Doğru eşleşme görünümü.
+    */
+    border: 2px solid #22c55e;
+
+    background-color: #0f2a22;
+}
+
+
+/*
+    Doğru eşleşmeden sonra görev kutusunun içine
+    taşınan bileşen kartının görünümü.
+*/
+.matching-drop-zone .matching-card {
+
+    /*
+        Kutunun tamamını kaplamasını sağlıyoruz.
+    */
+    width: 100%;
+
+    /*
+        Alt boşluğu kaldırıyoruz.
+        Çünkü artık eski listedeki gibi kartlar
+        alt alta durmuyor.
+    */
+    margin-bottom: 0;
+
+    /*
+        Doğru eşleşmede yeşil tonlu çerçeve kullanıyoruz.
+    */
+    border-color: #22c55e;
+
+    /*
+        Biraz daha kompakt görünmesi için.
+    */
+    padding: 14px;
+}
+
+/*
+    Görev kutusundaki açıklama metni.
+*/
+.matching-drop-zone > p {
+
+    /*
+        Varsayılan paragraf boşluğunu azaltıyoruz.
+    */
+    margin: 0;
+
+    /*
+        Metni ortalıyoruz.
+    */
+    text-align: center;
+
+    /*
+        Okunabilirlik.
+    */
+    line-height: 1.5;
+
+    font-size: 17px;
+}
+
+
+/*
+    =====================================================
+    OYUN 02 - YANLIŞ EŞLEŞTİRME
+    =====================================================
+*/
+
+.matching-drop-zone.wrong-match {
+
+    /*
+        Yanlış görev kutusunu kırmızı yapıyoruz.
+    */
+    border: 2px solid #ef4444;
+
+    background-color: #2a1218;
+}
+
+
+/*
+    Yanlış eşleştirme mesajının görünümü.
+*/
+#matching-result-1 .result.wrong,
+#matching-result-2 .result.wrong,
+#matching-result-3 .result.wrong {
+
+    margin-top: 10px;
+
+    padding: 15px;
+
+    border: 1px solid #ef4444;
+
+    border-radius: 8px;
+
+    background-color: #2a1218;
+
+    text-align: left;
+}
+
+
+/*
+    =====================================================
+    OYUN 02 - SONUÇ ALANLARI ARASI BOŞLUK
+    =====================================================
+*/
+
+/*
+    Her görevin altındaki doğru / yanlış sonuç alanına
+    alttan boşluk veriyoruz.
+
+    Böylece mesaj kutusu bir sonraki göreve yapışmaz.
+*/
+#matching-result-1,
+#matching-result-2,
+#matching-result-3 {
+
+    margin-bottom: 30px;
+}
+
+/*
+    =====================================================
+    OYUN 02 - OYUN REHBER KARTI
+    =====================================================
+*/
+
+/* =====================================================
+   OYUN 02 - NASIL OYNANIR REHBERİ
+   ===================================================== */
+
+
+/*
+    Rehberin ana kartı.
+*/
+.matching-game-info {
+
+    max-width: 950px;
+
+    margin: 10px auto 25px;
+
+    padding: 20px 24px;
+
+    background-color: #0d1b2e;
+
+    border: 1px solid #1d3553;
+
+    border-radius: 12px;
+
+    text-align: center;
+}
+
+
+.matching-game-info h2 {
+
+    margin: 6px 0 8px;
+
+    font-size: 24px;
+}
+
+
+.matching-guide-description {
+
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+
+.matching-guide-steps {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-top: 18px;
+}
+
+
+.matching-guide-step {
+
+    flex: 1;
+
+    /*
+        Önceki 155px değerini kaldırıyoruz.
+        Kartların gereksiz yere uzun olmasını engeller.
+    */
+    min-height: 115px;
+
+    padding: 14px;
+}
+
+
+.matching-guide-number {
+
+    font-size: 12px;
+}
+
+
+.matching-guide-step h3 {
+
+    margin: 8px 0 5px;
+
+    font-size: 16px;
+}
+
+
+.matching-guide-step p {
+
+    margin: 0;
+
+    font-size: 12px;
+
+    line-height: 1.45;
+}
+
+
+.matching-guide-arrow {
+
+    font-size: 22px;
+}
+
+/*
+    OYUN 02 sonuç mesajlarını daha kompakt yapıyoruz.
+    Böylece sayfa gereksiz yere fazla uzamaz.
+*/
+#matching-result-1 .result,
+#matching-result-2 .result,
+#matching-result-3 .result {
+
+    padding: 10px 14px;
+
+    margin-top: 8px;
+
+    margin-bottom: 12px;
+
+}
+
+
+/*
+    Sonuç mesajlarının içindeki açıklamayı
+    biraz küçültüyoruz.
+*/
+#matching-result-1 .result p,
+#matching-result-2 .result p,
+#matching-result-3 .result p {
+
+    margin: 6px 0 0;
+
+    font-size: 13px;
+
+    line-height: 1.4;
+
+}
+
+
+/*
+    Görevler arasında yeterli boşluk bırakıyoruz
+    ama sayfayı gereksiz yere uzatmıyoruz.
+*/
+.matching-drop-zone {
+
+    margin-bottom: 18px;
+}
+
+
+/*
+    Sonuç alanının altında da küçük bir boşluk.
+*/
+#matching-result-1,
+#matching-result-2,
+#matching-result-3 {
+
+    margin-bottom: 18px;
+}
+
+
+
+/* =====================================================
+   OYUN 02 - TEKRAR BAŞLAT ALANI
+   ===================================================== */
+
+
+/*
+    Tekrar başlat butonunun bulunduğu alan.
+*/
+.matching-restart-area {
+
+    /*
+        Butonu yatay olarak ortalıyoruz.
+    */
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    /*
+        Oyun alanına çok uzak olmamasını sağlıyoruz.
+    */
+    margin: 5px 0 15px;
+
+    min-height: 50px;
+}
+
+
+/*
+    Oyun başlangıcında buton görünmez.
+    JavaScript üç görevde eşleştirme yapıldığında
+    display değerini block olarak değiştirecek.
+*/
+#matching-restart-button {
+
+    display: none;
+
+    padding: 12px 24px;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    background-color: #2563eb;
+
+    color: white;
+
+    border: 1px solid #4da3ff;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+}
+
+
+/*
+    Fare butonun üzerine geldiğinde
+    biraz daha koyu görünmesini sağlıyoruz.
+*/
+#matching-restart-button:hover {
+
+    background-color: #1d4ed8;
+}
