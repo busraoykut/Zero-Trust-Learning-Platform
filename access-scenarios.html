@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+
+<head>
+
+    <!-- Türkçe karakterlerin düzgün görüntülenmesini sağlar -->
+    <meta charset="UTF-8">
+
+    <!-- Sayfanın mobil cihazlarda düzgün ölçeklenmesini sağlar -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Tarayıcı sekmesinde görünecek başlık -->
+    <title>Erişim Senaryoları | Zero Trust Lab</title>
+
+    <!-- Projenin ortak CSS dosyasını bağlıyoruz -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         ÜST MENÜ
+         ===================================================== -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            Zero Trust Lab
+        </div>
+
+        <nav>
+
+            <a href="index.html">
+                Ana Sayfa
+            </a>
+
+            <a href="learn.html">
+                Öğren
+            </a>
+
+            <a href="lab.html">
+                Lab
+            </a>
+
+            <a href="#">
+                Oyunlar
+            </a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         LAB 03 ANA İÇERİĞİ
+         ===================================================== -->
+
+    <main class="access-scenarios-page">
+
+
+        <!-- =================================================
+             SAYFA BAŞLIĞI
+             ================================================= -->
+
+        <section class="access-scenarios-header">
+
+            <p class="hero-label">
+                LAB 03
+            </p>
+
+            <h1>
+                Erişim Senaryoları
+                (Access Scenarios)
+            </h1>
+
+            <p>
+                Farklı erişim isteklerini analiz et,
+                güvenlik koşullarını değerlendir ve erişime
+                izin verilmesi veya reddedilmesi gerektiğine karar ver.
+            </p>
+
+        </section>
+
+
+
+        <!-- =================================================
+             NASIL KULLANILIR?
+             ================================================= -->
+
+        <section class="lab-guide">
+
+            <span class="lab-tool-label">
+                NASIL KULLANILIR?
+            </span>
+
+            <h2>
+                Erişim İsteğini 3 Adımda Analiz Et
+            </h2>
+
+
+            <p class="lab-guide-description">
+
+                Her senaryoda kullanıcı, cihaz, kaynak ve
+                güvenlik koşullarını inceleyerek doğru erişim
+                kararını vermeye çalış.
+
+            </p>
+
+
+            <div class="lab-guide-steps">
+
+
+                <!-- 1. ADIM -->
+                <div class="lab-guide-step">
+
+                    <span class="guide-number">
+                        01
+                    </span>
+
+                    <h3>
+                        Senaryoyu İncele
+                    </h3>
+
+                    <p>
+                        Kullanıcının rolünü, MFA durumunu,
+                        cihaz güvenliğini, kaynağı ve risk
+                        seviyesini incele.
+                    </p>
+
+                </div>
+
+
+
+                <!-- 2. ADIM -->
+                <div class="lab-guide-step">
+
+                    <span class="guide-number">
+                        02
+                    </span>
+
+                    <h3>
+                        Güvenlik Koşullarını Değerlendir
+                    </h3>
+
+                    <p>
+                        Erişim isteğinde güvenlik problemi
+                        veya yetki sorunu olup olmadığını düşün.
+                    </p>
+
+                </div>
+
+
+
+                <!-- 3. ADIM -->
+                <div class="lab-guide-step">
+
+                    <span class="guide-number">
+                        03
+                    </span>
+
+                    <h3>
+                        Kararını Ver
+                    </h3>
+
+                    <p>
+                        Erişim isteği için ALLOW veya DENY
+                        kararlarından birini seç.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             SENARYOLAR
+             ================================================= -->
+
+        <section class="access-scenario-container">
+
+
+            <span class="lab-tool-label">
+                ERİŞİM SENARYOLARI
+            </span>
+
+
+            <h2>
+                Senaryoyu Analiz Et
+            </h2>
+
+
+            <p>
+                Aşağıdaki erişim koşullarını inceleyerek
+                doğru erişim kararını belirle.
+            </p>
+
+
+            
+            <!-- =================================================
+     SENARYO 01 - NORMAL ÇALIŞAN ERİŞİMİ
+     ================================================= -->
+
+<div class="access-scenario-card">
+
+    <!-- Senaryonun numarası -->
+    <span class="scenario-number">
+        SENARYO 01
+    </span>
+
+
+    <!-- Senaryonun başlığı -->
+    <h3>
+        Normal Çalışan Erişimi
+    </h3>
+
+
+    <!-- Kullanıcıya senaryonun kısa açıklamasını veriyoruz -->
+    <p class="scenario-description">
+        Bir çalışan, kurum tarafından yönetilen güvenli
+        cihazından Dosya Sunucusuna erişmek istiyor.
+    </p>
+
+
+    <!--
+        Senaryoya ait erişim koşullarını
+        ayrı bir alan içerisinde gösteriyoruz.
+    -->
+    <div class="scenario-details">
+
+
+        <p>
+            <strong>Kullanıcı Rolü:</strong>
+            Çalışan
+        </p>
+
+
+        <p>
+            <strong>MFA Durumu:</strong>
+            Başarılı
+        </p>
+
+
+        <p>
+            <strong>Cihaz Güvenliği:</strong>
+            Güvenli
+        </p>
+
+
+        <p>
+            <strong>Kaynak:</strong>
+            Dosya Sunucusu
+        </p>
+
+
+        <p>
+            <strong>Risk Seviyesi:</strong>
+            Düşük
+        </p>
+
+
+    </div>
+
+
+    <!-- Kullanıcıdan erişim kararı vermesini istiyoruz -->
+    <div class="scenario-question">
+
+        <h4>
+            Bu erişim isteğine izin verilmeli mi?
+        </h4>
+
+
+       <div class="scenario-buttons">
+
+    <!--
+        Kullanıcı ALLOW butonuna bastığında senaryoBirKontrol() fonksiyonuna
+        "allow" değerini gönderiyoruz.
+    -->
+        <button
+            type="button"
+            onclick="senaryoBirKontrol('allow')"
+        >
+            ALLOW - İzin Ver
+        </button>
+
+
+        <!--
+            Kullanıcı DENY butonuna bastığında aynı fonksiyona "deny" değerini gönderiyoruz.
+        -->
+        <button
+            type="button"
+            onclick="senaryoBirKontrol('deny')"
+        >
+            DENY - Reddet
+        </button>
+
+    </div>
+
+
+    <!--
+        JavaScript tarafından oluşturulan doğru / yanlış sonucu burada gösterilecek.
+    -->
+    <div id="scenario-1-result"></div>
+
+    <!-- =================================================
+     SENARYO 02 - GÜVENSİZ CİHAZDAN ERİŞİM
+     ================================================= -->
+
+<div class="access-scenario-card">
+
+    <span class="scenario-number">
+        SENARYO 02
+    </span>
+
+    <h3>
+        Güvensiz Cihazdan Erişim
+    </h3>
+
+    <p class="scenario-description">
+        Bir çalışan, Çok Faktörlü Kimlik Doğrulamasını (MFA)
+        başarıyla tamamlamış ancak güvenlik gereksinimlerini
+        karşılamayan bir cihazdan Dosya Sunucusuna erişmek istiyor.
+    </p>
+
+
+    <div class="scenario-details">
+
+        <p>
+            <strong>Kullanıcı Rolü:</strong>
+            Çalışan
+        </p>
+
+        <p>
+            <strong>MFA Durumu:</strong>
+            Başarılı
+        </p>
+
+        <p>
+            <strong>Cihaz Güvenliği:</strong>
+            Güvenli Değil
+        </p>
+
+        <p>
+            <strong>Kaynak:</strong>
+            Dosya Sunucusu
+        </p>
+
+        <p>
+            <strong>Risk Seviyesi:</strong>
+            Orta
+        </p>
+
+    </div>
+
+
+    <div class="scenario-question">
+
+        <h4>
+            Bu erişim isteğine izin verilmeli mi?
+        </h4>
+
+        <div class="scenario-buttons">
+
+            <button
+                type="button"
+                onclick="senaryoIkiKontrol('allow')"
+            >
+                ALLOW - İzin Ver
+            </button>
+
+            <button
+                type="button"
+                onclick="senaryoIkiKontrol('deny')"
+            >
+                DENY - Reddet
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!--
+        Senaryo 02 sonucu
+        JavaScript tarafından buraya yazılacak.
+    -->
+    <div id="scenario-2-result"></div>
+
+    <!-- =================================================
+     SENARYO 03 - YETKİSİZ YÖNETİM PANELİ ERİŞİMİ
+     ================================================= -->
+
+<div class="access-scenario-card">
+
+    <span class="scenario-number">
+        SENARYO 03
+    </span>
+
+    <h3>
+        Yetkisiz Yönetim Paneli Erişimi
+    </h3>
+
+    <p class="scenario-description">
+        Bir çalışan, Çok Faktörlü Kimlik Doğrulamasını (MFA)
+        başarıyla tamamlamış ve güvenli bir cihaz kullanıyor.
+        Ancak Yönetim Paneline erişmek istiyor.
+    </p>
+
+
+    <div class="scenario-details">
+
+        <p>
+            <strong>Kullanıcı Rolü:</strong>
+            Çalışan
+        </p>
+
+        <p>
+            <strong>MFA Durumu:</strong>
+            Başarılı
+        </p>
+
+        <p>
+            <strong>Cihaz Güvenliği:</strong>
+            Güvenli
+        </p>
+
+        <p>
+            <strong>Kaynak:</strong>
+            Yönetim Paneli
+        </p>
+
+        <p>
+            <strong>Risk Seviyesi:</strong>
+            Düşük
+        </p>
+
+    </div>
+
+
+    <div class="scenario-question">
+
+        <h4>
+            Bu erişim isteğine izin verilmeli mi?
+        </h4>
+
+        <div class="scenario-buttons">
+
+            <button
+                type="button"
+                onclick="senaryoUcKontrol('allow')"
+            >
+                ALLOW - İzin Ver
+            </button>
+
+            <button
+                type="button"
+                onclick="senaryoUcKontrol('deny')"
+            >
+                DENY - Reddet
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!--
+        Senaryo 03 sonucu
+        JavaScript tarafından bu alana yazılacak.
+    -->
+    <div id="scenario-3-result"></div>
+
+</div>
+
+</div>
+
+
+</div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- JavaScript dosyamızı bağlıyoruz -->
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>

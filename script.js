@@ -897,3 +897,289 @@ function politikaFormunuSifirla() {
     */
     document.getElementById("created-policy-result").innerHTML = "";
 }
+
+/*
+    =====================================================
+    LAB 03 - ERİŞİM SENARYOLARI
+    SENARYO 01
+    =====================================================
+
+    Kullanıcı Senaryo 01 için ALLOW veya DENY
+    butonuna bastığında bu fonksiyon çalışır.
+
+    kullaniciKarari parametresi:
+    "allow" → Kullanıcı erişime izin verdi.
+    "deny"  → Kullanıcı erişimi reddetti.
+*/
+function senaryoBirKontrol(kullaniciKarari) {
+
+
+    /*
+        HTML içerisinde id="scenario-1-result"
+        olan sonuç alanını buluyoruz.
+
+        Sonucu birazdan bu alanın içine yazacağız.
+    */
+    const sonucAlani =
+        document.getElementById("scenario-1-result");
+
+
+    /*
+        =================================================
+        SENARYONUN DOĞRU KARARI
+        =================================================
+
+    */
+    if (kullaniciKarari === "allow") {
+
+
+        /*
+            Kullanıcı doğru karar verdiyse
+            olumlu sonuç kartını gösteriyoruz.
+        */
+        sonucAlani.innerHTML = `
+
+            <div class="result correct">
+
+                <strong>
+                    ✓ Doğru Karar
+                </strong>
+
+                <p>
+                    Bu erişim isteği için ALLOW kararı uygundur.
+                </p>
+
+                <p>
+                    Kullanıcının Çok Faktörlü Kimlik Doğrulaması (MFA)
+                    başarılıdır, cihaz güvenlidir, risk seviyesi düşüktür
+                    ve çalışan rolünün Dosya Sunucusuna erişimine
+                    izin verilebilir.
+                </p>
+
+            </div>
+
+        `;
+
+    }
+
+
+    /*
+        Kullanıcı DENY seçtiyse
+        bu senaryo için yanlış karar vermiştir.
+    */
+    else {
+
+
+        sonucAlani.innerHTML = `
+
+            <div class="result wrong">
+
+                <strong>
+                    ✕ Yanlış Karar
+                </strong>
+
+                <p>
+                    Bu senaryo için uygun karar ALLOW olmalıdır.
+                </p>
+
+                <p>
+                    MFA başarılı, cihaz güvenli ve risk seviyesi düşüktür.
+                    Ayrıca çalışan rolünün Dosya Sunucusuna erişmesine
+                    engel olan örnek bir politika koşulu bulunmamaktadır.
+                </p>
+
+            </div>
+
+        `;
+
+    }
+
+}
+
+/*
+    =====================================================
+    LAB 03 - ERİŞİM SENARYOLARI
+    SENARYO 02
+    =====================================================
+
+*/
+function senaryoIkiKontrol(kullaniciKarari) {
+
+
+    /*
+        Senaryo 02 için sonucu göstereceğimiz
+        HTML alanını buluyoruz.
+    */
+    const sonucAlani =
+        document.getElementById("scenario-2-result");
+
+
+    /*
+        Bu senaryoda doğru karar DENY.
+
+        Kullanıcı DENY seçtiyse
+        doğru karar vermiştir.
+    */
+    if (kullaniciKarari === "deny") {
+
+
+        sonucAlani.innerHTML = `
+
+            <div class="result correct">
+
+                <strong>
+                    ✓ Doğru Karar
+                </strong>
+
+                <p>
+                    Bu erişim isteği için DENY kararı uygundur.
+                </p>
+
+                <p>
+                    Çok Faktörlü Kimlik Doğrulama (MFA)
+                    başarılı olsa da erişim isteyen cihaz
+                    güvenlik gereksinimlerini karşılamamaktadır.
+                </p>
+
+                <p>
+                    Sıfır Güven yaklaşımında kullanıcının kimliği
+                    tek başına yeterli değildir. Cihaz durumu da
+                    erişim kararının bir parçası olarak değerlendirilebilir.
+                </p>
+
+            </div>
+
+        `;
+
+    }
+
+
+    /*
+        Kullanıcı ALLOW seçtiyse
+        yanlış karar vermiştir.
+    */
+    else {
+
+
+        sonucAlani.innerHTML = `
+
+            <div class="result wrong">
+
+                <strong>
+                    ✕ Yanlış Karar
+                </strong>
+
+                <p>
+                    Bu senaryo için uygun karar DENY olmalıdır.
+                </p>
+
+                <p>
+                    Kullanıcının MFA işlemi başarılıdır ancak
+                    erişim isteyen cihaz güvenli değildir.
+                </p>
+
+                <p>
+                    Bu nedenle yalnızca başarılı kimlik doğrulamaya
+                    bakarak erişime izin verilmemelidir.
+                </p>
+
+            </div>
+
+        `;
+
+    }
+
+}
+
+/*
+    =====================================================
+    LAB 03 - ERİŞİM SENARYOLARI
+    SENARYO 03
+    =====================================================
+
+
+*/
+function senaryoUcKontrol(kullaniciKarari) {
+
+
+    /*
+        Senaryo 03 sonucunu göstereceğimiz HTML alanını buluyoruz.
+    */
+    const sonucAlani =
+        document.getElementById("scenario-3-result");
+
+
+    
+    
+    if (kullaniciKarari === "deny") {
+
+
+        sonucAlani.innerHTML = `
+
+            <div class="result correct">
+
+                <strong>
+                    ✓ Doğru Karar
+                </strong>
+
+                <p>
+                    Bu erişim isteği için DENY kararı uygundur.
+                </p>
+
+                <p>
+                    Kullanıcının MFA işlemi başarılı ve cihazı
+                    güvenlidir. Ancak çalışan rolünün Yönetim
+                    Paneline erişim yetkisi bulunmamaktadır.
+                </p>
+
+                <p>
+                    Erişim kararı verilirken yalnızca kimlik
+                    doğrulama ve cihaz güvenliği değil,
+                    kullanıcının erişmek istediği kaynak için
+                    sahip olduğu yetki de değerlendirilmelidir.
+                </p>
+
+            </div>
+
+        `;
+
+    }
+
+
+    /*
+        Kullanıcı ALLOW seçtiyse  yanlış karar vermiştir.
+    */
+    else {
+
+
+        sonucAlani.innerHTML = `
+
+            <div class="result wrong">
+
+                <strong>
+                    ✕ Yanlış Karar
+                </strong>
+
+                <p>
+                    Bu senaryo için uygun karar DENY olmalıdır.
+                </p>
+
+                <p>
+                    MFA başarılı ve cihaz güvenli olsa bile
+                    çalışan rolünün Yönetim Paneline erişim
+                    yetkisi bulunmamaktadır.
+                </p>
+
+                <p>
+                    Güvenli bir erişim isteği olması,
+                    kullanıcının her kaynağa erişebileceği
+                    anlamına gelmez.
+                </p>
+
+            </div>
+
+        `;
+
+    }
+
+}

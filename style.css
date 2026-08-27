@@ -2908,3 +2908,202 @@ body {
 #reset-policy-button:hover {
     background-color: #334155;
 }
+
+
+/* =====================================================
+   LAB 03 - ERİŞİM SENARYOLARI
+   ===================================================== */
+
+
+/*
+    LAB 03 sayfasının genel alanı.
+*/
+.access-scenarios-page {
+    padding-bottom: 80px;
+}
+
+
+/*
+    LAB 03 üst başlık alanı.
+*/
+.access-scenarios-header {
+    text-align: center;
+    padding: 70px 20px 50px;
+}
+
+
+/*
+    LAB 03 ana başlığı.
+*/
+.access-scenarios-header h1 {
+    font-size: 42px;
+    margin: 10px 0;
+}
+
+
+/*
+    Başlığın altındaki açıklama.
+*/
+.access-scenarios-header > p:last-child {
+    color: #aebbd0;
+    font-size: 18px;
+}
+
+
+/*
+    Senaryoların bulunduğu ana alan.
+*/
+.access-scenario-container {
+
+    max-width: 900px;
+
+    /*
+        margin: 0 auto;
+        alanı yatay olarak ortalar.
+    */
+    margin: 50px auto 0;
+
+    padding: 0 30px;
+}
+
+
+/*
+    Senaryo alanının ana başlığı.
+*/
+.access-scenario-container > h2 {
+    font-size: 30px;
+    margin-top: 10px;
+}
+
+
+/*
+    Her bir erişim senaryosunun kartı.
+*/
+.access-scenario-card {
+
+    background-color: #0d1b2e;
+
+    border: 1px solid #1d3553;
+
+    border-radius: 14px;
+
+    padding: 30px;
+
+    margin-top: 30px;
+
+    text-align: left;
+}
+
+
+/*
+    SENARYO 01 gibi küçük etiketi.
+*/
+.scenario-number {
+
+    color: #4da3ff;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 1.5px;
+}
+
+
+/*
+    Senaryo başlığı.
+*/
+.access-scenario-card h3 {
+
+    font-size: 26px;
+
+    margin: 10px 0 15px;
+}
+
+
+/*
+    Senaryonun kısa açıklaması.
+*/
+.scenario-description {
+
+    font-size: 17px;
+
+    line-height: 1.6;
+}
+
+
+/*
+    Kullanıcı, MFA, cihaz, kaynak ve risk
+    bilgilerinin bulunduğu alan.
+*/
+.scenario-details {
+
+    background-color: #091522;
+
+    border: 1px solid #1d3553;
+
+    border-radius: 10px;
+
+    padding: 20px;
+
+    margin-top: 25px;
+}
+
+
+/*
+    Senaryo bilgilerindeki paragraflar.
+*/
+.scenario-details p {
+
+    font-size: 16px;
+
+    margin: 10px 0;
+}
+
+
+/*
+    Kullanıcının karar vereceği bölüm.
+*/
+.scenario-question {
+
+    margin-top: 25px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #1d3553;
+}
+
+
+/*
+    Soru başlığı.
+*/
+.scenario-question h4 {
+
+    font-size: 19px;
+
+    margin-bottom: 20px;
+}
+
+
+/*
+    ALLOW ve DENY butonlarını yan yana getiren alan.
+*/
+.scenario-buttons {
+
+    display: flex;
+
+    gap: 15px;
+}
+
+
+/*
+    Senaryo butonları.
+*/
+.scenario-buttons button {
+
+    flex: 1;
+
+    padding: 13px;
+
+    font-size: 16px;
+}
