@@ -1177,3 +1177,720 @@ function senaryoSonuclariniSifirla() {
     document.getElementById("scenario-3-result").innerHTML = "";
 
 }
+
+/*
+    =====================================================
+    OYUN 01 - ZERO TRUST BİLGİ TESTİ
+    =====================================================
+*/
+
+/*
+    Kullanıcının quiz boyunca kazandığı puanı tutar.
+    Başlangıçta henüz doğru cevap verilmediği için skor değeri 0'dır.
+*/
+
+let quizSkoru = 0;
+
+let soruCevaplandiMi = false;
+
+/*
+    Şu anda kullanıcının hangi soruda olduğunu takip eder.
+    Quiz ilk açıldığında 1. sorudayız.
+*/
+
+let mevcutSoru = 1;
+
+/*
+    Mevcut sorunun doğru cevap numarasını tutar.Soru 1'de doğru cevap ikinci seçenektir.
+*/
+let dogruCevap = 2;
+
+function quizCevapKontrol(secilenCevap) {
+
+    if (soruCevaplandiMi === true) {
+        return;
+    }
+
+
+    const sonucAlani =
+        document.getElementById("quiz-result");
+
+    const skorAlani =
+        document.getElementById("quiz-score");
+
+    const sonrakiSoruButonu =
+        document.getElementById("next-question-button");
+
+
+    soruCevaplandiMi = true;
+
+    sonrakiSoruButonu.classList.add("show");
+
+
+    let cevapAciklamasi = "";
+
+
+    if (mevcutSoru === 1) {
+
+        cevapAciklamasi =
+            "Sıfır Güven yaklaşımında her erişim isteği kullanıcı, cihaz, kaynak ve güvenlik koşullarına göre değerlendirilmelidir.";
+
+    }
+
+    else if (mevcutSoru === 2) {
+
+        cevapAciklamasi =
+            "Politika Motoru (Policy Engine - PE), erişim isteğini mevcut politikalar ve bilgiler doğrultusunda değerlendirerek erişim kararını verir.";
+
+    }
+
+     /*
+    Soru 3 için açıklama.
+    */
+else if (mevcutSoru === 3) {
+
+    cevapAciklamasi =
+        "Politika Uygulama Noktası (Policy Enforcement Point - PEP), verilen erişim kararını uygular. Erişimi açabilir, engelleyebilir veya sonlandırabilir.";
+
+
+}
+
+/*
+    Soru 4 için açıklama.
+*/
+else if (mevcutSoru === 4) {
+
+    cevapAciklamasi =
+        "Çok Faktörlü Kimlik Doğrulama (Multi-Factor Authentication - MFA), kullanıcının kimliğini birden fazla doğrulama yöntemiyle kontrol ederek kimlik doğrulama sürecini güçlendirir.";
+
+}
+
+
+/*
+    Soru 5 için açıklama.
+*/
+else if (mevcutSoru === 5) {
+
+    cevapAciklamasi =
+        "Sıfır Güven yaklaşımında cihazın güvenlik durumu erişim kararında değerlendirilebilir. Güvenlik gereksinimlerini karşılamayan bir cihazın erişimi reddedilebilir veya kısıtlanabilir.";
+
+}
+
+
+    if (secilenCevap === dogruCevap) {
+
+        quizSkoru = quizSkoru + 1;
+
+        skorAlani.textContent =
+            "Skor: " + quizSkoru;
+
+
+        sonucAlani.innerHTML = `
+            <div class="result correct">
+
+                <strong>
+                    ✓ Doğru!
+                </strong>
+
+                <p>
+                    ${cevapAciklamasi}
+                </p>
+
+            </div>
+        `;
+
+    }
+
+    else {
+
+        sonucAlani.innerHTML = `
+            <div class="result wrong">
+
+                <strong>
+                    ✕ Yanlış!
+                </strong>
+
+                <p>
+                    ${cevapAciklamasi}
+                </p>
+
+            </div>
+        `;
+
+    }
+
+}
+
+/*
+    =====================================================
+    SONRAKİ SORUYA GEÇİŞ
+    =====================================================
+*/
+
+
+function sonrakiSoru() {
+
+    /*
+        =====================================================
+        ÖNCE HTML ELEMANLARINI BULUYORUZ
+        =====================================================
+    */
+
+
+    /*
+        HTML'deki soru numarası alanını buluyoruz.
+    */
+    const soruNumarasiAlani =
+        document.getElementById("question-number");
+
+
+    /*
+        HTML'deki soru metnini buluyoruz.
+    */
+    const soruAlani =
+        document.getElementById("quiz-question");
+
+
+    /*
+        Sonuç mesajının bulunduğu alanı buluyoruz.
+    */
+    const sonucAlani =
+        document.getElementById("quiz-result");
+
+
+    /*
+        Sonraki Soru butonunu buluyoruz.
+    */
+    const sonrakiSoruButonu =
+        document.getElementById("next-question-button");
+
+
+    /*
+        Dört cevap butonunu ayrı ayrı buluyoruz.
+
+        Böylece yeni soruya geçtiğimizde
+        cevapların yazılarını değiştirebiliriz.
+    */
+    const cevapBir =
+        document.getElementById("answer-1");
+
+    const cevapIki =
+        document.getElementById("answer-2");
+
+    const cevapUc =
+        document.getElementById("answer-3");
+
+    const cevapDort =
+        document.getElementById("answer-4");
+
+
+    /*
+        =====================================================
+        HANGİ SORUYA GEÇECEĞİMİZİ BELİRLİYORUZ
+        =====================================================
+    */
+
+
+    /*
+        Eğer şu anda Soru 1'deysek
+        Soru 2'ye geçiyoruz.
+    */
+    if (mevcutSoru === 1) {
+
+        /*
+            Artık mevcut soru 2.
+        */
+        mevcutSoru = 2;
+
+
+        /*
+            Soru 2'nin doğru cevabı
+            ikinci seçenektir.
+        */
+        dogruCevap = 2;
+
+
+        /*
+            Soru numarasını güncelliyoruz.
+        */
+        soruNumarasiAlani.textContent =
+            "Soru 2 / 5";
+
+
+        /*
+            Soru 2'nin metni.
+        */
+        soruAlani.textContent =
+            "Politika Motorunun (Policy Engine - PE) temel görevi nedir?";
+
+
+        /*
+            Soru 2'nin cevap seçenekleri.
+        */
+        cevapBir.textContent =
+            "Ağ kablolarını yönetmek";
+
+        cevapIki.textContent =
+            "Erişim isteğini değerlendirerek erişim kararı vermek";
+
+        cevapUc.textContent =
+            "Kullanıcının cihazını fiziksel olarak kontrol etmek";
+
+        cevapDort.textContent =
+            "Yalnızca parola oluşturmak";
+
+    }
+
+
+    /*
+        Eğer şu anda Soru 2'deysek
+        Soru 3'e geçiyoruz.
+    */
+    else if (mevcutSoru === 2) {
+
+        /*
+            Artık mevcut soru 3.
+        */
+        mevcutSoru = 3;
+
+
+        /*
+            Soru 3'ün doğru cevabı
+            üçüncü seçenektir.
+        */
+        dogruCevap = 3;
+
+
+        /*
+            Soru numarasını güncelliyoruz.
+        */
+        soruNumarasiAlani.textContent =
+            "Soru 3 / 5";
+
+
+        /*
+            Soru 3'ün metni.
+        */
+        soruAlani.textContent =
+            "Politika Uygulama Noktasının (Policy Enforcement Point - PEP) temel görevi nedir?";
+
+
+        /*
+            Soru 3'ün cevap seçenekleri.
+        */
+        cevapBir.textContent =
+            "Yeni kullanıcı hesapları oluşturmak";
+
+        cevapIki.textContent =
+            "Kurumun bütün güvenlik politikalarını yazmak";
+
+        cevapUc.textContent =
+            "Erişim kararını uygulamak ve erişimi açmak veya engellemek";
+
+        cevapDort.textContent =
+            "Sadece risk seviyesini hesaplamak";
+
+    }
+
+    /*
+    Eğer şu anda Soru 3'teysek
+    Soru 4'e geçiyoruz.
+*/
+else if (mevcutSoru === 3) {
+
+    /*
+        Artık mevcut soru 4.
+    */
+    mevcutSoru = 4;
+
+
+    /*
+        Soru 4'ün doğru cevabı
+        birinci seçenektir.
+    */
+    dogruCevap = 1;
+
+
+    /*
+        Soru numarasını güncelliyoruz.
+    */
+    soruNumarasiAlani.textContent =
+        "Soru 4 / 5";
+
+
+    /*
+        Soru 4'ün metni.
+    */
+    soruAlani.textContent =
+        "Sıfır Güven yaklaşımında Çok Faktörlü Kimlik Doğrulama (MFA) neden kullanılır?";
+
+
+    /*
+        Soru 4'ün cevap seçenekleri.
+    */
+    cevapBir.textContent =
+        "Kullanıcının kimliğini doğrulama sürecini güçlendirmek";
+
+    cevapIki.textContent =
+        "Cihazın IP adresini değiştirmek";
+
+    cevapUc.textContent =
+        "Ağ kablosunu şifrelemek";
+
+    cevapDort.textContent =
+        "Dosya sunucusunu kapatmak";
+
+}
+
+/*
+    Eğer şu anda Soru 4'teysek
+    Soru 5'e geçiyoruz.
+*/
+else if (mevcutSoru === 4) {
+
+    /*
+        Artık mevcut soru 5.
+    */
+    mevcutSoru = 5;
+
+
+    /*
+        Soru 5'in doğru cevabı
+        üçüncü seçenektir.
+    */
+    dogruCevap = 3;
+
+
+    /*
+        Soru numarasını güncelliyoruz.
+    */
+    soruNumarasiAlani.textContent =
+        "Soru 5 / 5";
+
+
+    /*
+        Soru 5'in metni.
+    */
+    soruAlani.textContent =
+        "Sıfır Güven yaklaşımında bir cihaz güvenlik gereksinimlerini karşılamıyorsa ne yapılabilir?";
+
+
+    /*
+        Soru 5'in cevap seçenekleri.
+    */
+    cevapBir.textContent =
+        "Cihaza otomatik olarak tam erişim verilir";
+
+    cevapIki.textContent =
+        "Güvenlik durumu dikkate alınmaz";
+
+    cevapUc.textContent =
+        "Erişim reddedilebilir veya kısıtlanabilir";
+
+    cevapDort.textContent =
+        "Kullanıcının parolası kaldırılır";
+        /*
+    Son soruya geçtiğimiz için
+    butonun görevini kullanıcıya belirtiyoruz.
+*/
+sonrakiSoruButonu.textContent =
+    "Sonucu Gör";
+
+}
+
+  /*
+    Eğer şu anda Soru 5'teysek
+    artık quiz tamamlanmıştır.
+*/
+else if (mevcutSoru === 5) {
+
+    /*
+        Quiz bitiş ekranını gösterecek
+        fonksiyonu çalıştırıyoruz.
+    */
+    quizSonucunuGoster();
+
+    /*
+        Fonksiyonu burada durduruyoruz.
+
+        Çünkü artık yeni bir soruya
+        geçmeyeceğiz.
+    */
+    return;
+
+}
+
+    /*
+        =====================================================
+        YENİ SORU İÇİN EKRANI HAZIRLIYORUZ
+        =====================================================
+    */
+
+
+    /*
+        Önceki sorunun doğru / yanlış
+        sonucunu temizliyoruz.
+    */
+    sonucAlani.innerHTML = "";
+
+
+    /*
+        Yeni soruya geçtiğimiz için
+        henüz cevap verilmedi.
+    */
+    soruCevaplandiMi = false;
+
+
+    /*
+        Kullanıcı yeni soruyu cevaplamadan
+        Sonraki Soru butonu görünmemeli.
+    */
+    sonrakiSoruButonu.classList.remove("show");
+
+}
+
+/*
+    =====================================================
+    QUIZ SONUÇ EKRANI
+    =====================================================
+*/
+
+
+function quizSonucunuGoster() {
+
+    /*
+        Quiz sayfasındaki gerekli HTML
+        elemanlarını buluyoruz.
+    */
+    const soruNumarasiAlani =
+        document.getElementById("question-number");
+
+    const soruAlani =
+        document.getElementById("quiz-question");
+
+    const cevapAlani =
+        document.querySelector(".quiz-answers");
+
+    const sonucAlani =
+        document.getElementById("quiz-result");
+
+    const sonrakiSoruButonu =
+        document.getElementById("next-question-button");
+
+
+    /*
+        Kullanıcının skoruna göre
+        farklı bir değerlendirme mesajı göstereceğiz.
+    */
+    let sonucMesaji = "";
+
+
+    /*
+        5 sorunun tamamı doğruysa.
+    */
+    if (quizSkoru === 5) {
+
+        sonucMesaji =
+            "Mükemmel! Sıfır Güven Mimarisi'nin temel kavramlarını çok iyi anlamış görünüyorsun.";
+
+    }
+
+
+    /*
+        3 veya 4 doğru cevap varsa.
+    */
+    else if (quizSkoru >= 3) {
+
+        sonucMesaji =
+            "İyi sonuç! Temel kavramları büyük ölçüde anlamışsın. Öğren bölümündeki ilgili konuları tekrar ederek bilgini daha da güçlendirebilirsin.";
+
+    }
+
+
+    /*
+        0, 1 veya 2 doğru cevap varsa.
+    */
+    else {
+
+        sonucMesaji =
+            "Bazı temel kavramları tekrar etmek faydalı olabilir. Öğren bölümündeki Zero Trust konularını gözden geçirip quiz'i yeniden deneyebilirsin.";
+
+    }
+
+
+    /*
+        Soru numarası yerine quiz'in tamamlandığını gösteriyoruz.
+    */
+    soruNumarasiAlani.textContent =
+        "Quiz Tamamlandı";
+
+
+    /*
+        Soru başlığını sonuç başlığıyla değiştiriyoruz.
+    */
+    soruAlani.textContent =
+        "Sonucun";
+
+
+    /*
+        Artık cevap seçeneklerine ihtiyacımız yok. Bu nedenle cevap alanını gizliyoruz.
+    */
+    cevapAlani.style.display =
+        "none";
+
+
+    /*
+        Sonraki Soru / Sonucu Gör butonunu artık göstermiyoruz.
+    */
+    sonrakiSoruButonu.classList.remove("show");
+
+
+    /*
+        Kullanıcının final skorunu ve değerlendirme mesajını gösteriyoruz.
+    */
+    sonucAlani.innerHTML = `
+        <div class="quiz-final-result">
+
+            <h2>
+                ${quizSkoru} / 5
+            </h2>
+
+            <p>
+                ${sonucMesaji}
+            </p>
+
+            <button
+                type="button"
+                onclick="quizTekrarBaslat()"
+            >
+                Quiz'i Tekrar Başlat
+            </button>
+
+        </div>
+    `;
+
+}
+
+/*
+    =====================================================
+    QUIZ'İ TEKRAR BAŞLAT
+    =====================================================
+*/
+
+
+function quizTekrarBaslat() {
+
+    /*
+        Quiz değişkenlerini başlangıç
+        değerlerine döndürüyoruz.
+    */
+    quizSkoru = 0;
+
+    mevcutSoru = 1;
+
+    dogruCevap = 2;
+
+    soruCevaplandiMi = false;
+
+
+    /*
+        Gerekli HTML elemanlarını buluyoruz.
+    */
+    const soruNumarasiAlani =
+        document.getElementById("question-number");
+
+    const skorAlani =
+        document.getElementById("quiz-score");
+
+    const soruAlani =
+        document.getElementById("quiz-question");
+
+    const cevapAlani =
+        document.querySelector(".quiz-answers");
+
+    const sonucAlani =
+        document.getElementById("quiz-result");
+
+    const sonrakiSoruButonu =
+        document.getElementById("next-question-button");
+
+
+    const cevapBir =
+        document.getElementById("answer-1");
+
+    const cevapIki =
+        document.getElementById("answer-2");
+
+    const cevapUc =
+        document.getElementById("answer-3");
+
+    const cevapDort =
+        document.getElementById("answer-4");
+
+
+    /*
+        Soru numarasını başlangıca döndürüyoruz.
+    */
+    soruNumarasiAlani.textContent =
+        "Soru 1 / 5";
+
+
+    /*
+        Skoru sıfırlıyoruz.
+    */
+    skorAlani.textContent =
+        "Skor: 0";
+
+
+    /*
+        İlk soruyu tekrar ekrana getiriyoruz.
+    */
+    soruAlani.textContent =
+        "Sıfır Güven yaklaşımında aşağıdakilerden hangisi doğrudur?";
+
+
+    /*
+        İlk sorunun cevaplarını tekrar yazıyoruz.
+    */
+    cevapBir.textContent =
+        "Kullanıcı kurum ağındaysa otomatik olarak güvenilmelidir.";
+
+    cevapIki.textContent =
+        "Her erişim isteği güvenlik koşullarına göre değerlendirilmelidir.";
+
+    cevapUc.textContent =
+        "Sadece cihazın IP adresi kontrol edilmelidir.";
+
+    cevapDort.textContent =
+        "MFA kullanılıyorsa başka kontrol yapılmasına gerek yoktur.";
+
+
+    /*
+        Quiz bittiğinde gizlediğimiz
+        cevap alanını tekrar gösteriyoruz.
+    */
+    cevapAlani.style.display =
+        "flex";
+
+
+    /*
+        Eski sonuç ekranını temizliyoruz.
+    */
+    sonucAlani.innerHTML =
+        "";
+
+
+    /*
+        Buton yazısını tekrar normal
+        haline getiriyoruz.
+    */
+    sonrakiSoruButonu.textContent =
+        "Sonraki Soru";
+
+
+    /*
+        Buton başlangıçta görünmemeli.
+    */
+    sonrakiSoruButonu.classList.remove("show");
+
+}

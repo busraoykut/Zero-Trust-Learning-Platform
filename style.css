@@ -3158,3 +3158,612 @@ body {
 
     color: white;
 }
+
+/*
+    =====================================================
+    OYUNLAR SAYFASI
+    =====================================================
+*/
+
+
+/*
+    Oyunlar sayfasının genel alanı.
+*/
+.games-page {
+    padding-bottom: 80px;
+}
+
+
+/*
+    Oyunlar sayfasının üst başlık bölümü.
+*/
+.games-header {
+
+    text-align: center;
+
+    padding: 70px 20px 50px;
+}
+
+
+/*
+    Ana başlık.
+*/
+.games-header h1 {
+
+    font-size: 42px;
+
+    margin: 10px 0;
+}
+
+
+/*
+    Başlığın altındaki açıklama.
+*/
+.games-header > p:last-child {
+
+    max-width: 700px;
+
+    margin: 0 auto;
+
+    color: #aebbd0;
+
+    font-size: 18px;
+
+    line-height: 1.6;
+}
+
+
+/*
+    Üç oyun kartının bulunduğu alan.
+*/
+.game-cards {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 25px;
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 20px 30px;
+}
+
+
+/*
+    Her oyun için kullanılan kart.
+*/
+.game-card {
+
+    width: 340px;
+
+    background-color: #0d1b2e;
+
+    border: 1px solid #1d3553;
+
+    border-radius: 14px;
+
+    padding: 30px;
+
+    text-align: left;
+
+    transition: 0.3s;
+}
+
+
+/*
+    Mouse kartın üzerine geldiğinde
+    kart biraz yukarı hareket eder.
+*/
+.game-card:hover {
+
+    transform: translateY(-8px);
+
+    border-color: #2563eb;
+}
+
+
+/*
+    Kartın üstündeki emoji / ikon.
+*/
+.game-icon {
+
+    font-size: 35px;
+
+    margin-bottom: 20px;
+}
+
+
+/*
+    OYUN 01 gibi küçük etiket.
+*/
+.game-label {
+
+    color: #4da3ff;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 1.5px;
+}
+
+
+/*
+    Oyun kartının başlığı.
+*/
+.game-card h2 {
+
+    font-size: 23px;
+
+    margin: 12px 0;
+}
+
+
+/*
+    Oyun açıklaması.
+*/
+.game-card p {
+
+    font-size: 16px;
+
+    line-height: 1.6;
+}
+
+
+/*
+    Oyun başlatma butonları.
+*/
+.game-card button {
+
+    margin-top: 15px;
+
+    width: 100%;
+
+    padding: 12px;
+
+    font-size: 15px;
+}
+
+/* =====================================================
+   OYUN 01 - ZERO TRUST BİLGİ TESTİ
+   ===================================================== */
+
+
+/*
+    Quiz sayfasının ana alanı.
+
+    padding-bottom:
+    Sayfanın alt kısmında boşluk bırakır.
+*/
+.quiz-page {
+    padding-bottom: 80px;
+}
+
+
+/*
+    Quiz sayfasının üst başlık alanı.
+*/
+.quiz-header {
+    text-align: center;
+    padding: 70px 20px 40px;
+}
+
+
+/*
+    Quiz ana başlığının boyutu.
+*/
+.quiz-header h1 {
+    font-size: 42px;
+    margin: 10px 0;
+}
+
+
+/*
+    Başlığın altındaki açıklama metni.
+*/
+.quiz-header > p:last-child {
+    max-width: 650px;
+    margin: 0 auto;
+    color: #aebbd0;
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   QUIZ KARTI
+   ===================================================== */
+
+
+/*
+    Sorunun ve cevapların bulunduğu ana kart.
+*/
+.quiz-container {
+
+    /*
+        Kartın çok fazla genişlemesini engeller.
+    */
+    max-width: 800px;
+
+    /*
+        Kartı yatay olarak ortalar.
+    */
+    margin: 0 auto;
+
+    /*
+        Kartın iç kısmında boşluk bırakır.
+    */
+    padding: 35px;
+
+    /*
+        Koyu kart arka planı.
+    */
+    background-color: #0d1b2e;
+
+    /*
+        Kartın çevresindeki ince çerçeve.
+    */
+    border: 1px solid #1d3553;
+
+    /*
+        Kart köşelerini yuvarlatır.
+    */
+    border-radius: 14px;
+
+    /*
+        Kart içindeki yazıları sola hizalar.
+    */
+    text-align: left;
+}
+
+
+/* =====================================================
+   SORU NUMARASI VE SKOR
+   ===================================================== */
+
+
+/*
+    Soru numarası ile skoru aynı satırda gösteriyoruz.
+*/
+.quiz-status {
+
+    /*
+        Flexbox:
+        Elemanları düzenli şekilde yan yana yerleştirmemizi sağlar.
+    */
+    display: flex;
+
+    /*
+        İlk elemanı sola,
+        ikinci elemanı sağa gönderir.
+    */
+    justify-content: space-between;
+
+    /*
+        Dikey olarak aynı hizaya getirir.
+    */
+    align-items: center;
+
+    /*
+        Soru ile arasında boşluk bırakır.
+    */
+    margin-bottom: 30px;
+
+    /*
+        Yazıyı belirginleştirir.
+    */
+    font-weight: bold;
+
+    color: #4da3ff;
+}
+
+
+/* =====================================================
+   SORU
+   ===================================================== */
+
+
+/*
+    Quiz sorusunun görünümü.
+*/
+#quiz-question {
+
+    font-size: 26px;
+
+    line-height: 1.5;
+
+    margin-bottom: 30px;
+}
+
+
+/* =====================================================
+   CEVAP BUTONLARI
+   ===================================================== */
+
+
+/*
+    Cevap butonlarını tutan alan.
+*/
+.quiz-answers {
+
+    /*
+        Cevapları dikey olarak alt alta sıralıyoruz.
+    */
+    display: flex;
+
+    flex-direction: column;
+
+    /*
+        Butonların arasında boşluk bırakır.
+    */
+    gap: 15px;
+}
+
+
+/*
+    Yalnızca quiz cevap butonlarını etkiler.
+*/
+.quiz-answers button {
+
+    /*
+        Yazıları sola hizalıyoruz.
+    */
+    text-align: left;
+
+    padding: 16px 20px;
+
+    background-color: #101f34;
+
+    color: #dbe7f5;
+
+    border: 1px solid #29425f;
+
+    border-radius: 8px;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    /*
+        Hover efektinin daha yumuşak
+        görünmesini sağlar.
+    */
+    transition: 0.2s;
+}
+
+
+/*
+    Kullanıcı cevap seçeneğinin üzerine
+    mouse ile geldiğinde.
+*/
+.quiz-answers button:hover {
+
+    border-color: #4da3ff;
+
+    background-color: #142a46;
+
+    /*
+        Butonu çok hafif sağa kaydırır.
+    */
+    transform: translateX(4px);
+}
+
+
+/* =====================================================
+   OYUNLAR SAYFASI - OYUN BUTONU
+   ===================================================== */
+
+
+/*
+    games.html içinde <button> yerine <a> kullandığımız
+    Quiz'i Başlat bağlantısının buton gibi görünmesini sağlar.
+*/
+.game-button {
+
+    display: inline-block;
+
+    margin-top: 15px;
+
+    padding: 12px 20px;
+
+    background-color: #2563eb;
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 8px;
+
+    font-size: 16px;
+
+    transition: 0.2s;
+}
+
+
+/*
+    Mouse bağlantının üzerine geldiğinde.
+*/
+.game-button:hover {
+
+    background-color: #1d4ed8;
+}
+
+/* =====================================================
+   QUIZ SONUÇ MESAJLARI
+   ===================================================== */
+
+
+/*
+    Doğru veya yanlış cevap sonrasında
+    gösterilecek sonuç kutusunun ortak görünümü.
+*/
+#quiz-result {
+    margin-top: 25px;
+}
+
+
+/*
+    Sonuç kutusunun temel tasarımı.
+*/
+#quiz-result .result {
+    padding: 18px 20px;
+    border-radius: 10px;
+    line-height: 1.6;
+}
+
+
+/*
+    Doğru cevap kutusu.
+*/
+#quiz-result .correct {
+    background-color: rgba(34, 197, 94, 0.12);
+    border: 1px solid #22c55e;
+}
+
+
+/*
+    Yanlış cevap kutusu.
+*/
+#quiz-result .wrong {
+    background-color: rgba(239, 68, 68, 0.12);
+    border: 1px solid #ef4444;
+}
+
+
+/*
+    Sonuç başlığını biraz daha belirgin yapar.
+*/
+#quiz-result strong {
+    font-size: 18px;
+}
+
+
+/*
+    Sonuç açıklamasının alt boşluğunu kaldırır.
+*/
+#quiz-result p {
+    margin-bottom: 0;
+    font-size: 16px;
+}
+
+/* =====================================================
+   QUIZ - SONRAKİ SORU BUTONU
+   ===================================================== */
+
+
+/*
+    Sonraki Soru / Sonucu Gör butonu.
+
+    Başlangıçta gizlidir.
+*/
+#next-question-button {
+    display: none;
+
+    margin-top: 25px;
+
+    padding: 12px 22px;
+
+    background-color: #2563eb;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 8px;
+
+    font-size: 16px;
+
+    cursor: pointer;
+}
+
+
+/*
+    JavaScript "show" sınıfını eklediğinde
+    buton görünür olur.
+*/
+#next-question-button.show {
+    display: inline-block;
+}
+
+
+/*
+    Mouse butonun üzerine geldiğinde
+    biraz daha koyu görünür.
+*/
+#next-question-button:hover {
+    background-color: #1d4ed8;
+}
+
+/* =====================================================
+   QUIZ BİTİŞ EKRANI
+   ===================================================== */
+
+
+/*
+    Quiz tamamlandığında gösterilen
+    final sonuç kartı.
+*/
+.quiz-final-result {
+    text-align: center;
+
+    /*
+        Kartın üst-alt ve sağ-sol iç boşluğunu artırıyoruz.
+        Böylece içerik dip dibe görünmez.
+    */
+    padding: 40px 35px;
+
+    background-color: #101f34;
+
+    border: 1px solid #29425f;
+
+    border-radius: 12px;
+
+    /*
+        Sonuç kartını üst bölümden biraz ayırıyoruz.
+    */
+    margin-top: 30px;
+}
+
+
+/*
+    Kullanıcının 5 üzerinden aldığı skor.
+*/
+.quiz-final-result h2 {
+    margin: 0 0 20px;
+
+    font-size: 42px;
+
+    color: #4da3ff;
+}
+
+
+/*
+    Sonuç açıklaması.
+*/
+.quiz-final-result p {
+    max-width: 600px;
+
+    /*
+        Açıklamayı ortalıyoruz ve
+        butonla arasına daha fazla boşluk koyuyoruz.
+    */
+    margin: 0 auto 30px;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+}
+
+
+/*
+    Quiz'i Tekrar Başlat butonu.
+*/
+.quiz-final-result button {
+    margin-top: 5px;
+
+    padding: 14px 24px;
+
+    font-size: 16px;
+}

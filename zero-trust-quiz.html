@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+
+<head>
+
+    <!-- Türkçe karakterlerin düzgün görünmesini sağlar -->
+    <meta charset="UTF-8">
+
+    <!-- Sayfanın mobil cihazlarda düzgün ölçeklenmesini sağlar -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Tarayıcı sekmesinde görünecek başlık -->
+    <title>Zero Trust Bilgi Testi | Zero Trust Lab</title>
+
+    <!-- Projenin ortak CSS dosyasını bağlıyoruz -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         ÜST MENÜ
+         ===================================================== -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            Zero Trust Lab
+        </div>
+
+        <nav>
+
+            <a href="index.html">
+                Ana Sayfa
+            </a>
+
+            <a href="learn.html">
+                Öğren
+            </a>
+
+            <a href="lab.html">
+                Lab
+            </a>
+
+            <a href="games.html">
+                Oyunlar
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =====================================================
+         OYUN 01 ANA İÇERİĞİ
+         ===================================================== -->
+
+    <main class="quiz-page">
+
+
+        <!-- Quiz sayfasının başlık alanı -->
+        <section class="quiz-header">
+
+            <p class="hero-label">
+                OYUN 01
+            </p>
+
+            <h1>
+                Zero Trust Bilgi Testi
+            </h1>
+
+            <p>
+                Sıfır Güven Mimarisi (Zero Trust Architecture - ZTA)
+                hakkındaki bilgilerini test et.
+            </p>
+
+        </section>
+
+
+        <!-- =================================================
+             QUIZ ALANI
+             ================================================= -->
+
+        <section class="quiz-container">
+
+
+            <!-- Soru numarası ve skor -->
+            <div class="quiz-status">
+
+                <span id="question-number">
+                    Soru 1 / 5
+                </span>
+
+                <span id="quiz-score">
+                    Skor: 0
+                </span>
+
+            </div>
+
+
+            <!-- Gösterilecek soru -->
+            <h2 id="quiz-question">
+                Sıfır Güven yaklaşımında aşağıdakilerden hangisi doğrudur?
+            </h2>
+
+
+            <!-- Çoktan seçmeli cevapların bulunduğu alan -->
+          <div class="quiz-answers">
+
+            <button
+                type="button"
+                id="answer-1"
+                onclick="quizCevapKontrol(1)"
+            >
+                Kullanıcı kurum ağındaysa otomatik olarak güvenilmelidir.
+            </button>
+
+
+            <button
+                type="button"
+                id="answer-2"
+                onclick="quizCevapKontrol(2)"
+            >
+                Her erişim isteği güvenlik koşullarına göre değerlendirilmelidir.
+            </button>
+
+
+            <button
+                type="button"
+                id="answer-3"
+                onclick="quizCevapKontrol(3)"
+            >
+                Sadece cihazın IP adresi kontrol edilmelidir.
+            </button>
+
+
+            <button
+                type="button"
+                id="answer-4"
+                onclick="quizCevapKontrol(4)"
+            >
+                MFA kullanılıyorsa başka kontrol yapılmasına gerek yoktur.
+            </button>
+
+        </div>
+                   
+        
+        <!-- Kullanıcı bir cevap seçtiğinde doğru / yanlış sonucu burada gösterilecek -->
+            <div id="quiz-result"></div>
+
+            <!--
+            Kullanıcı mevcut soruyu cevapladıktan sonra bir sonraki soruya geçmek için bu butonu kullanacak.
+            -->
+            <button
+                type="button"
+                id="next-question-button"
+                onclick="sonrakiSoru()"
+            >
+                Sonraki Soru
+            </button>
+
+
+        </section>
+
+
+    </main>
+
+
+    <!-- Ortak JavaScript dosyamızı bağlıyoruz -->
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>
