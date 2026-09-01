@@ -263,17 +263,34 @@ body {
 
 
 /*
-    Ana başlama butonu
+    Ana sayfadaki büyük başlangıç butonu.
 */
 .start-button {
+
+    display: inline-block;
+
     margin-top: 35px;
+
     padding: 15px 30px;
+
     font-size: 17px;
+
     background-color: #2563eb;
+
     color: white;
+
     border: none;
+
     border-radius: 8px;
+
+    /*
+        Bağlantının alt çizgisini kaldırıyoruz.
+    */
+    text-decoration: none;
+
     cursor: pointer;
+
+    transition: 0.3s;
 }
 
 
@@ -4371,4 +4388,434 @@ body {
 #matching-restart-button:hover {
 
     background-color: #1d4ed8;
+}
+
+/*
+    =====================================================
+    ANA SAYFA - KART BAĞLANTI BUTONLARI
+    =====================================================
+*/
+
+/*
+    Derslere Git, Lab'a Git ve Oyunlara Git
+    bağlantılarını buton görünümüne getiriyoruz.
+*/
+.card-button {
+
+    /*
+        <a> etiketi normalde satır içi bir elemandır.
+        inline-block sayesinde padding ve buton
+        görünümü daha düzgün çalışır.
+    */
+    display: inline-block;
+
+    margin-top: 15px;
+
+    padding: 10px 18px;
+
+    background-color: transparent;
+
+    color: #4da3ff;
+
+    border: 1px solid #2563eb;
+
+    border-radius: 7px;
+
+    /*
+        Linklerin varsayılan alt çizgisini kaldırıyoruz.
+    */
+    text-decoration: none;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+/*
+    Fare butonun üzerine geldiğinde
+    arka planı mavi yapıyoruz.
+*/
+.card-button:hover {
+
+    background-color: #2563eb;
+
+    color: white;
+}
+
+/* =====================================================
+   OYUN 03 - ERİŞİM AKIŞINI SIRALA
+   ===================================================== */
+
+/* Oyun 03 sayfasının genel alanı */
+.access-flow-page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 50px 20px 80px;
+}
+
+
+/* Sayfa başlığı */
+.access-flow-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.access-flow-header h1 {
+    margin: 10px 0 15px;
+    font-size: 42px;
+}
+
+.access-flow-header p {
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   NASIL OYNANIR ALANI
+   ===================================================== */
+
+.access-flow-guide {
+    max-width: 850px;
+    margin: 0 auto 35px;
+    padding: 22px 28px;
+
+    background-color: #0d1b2e;
+
+    border: 1px solid #1d3553;
+    border-radius: 12px;
+
+    text-align: center;
+}
+
+.access-flow-guide h2 {
+    margin: 8px 0 10px;
+    font-size: 24px;
+}
+
+.access-flow-guide p {
+    margin: 0 auto;
+    max-width: 650px;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   ANA OYUN KARTI
+   ===================================================== */
+
+.access-flow-game {
+    max-width: 850px;
+    margin: 0 auto;
+
+    padding: 28px;
+
+    background-color: #0b1729;
+
+    border: 1px solid #1d3553;
+    border-radius: 14px;
+
+    text-align: left;
+}
+
+.access-flow-game > h2 {
+    margin-top: 0;
+    margin-bottom: 8px;
+
+    text-align: center;
+
+    color: #4da3ff;
+    font-size: 27px;
+}
+
+.access-flow-game > p {
+    margin: 0 auto 25px;
+
+    text-align: center;
+
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+
+/* =====================================================
+   ERİŞİM ADIMLARI
+   ===================================================== */
+
+.access-flow-list {
+    display: flex;
+
+    /*
+        Kartları dikey olarak alt alta dizer.
+    */
+    flex-direction: column;
+
+    /*
+        Kartların arasına boşluk bırakır.
+    */
+    gap: 14px;
+}
+
+
+/* Her bir erişim adımı */
+.access-flow-card {
+    position: relative;
+
+    padding: 18px 22px 18px 70px;
+
+    background-color: #0d1b2e;
+
+    border: 1px solid #244568;
+    border-radius: 10px;
+
+    transition: 0.25s;
+
+    cursor: grab;
+}
+
+
+/* Kartın üzerine gelindiğinde */
+.access-flow-card:hover {
+    border-color: #4da3ff;
+
+    /*
+        Kartı çok hafif sağa hareket ettiriyoruz.
+    */
+    transform: translateX(4px);
+
+    background-color: #10233b;
+}
+
+
+/* Kart başlığı */
+.access-flow-card strong {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #ffffff;
+
+    font-size: 16px;
+}
+
+
+/* Kart açıklaması */
+.access-flow-card p {
+    margin: 0;
+
+    font-size: 14px;
+
+    line-height: 1.55;
+
+    color: #aebbd0;
+}
+
+/* =====================================================
+   OYUN 03 - SÜRÜKLEME GÖSTERGESİ
+   ===================================================== */
+
+/*
+    Kartın sol tarafındaki ↕ simgesini küçük bir kontrol kutusu gibi gösteriyoruz.
+*/
+.access-flow-drag-icon {
+
+    /*
+        Kartın içine göre konumlandıracağız.
+    */
+    position: absolute;
+
+    left: 18px;
+    top: 50%;
+
+    /*
+        Simgeyi dikey olarak tam ortaya getirir.
+    */
+    transform: translateY(-50%);
+
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #10294a;
+
+    border: 1px solid #2563eb;
+    border-radius: 8px;
+
+    color: #4da3ff;
+
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+/* Kart sürüklenirken kullanılan görünüm */
+.access-flow-card.access-flow-dragging {
+
+    /*
+        Kartı hafif şeffaf yapıyoruz.
+    */
+    opacity: 0.55;
+
+    /*
+        Sürükleme sırasında biraz küçültüyoruz.
+    */
+    transform: scale(0.98);
+
+    /*
+        Tutulmuş olduğunu belli etmek için
+        imleci değiştiriyoruz.
+    */
+    cursor: grabbing;
+}
+
+/* =====================================================
+   OYUN 03 - DOĞRU / YANLIŞ KART GÖRÜNÜMÜ
+   ===================================================== */
+
+
+/*
+    Doğru konumda bulunan erişim adımı.
+*/
+.access-flow-card.access-flow-correct {
+
+    border-color: #22c55e;
+
+    background-color: #0f2a22;
+}
+
+
+/*
+    Doğru kartın sürükleme simgesini de
+    yeşil tonlara getiriyoruz.
+*/
+.access-flow-card.access-flow-correct
+.access-flow-drag-icon {
+
+    border-color: #22c55e;
+
+    color: #4ade80;
+
+    background-color: #123126;
+}
+
+
+/*
+    Yanlış konumda bulunan erişim adımı.
+*/
+.access-flow-card.access-flow-wrong {
+
+    border-color: #ef4444;
+
+    background-color: #2a1218;
+}
+
+
+/*
+    Yanlış kartın sürükleme simgesi.
+*/
+.access-flow-card.access-flow-wrong
+.access-flow-drag-icon {
+
+    border-color: #ef4444;
+
+    color: #f87171;
+
+    background-color: #35151c;
+}
+
+/* =====================================================
+   OYUN 03 - KONTROL BUTONLARI
+   ===================================================== */
+
+.access-flow-check-area {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-top: 25px;
+
+    flex-wrap: wrap;
+}
+
+
+#access-flow-check-button,
+#access-flow-shuffle-button {
+
+    padding: 12px 22px;
+
+    font-size: 15px;
+
+    font-weight: bold;
+}
+
+
+/*
+    Karıştır butonunu biraz daha
+    ikincil bir buton gibi gösteriyoruz.
+*/
+#access-flow-shuffle-button {
+
+    background-color: transparent;
+
+    color: #4da3ff;
+
+    border: 1px solid #2563eb;
+}
+
+
+#access-flow-shuffle-button:hover {
+
+    background-color: #14263d;
+}
+
+/* =====================================================
+   OYUN 03 - TEKRAR BAŞLAT BUTONU
+   ===================================================== */
+
+#access-flow-restart-button {
+
+    display: none;
+
+    margin: 18px auto 0;
+
+    padding: 12px 24px;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    background-color: #2563eb;
+
+    color: white;
+
+    border: 1px solid #4da3ff;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+}
+
+
+#access-flow-restart-button:hover {
+
+    background-color: #1d4ed8;
+}
+
+/* Oyun başarıyla tamamlandığında  sürükleme simgesini biraz geri plana alıyoruz.
+*/
+.access-flow-card.access-flow-correct
+.access-flow-drag-icon {
+
+    opacity: 0.65;
 }

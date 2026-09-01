@@ -2353,3 +2353,423 @@ function eslestirmeOyununuTekrarBaslat() {
 
 }
 
+/* =====================================================
+   OYUN 03 - ERİŞİM AKIŞINI SIRALA
+   ===================================================== 
+
+    Kullanıcı bir erişim adımı kartını sürüklemeye başladığında çalışır.
+*/
+
+
+let suruklenenAkisKarti = null;
+function akisKartiniSurukle(event, kart) {
+
+    /*
+        Sürüklenen kartı saklıyoruz.
+    */
+    suruklenenAkisKarti = kart;
+
+    /*
+    Kullanıcı yeni bir denemeye başladığında önceki doğru / yanlış kart renklerini temizliyoruz.
+*/
+const tumAkisKartlari =
+    document.querySelectorAll(".access-flow-card");
+
+ /*
+  Önceki kontrol sonucunu da ekrandan kaldırıyoruz.
+*/
+const sonucAlani =
+    document.getElementById("access-flow-result");
+
+
+if (sonucAlani !== null) {
+
+    sonucAlani.innerHTML = "";
+
+}
+
+tumAkisKartlari.forEach(function (akisKarti) {
+
+    akisKarti.classList.remove(
+        "access-flow-correct",
+        "access-flow-wrong"
+    );
+
+});
+
+
+    /*
+        Tarayıcıya bunun bir taşıma işlemi olduğunu söylüyoruz.
+    */
+    event.dataTransfer.effectAllowed = "move";
+
+
+    /*
+        Bazı tarayıcıların drag & drop işlemini düzgün başlatabilmesi için geçici veri ekliyoruz.
+    */
+    event.dataTransfer.setData(
+        "text/plain",
+        "access-flow-card"
+    );
+
+
+    /*
+        Sürüklenen kartın görünümünü değiştiriyoruz.
+    */
+    kart.classList.add("access-flow-dragging");
+
+}
+
+
+/*
+    Kullanıcı kartı sürüklemeyi bıraktığında çalışır.
+*/
+function akisKartiniBirak(kart) {
+
+    /*
+        Sürükleme görünümünü kaldırıyoruz.
+    */
+    kart.classList.remove("access-flow-dragging");
+
+    /*
+        Sürükleme tamamlandığı için geçici kart bilgisini temizliyoruz.
+    */
+    suruklenenAkisKarti = null;
+
+}
+
+
+/*
+    Bir kart başka bir kartın üzerine geldiğinde bırakma işlemine izin verir.
+*/
+function akisKartininUzerineGel(event) {
+
+    /*
+        Tarayıcının varsayılan davranışını engelliyoruz. Böylece buraya kart bırakılabilir.
+    */
+    event.preventDefault();
+
+
+    /*
+        Bırakma işleminin bir taşıma işlemi  olduğunu belirtiyoruz.
+    */
+    event.dataTransfer.dropEffect = "move";
+
+}
+
+/*
+    Kullanıcı sürüklediği kartı başka bir   erişim kartının üzerine bıraktığında çalışır.
+*/
+function akisKartiniTasi(hedefKart) {
+
+    /*
+        Kart kendi üzerine bırakıldıysa
+        herhangi bir işlem yapmıyoruz.
+    */
+    if (suruklenenAkisKarti === hedefKart) {
+        return;
+    }
+
+
+    /*
+        Kartların bulunduğu ana alanı buluyoruz.
+    */
+    const akisListesi =
+        document.querySelector(".access-flow-list");
+
+
+    /*
+        Listedeki bütün erişim kartlarını alıyoruz.
+    */
+    const kartlar =
+        Array.from(
+            akisListesi.querySelectorAll(".access-flow-card")
+        );
+
+
+    /*
+        Sürüklenen kartın mevcut sıra numarasını buluyoruz.
+    */
+    const suruklenenIndex =
+        kartlar.indexOf(suruklenenAkisKarti);
+
+
+    /*
+        Üzerine bırakılan hedef kartın mevcut sıra numarasını buluyoruz.
+    */
+    const hedefIndex =
+        kartlar.indexOf(hedefKart);
+
+
+    /*
+        Eğer kart yukarıdan aşağıya taşınıyorsa, hedef kartın SONRASINA yerleştiriyoruz.
+    */
+    if (suruklenenIndex < hedefIndex) {
+
+        hedefKart.after(suruklenenAkisKarti);
+
+    }
+
+    /*
+        Kart aşağıdan yukarıya taşınıyorsa, hedef kartın ÖNÜNE yerleştiriyoruz.
+    */
+    else {
+
+        akisListesi.insertBefore(
+            suruklenenAkisKarti,
+            hedefKart
+        );
+
+    }
+
+}
+
+/*
+    =====================================================
+    OYUN 03 - SIRALAMAYI KONTROL ET
+    =====================================================
+*/
+
+function akisSiralamasiKontrolEt() {
+
+    /*
+        O anda ekranda bulunan bütün erişim akışı kartlarını alıyoruz.
+    */
+    const kartlar =
+        document.querySelectorAll(".access-flow-card");
+
+
+    /*
+        Sonucu göstereceğimiz alanı buluyoruz.
+    */
+    const sonucAlani =
+        document.getElementById("access-flow-result");
+
+
+    /*
+        Başlangıçta sıralamanın doğru olduğunu varsayıyoruz.
+    */
+    let siralamaDogru = true;
+
+
+    /*
+        Her kartı sırayla kontrol ediyoruz.
+    */
+kartlar.forEach(function (kart, index) {
+
+    /*
+        Önce önceki kontrolden kalmış yeşil veya kırmızı görünümü temizliyoruz.
+    */
+    kart.classList.remove(
+        "access-flow-correct",
+        "access-flow-wrong"
+    );
+
+
+    /*
+        Kartın olması gereken doğru sırayı alıyoruz.
+    */
+    const dogruSira =
+        Number(kart.dataset.order);
+
+
+    /*
+        Kartın şu anda bulunduğu sırayı hesaplıyoruz.
+    */
+    const mevcutSira =
+        index + 1;
+
+
+    /*
+        Kart doğru yerdeyse  yeşil görünüm ekliyoruz.
+    */
+    if (dogruSira === mevcutSira) {
+
+        kart.classList.add("access-flow-correct");
+
+    }
+
+
+    /*
+        Kart yanlış yerdeyse kırmızı görünüm ekliyoruz.
+    */
+    else {
+
+        kart.classList.add("access-flow-wrong");
+
+        /*
+            En az bir yanlış kart olduğu için genel sıralama da yanlıştır.
+        */
+        siralamaDogru = false;
+
+    }
+
+});
+
+    /*
+    Eğer bütün kartlar doğru sıradaysa  kullanıcıya başarılı sonuç gösteriyoruz.
+*/
+if (siralamaDogru === true) {
+
+    sonucAlani.innerHTML = `
+        <div class="result correct">
+
+            <strong>
+                ✓ Doğru Sıralama!
+            </strong>
+
+            <p>
+                Sıfır Güven erişim akışındaki adımları
+                doğru sıraya yerleştirdin.
+            </p>
+
+        </div>
+    `;
+
+    /*
+    Doğru sıralama tamamlandığı için
+    kartları artık sürüklenemez hale getiriyoruz.
+    */
+        kartlar.forEach(function (kart) {
+
+            kart.draggable = false;
+
+        }); 
+
+     /*
+    Kullanıcı doğru sıralamayı bulduğunda  tekrar başlat butonunu gösteriyoruz.
+    */
+        document.getElementById(
+            "access-flow-restart-button"
+        ).style.display = "block";
+
+}
+
+
+/*
+    En az bir kart yanlış yerdeyse
+    kullanıcıya tekrar denemesi gerektiğini söylüyoruz.
+*/
+else {
+
+    sonucAlani.innerHTML = `
+        <div class="result wrong">
+
+            <strong>
+                ✕ Sıralama Henüz Doğru Değil
+            </strong>
+
+            <p>
+                Bazı erişim adımları yanlış konumda.
+                Kartların yerini değiştirerek tekrar dene.
+            </p>
+
+        </div>
+    `;
+
+    document.getElementById(
+    "access-flow-restart-button"
+    ).style.display = "none";
+
+}
+
+}
+
+/*
+    =====================================================
+    OYUN 03 - KARTLARI KARIŞTIR
+    =====================================================
+*/
+
+function akisKartlariniKaristir() {
+
+    /*
+        Kartların bulunduğu ana alanı buluyoruz.
+    */
+    const akisListesi =
+        document.querySelector(".access-flow-list");
+
+
+    /*
+        Bütün erişim kartlarını alıyoruz.
+
+        querySelectorAll normalde NodeList döndürür.
+        Array.from() ile bunu diziye çeviriyoruz.
+    */
+    const kartlar =
+        Array.from(
+            akisListesi.querySelectorAll(".access-flow-card")
+        );
+
+
+    /*
+        Kartların sırasını rastgele değiştiriyoruz.
+    */
+    kartlar.sort(function () {
+
+        return Math.random() - 0.5;
+
+    });
+
+
+   
+    kartlar.forEach(function (kart) {
+
+        akisListesi.appendChild(kart);
+
+    });
+
+    /*
+    Yeni oyun başladığı için bütün kartları tekrar sürüklenebilir yapıyoruz.
+*/
+    kartlar.forEach(function (kart) {
+
+        kart.draggable = true;
+
+    });
+
+
+    /*
+        Önceki doğru / yanlış renklerini temizliyoruz.
+    */
+    kartlar.forEach(function (kart) {
+
+        kart.classList.remove(
+            "access-flow-correct",
+            "access-flow-wrong"
+        );
+
+    });
+
+
+    /*
+        Önceki sonuç mesajını temizliyoruz.
+    */
+    const sonucAlani =
+        document.getElementById("access-flow-result");
+
+
+    sonucAlani.innerHTML = "";
+
+}
+
+/* =====================================================
+   OYUN 03 - OYUNU TEKRAR BAŞLAT
+   ===================================================== */
+
+function akisOyununuTekrarBaslat() {
+
+    /*
+        Kartları tekrar rastgele sıraya getiriyoruz.
+    */
+    akisKartlariniKaristir();
+
+
+    /*
+        Tekrar başlat butonunu gizliyoruz.
+    */
+    document.getElementById(
+        "access-flow-restart-button"
+    ).style.display = "none";
+
+}

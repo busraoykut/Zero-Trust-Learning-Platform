@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Tarayıcı sekmesinde görünecek başlık -->
+    <title>Erişim Akışını Sırala | Zero Trust Lab</title>
+
+    <!-- Ortak CSS dosyamızı bağlıyoruz -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- =====================================================
+         ÜST MENÜ
+         ===================================================== -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            Zero Trust Lab
+        </div>
+
+        <nav>
+
+            <a href="index.html">
+                Ana Sayfa
+            </a>
+
+            <a href="learn.html">
+                Öğren
+            </a>
+
+            <a href="lab.html">
+                Lab
+            </a>
+
+            <a href="games.html">
+                Oyunlar
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =====================================================
+         OYUN 03 ANA İÇERİĞİ
+         ===================================================== -->
+
+    <main class="access-flow-page">
+
+        <!-- Sayfanın başlık alanı -->
+        <section class="access-flow-header">
+
+            <p class="hero-label">
+                OYUN 03
+            </p>
+
+            <h1>
+                Erişim Akışını Sırala
+            </h1>
+
+            <p>
+                Sıfır Güven Mimarisi'nde bir erişim isteğinin
+                hangi aşamalardan geçtiğini doğru sıraya yerleştir.
+            </p>
+
+        </section>
+        
+    <!-- =====================================================
+     OYUN 03 - NASIL OYNANIR?
+     ===================================================== -->
+
+        <section class="access-flow-guide">
+
+            <span class="lab-tool-label">
+                NASIL OYNANIR?
+            </span>
+
+            <h2>
+                Erişim Akışını Doğru Sıraya Getir
+            </h2>
+
+            <p>
+                Karışık olarak verilen Sıfır Güven erişim
+                adımlarını başlangıçtan sona doğru sırala.
+            </p>
+
+        </section>
+
+    <!-- =====================================================
+     OYUN 03 - ERİŞİM AKIŞI OYUN ALANI
+     ===================================================== -->
+
+<section class="access-flow-game">
+
+    <h2>
+        Adımları Sırala
+    </h2>
+
+    <p>
+        Aşağıdaki adımlar karışık sıradadır.
+        Doğru erişim akışını oluştur.
+    </p>
+
+
+    <!-- Karışık erişim adımlarını tutan alan -->
+ 
+<!-- Karışık erişim adımlarını tutan ana alan -->
+<div class="access-flow-list">   
+    
+ 
+<!-- ADIM KARTI -->
+<div
+    class="access-flow-card"
+    data-order="3"
+    draggable="true"
+    ondragstart="akisKartiniSurukle(event, this)"
+    ondragend="akisKartiniBirak(this)"
+    ondragover="akisKartininUzerineGel(event)"
+    ondrop="akisKartiniTasi(this)"
+>
+    <span class="access-flow-drag-icon">
+    ↕
+    </span>
+
+    <strong>
+        Politika Motoru
+        (Policy Engine - PE) Değerlendirme Yapar
+    </strong>
+
+    <p>
+        Kullanıcı kimliği, cihaz durumu, kaynak,
+        güvenlik politikaları ve mevcut risk gibi
+        bilgileri birlikte değerlendirir.
+    </p>
+
+</div>
+
+
+  
+<!-- ADIM KARTI -->      
+
+<div
+    class="access-flow-card"
+    data-order="2"
+    draggable="true"
+    ondragstart="akisKartiniSurukle(event, this)"
+    ondragend="akisKartiniBirak(this)"
+    ondragover="akisKartininUzerineGel(event)"
+    ondrop="akisKartiniTasi(this)"
+>
+    <span class="access-flow-drag-icon">
+    ↕
+    </span>
+
+    <strong>
+        Politika Uygulama Noktası
+        (Policy Enforcement Point - PEP)
+    </strong>
+
+    <p>
+        Kullanıcı ile kaynak arasındaki erişim noktasında
+        isteği karşılar ve politika kararının uygulanacağı
+        noktayı oluşturur.
+    </p>
+
+</div>
+
+
+
+   <!-- ADIM KARTI -->
+<div
+    class="access-flow-card"
+    data-order="1"
+    draggable="true"
+    ondragstart="akisKartiniSurukle(event, this)"
+    ondragend="akisKartiniBirak(this)"
+    ondragover="akisKartininUzerineGel(event)"
+    ondrop="akisKartiniTasi(this)"
+>
+
+    <span class="access-flow-drag-icon">
+    ↕
+    </span>
+
+    <strong>
+        Kullanıcı Erişim İsteği Oluşturur
+    </strong>
+
+    <p>
+        Kullanıcı veya sistem, korunan bir uygulama,
+        veri ya da kaynağa erişmek ister.
+    </p>
+
+</div>
+
+
+
+
+<!-- ADIM KARTI -->
+<div
+    class="access-flow-card"
+    data-order="5"
+    draggable="true"
+    ondragstart="akisKartiniSurukle(event, this)"
+    ondragend="akisKartiniBirak(this)"
+    ondragover="akisKartininUzerineGel(event)"
+    ondrop="akisKartiniTasi(this)"
+>
+    <span class="access-flow-drag-icon">
+    ↕
+    </span>
+    <strong>
+        Politika Yöneticisi
+        (Policy Administrator - PA) Kararı Uygulatır
+    </strong>
+
+    <p>
+        Politika Motorunun verdiği kararın
+        Politika Uygulama Noktası (PEP) tarafından
+        uygulanabilmesi için gerekli süreci yönetir.
+    </p>
+
+</div>
+
+
+<!-- ADIM KARTI -->
+<div
+    class="access-flow-card"
+    data-order="4"
+    draggable="true"
+    ondragstart="akisKartiniSurukle(event, this)"
+    ondragend="akisKartiniBirak(this)"
+    ondragover="akisKartininUzerineGel(event)"
+    ondrop="akisKartiniTasi(this)"
+>
+<span class="access-flow-drag-icon">
+    ↕
+    </span>
+
+    <strong>
+        Politika Motoru
+        (Policy Engine - PE) Karar Verir
+    </strong>
+
+    <p>
+        Değerlendirme sonucunda erişime izin verilmesi
+        veya erişimin reddedilmesi yönünde
+        ALLOW / DENY kararı oluşturur.
+    </p>
+
+</div>
+
+</div>
+
+
+<div class="access-flow-check-area">
+
+    <button
+        type="button"
+        id="access-flow-check-button"
+        onclick="akisSiralamasiKontrolEt()"
+    >
+        Sıralamayı Kontrol Et
+    </button>
+
+    <button
+        type="button"
+        id="access-flow-shuffle-button"
+        onclick="akisKartlariniKaristir()"
+    >
+        Kartları Karıştır
+    </button>
+
+</div>
+
+<div id="access-flow-result"></div>
+
+<button
+    type="button"
+    id="access-flow-restart-button"
+    onclick="akisOyununuTekrarBaslat()"
+>
+    Oyunu Tekrar Başlat
+</button>
+
+</section>
+
+    </main>
+
+
+    <!-- Ortak JavaScript dosyamızı bağlıyoruz -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
