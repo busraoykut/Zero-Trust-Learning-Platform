@@ -1,92 +1,57 @@
+/* =====================================================
+   GENEL STİLLER
+   ===================================================== */
 
-/*
-    Ana başlığımızın görünümü.
-*/
 h1 {
 
-    /*
-        Başlığın yazı boyutu.
-    */
+
     font-size: 50px;
 
-    /*
-        Üstten biraz boşluk bırakıyoruz.
-    */
+
     margin-top: 150px;
 }
 
 
-/*
-    Paragraf tasarımı.
-*/
 p {
 
-    /*
-        Normal yazıdan biraz daha büyük.
-    */
+
     font-size: 20px;
 
-    /*
-        Açık gri bir renk.
-    */
+
     color: #b6c2d9;
 }
 
 
-/*
-    Bütün button etiketlerini etkiler.
-*/
 button {
 
-    /*
-        Butonun içindeki boşluk.
-    */
+
     padding: 15px 30px;
 
-    /*
-        Yazı büyüklüğü.
-    */
+
     font-size: 18px;
 
-    /*
-        Buton arka planı.
-    */
+
     background-color: #2563eb;
 
-    /*
-        Buton yazısı beyaz.
-    */
+
     color: white;
 
-    /*
-        Varsayılan çerçeveyi kaldırıyoruz.
-    */
+
     border: none;
 
-    /*
-        Köşeleri yuvarlatıyoruz.
-    */
+
     border-radius: 8px;
 
-    /*
-        Mouse butonun üzerine gelince
-        el işareti görünür.
-    */
+
     cursor: pointer;
 }
 
-/*
-    Tüm elementlerde boyut hesaplamasını
-    daha düzenli hale getirir.
-*/
+
 * {
     box-sizing: border-box;
 }
 
 
-/*
-    Sayfanın genel ayarları
-*/
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -96,47 +61,32 @@ body {
 }
 
 
-/*
-    Üst menü
-*/
+/* =====================================================
+   NAVBAR
+   ===================================================== */
+
 .navbar {
 
-    /*
-        İçindeki elemanları yatay hizalar.
-    */
+
     display: flex;
 
-    /*
-        Logo solda,
-        menü sağda olur.
-    */
+
     justify-content: space-between;
 
-    /*
-        Dikey olarak ortalar.
-    */
+
     align-items: center;
 
-    /*
-        İç boşluk.
-    */
+
     padding: 20px 70px;
 
-    /*
-        Hafif koyu arka plan.
-    */
+
     background-color: #0b1729;
 
-    /*
-        Altına ince çizgi.
-    */
+
     border-bottom: 1px solid #1c2d45;
 }
 
 
-/*
-    Logo yazısı
-*/
 .logo {
     font-size: 22px;
     font-weight: bold;
@@ -144,55 +94,39 @@ body {
 }
 
 
-/*
-    Menü linkleri
-*/
 .navbar nav a {
 
-    /*
-        Linklerin altındaki varsayılan çizgiyi kaldırır.
-    */
+
     text-decoration: none;
 
     color: #c7d2e3;
 
-    /*
-        Linklerin arasında boşluk bırakır.
-    */
+
     margin-left: 30px;
 
     font-size: 15px;
 }
 
 
-/*
-    Mouse linkin üzerine geldiğinde
-*/
 .navbar nav a:hover {
     color: #4da3ff;
 }
 
 
-/*
-    Ana giriş alanı
-*/
+/* =====================================================
+   ANA SAYFA
+   ===================================================== */
+
 .hero {
 
-    /*
-        İçeriği ortalar.
-    */
+
     text-align: center;
 
-    /*
-        Üst-alt boşluk.
-    */
+
     padding: 100px 20px 70px;
 }
 
 
-/*
-    Küçük NIST etiketi
-*/
 .hero-label {
     color: #4da3ff;
     font-weight: bold;
@@ -201,28 +135,18 @@ body {
 }
 
 
-/*
-    Büyük başlık
-*/
 .hero h1 {
     font-size: 58px;
     margin: 15px 0;
 }
 
 
-/*
-    Ana açıklama
-*/
 .hero-description {
 
-    /*
-        Yazının çok fazla genişlemesini engeller.
-    */
+
     max-width: 650px;
 
-    /*
-        Ortalar.
-    */
+
     margin: 0 auto;
 
     font-size: 19px;
@@ -231,9 +155,6 @@ body {
 }
 
 
-/*
-    Ana sayfadaki büyük başlangıç butonu.
-*/
 .start-button {
 
     display: inline-block;
@@ -252,9 +173,7 @@ body {
 
     border-radius: 8px;
 
-    /*
-        Bağlantının alt çizgisini kaldırıyoruz.
-    */
+
     text-decoration: none;
 
     cursor: pointer;
@@ -263,44 +182,29 @@ body {
 }
 
 
-/*
-    Mouse buton üzerine gelince
-*/
 .start-button:hover {
     background-color: #1d4ed8;
 }
 
 
-/*
-    Kartların bulunduğu alan
-*/
+/* Ana sayfa kartları */
+
 .cards {
 
-    /*
-        Kartları yan yana getirir.
-    */
+
     display: flex;
 
-    /*
-        Kartlar arasına boşluk koyar.
-    */
+
     gap: 25px;
 
-    /*
-        Ortalar.
-    */
+
     justify-content: center;
 
-    /*
-        Sayfanın kenarlarına boşluk verir.
-    */
+
     padding: 20px 60px 80px;
 }
 
 
-/*
-    Her bir kart
-*/
 .card {
     width: 300px;
     background-color: #0d1b2e;
@@ -309,49 +213,32 @@ body {
     padding: 30px;
     text-align: left;
 
-    /*
-        Geçiş efekti.
-        Hover sırasında hareket daha yumuşak olur.
-    */
+
     transition: 0.3s;
 }
 
 
-/*
-    Mouse kartın üzerine gelince
-*/
 .card:hover {
 
-    /*
-        Kartı biraz yukarı kaldırır.
-    */
+
     transform: translateY(-8px);
 
     border-color: #2563eb;
 }
 
 
-/*
-    Kart başlıkları
-*/
 .card h2 {
     margin-top: 0;
     font-size: 24px;
 }
 
 
-/*
-    Kart açıklaması
-*/
 .card p {
     color: #aebbd0;
     line-height: 1.6;
 }
 
 
-/*
-    Kartların içindeki butonlar
-*/
 .card button {
     margin-top: 15px;
     padding: 10px 18px;
@@ -363,63 +250,48 @@ body {
 }
 
 
-/*
-    Kart butonlarında hover
-*/
 .card button:hover {
     background-color: #2563eb;
     color: white;
 }
 
-/*
-    Öğren sayfasının ana alanı
-*/
+
+/* =====================================================
+   ÖĞREN SAYFASI
+   ===================================================== */
+
 .learn-page {
     padding-bottom: 80px;
 }
 
 
-/*
-    Öğren sayfasının başlığı
-*/
 .learn-header {
     text-align: center;
     padding: 70px 20px 50px;
 }
 
 
-/*
-    Başlık boyutu
-*/
 .learn-header h1 {
     font-size: 42px;
     margin: 10px 0;
 }
 
 
-/*
-    Başlığın altındaki açıklama
-*/
 .learn-header > p:last-child {
     color: #aebbd0;
     font-size: 18px;
 }
 
 
-/*
-    Sol menü + sağ içerik alanı
-*/
+/* Eğitim menüsü ve içerik düzeni */
+
 .learn-container {
     display: flex;
 
-    /*
-        İçeriğin çok geniş olmasını engelliyoruz.
-    */
+
     max-width: 1200px;
 
-    /*
-        margin auto ile ekranın ortasına getiriyoruz.
-    */
+
     margin: 0 auto;
 
     gap: 30px;
@@ -428,24 +300,15 @@ body {
 }
 
 
-/*
-    Sol taraftaki eğitim menüsü
-*/
 .lesson-menu {
     width: 250px;
 
-    /*
-        İçerik aşağı doğru uzasa bile
-        menünün üstte kalmasını sağlar.
-    */
+
     position: sticky;
 
     top: 20px;
 
-    /*
-        Sticky özelliğinin düzgün çalışması için
-        kendi yüksekliği kadar yer kaplamasını istiyoruz.
-    */
+
     align-self: flex-start;
 
     background-color: #0d1b2e;
@@ -458,18 +321,12 @@ body {
 }
 
 
-/*
-    Sol menü başlığı
-*/
 .lesson-menu h3 {
     margin-top: 0;
     color: white;
 }
 
 
-/*
-    Sol menü bağlantıları
-*/
 .lesson-menu a {
     display: block;
 
@@ -485,9 +342,6 @@ body {
 }
 
 
-/*
-    Mouse ile üzerine gelince
-*/
 .lesson-menu a:hover {
     background-color: #14263d;
 
@@ -495,17 +349,13 @@ body {
 }
 
 
-/*
-    Sağ taraftaki ders alanı
-*/
 .lesson-content {
     flex: 1;
 }
 
 
-/*
-    Her ders bölümü
-*/
+/* Ders / modül kartları */
+
 .lesson-card {
     background-color: #0d1b2e;
 
@@ -519,9 +369,6 @@ body {
 }
 
 
-/*
-    MODÜL 01 gibi küçük yazılar
-*/
 .lesson-number {
     color: #4da3ff;
 
@@ -533,9 +380,6 @@ body {
 }
 
 
-/*
-    Ders başlığı
-*/
 .lesson-card h2 {
     font-size: 28px;
 
@@ -543,9 +387,6 @@ body {
 }
 
 
-/*
-    Ders paragrafları
-*/
 .lesson-card p {
     color: #b6c2d9;
 
@@ -555,9 +396,6 @@ body {
 }
 
 
-/*
-    Önemli kavram kutuları
-*/
 .concept-box {
     background-color: #101f34;
 
@@ -571,9 +409,6 @@ body {
 }
 
 
-/*
-    Karşılaştırma alanı
-*/
 .comparison {
     display: flex;
 
@@ -583,9 +418,6 @@ body {
 }
 
 
-/*
-    Karşılaştırma kutuları
-*/
 .comparison-box {
     flex: 1;
 
@@ -599,15 +431,10 @@ body {
 }
 
 
-/*
-    Temel prensipler için grid sistemi
-*/
 .principle-grid {
     display: grid;
 
-    /*
-        İki sütun oluşturuyoruz.
-    */
+
     grid-template-columns: repeat(2, 1fr);
 
     gap: 20px;
@@ -616,9 +443,6 @@ body {
 }
 
 
-/*
-    Her prensip kutusu
-*/
 .principle-item {
     background-color: #101f34;
 
@@ -630,9 +454,6 @@ body {
 }
 
 
-/*
-    Mimari akış
-*/
 .architecture-flow {
     display: flex;
 
@@ -646,9 +467,6 @@ body {
 }
 
 
-/*
-    PE → PA → PEP kontrol akışı
-*/
 .architecture-control {
     display: flex;
 
@@ -662,9 +480,6 @@ body {
 }
 
 
-/*
-    Mimari kutular
-*/
 .architecture-item {
     background-color: #14263d;
 
@@ -678,9 +493,6 @@ body {
 }
 
 
-/*
-    Önemli bileşenleri biraz farklı gösteriyoruz.
-*/
 .architecture-item.highlight {
     border-color: #2563eb;
 
@@ -688,9 +500,6 @@ body {
 }
 
 
-/*
-    Ok işaretleri
-*/
 .arrow {
     font-size: 25px;
 
@@ -698,23 +507,14 @@ body {
 }
 
 
-/*
-    Küçük ekranlar için responsive tasarım.
-*/
 @media (max-width: 850px) {
 
-    /*
-        Sol menü ve ders içeriğini
-        alt alta getiriyoruz.
-    */
+
     .learn-container {
         flex-direction: column;
     }
 
 
-    /*
-        Menü artık ekranın tamamına yakın genişlikte.
-    */
     .lesson-menu {
         width: 100%;
 
@@ -722,39 +522,27 @@ body {
     }
 
 
-    /*
-        Prensipleri tek sütuna indiriyoruz.
-    */
     .principle-grid {
         grid-template-columns: 1fr;
     }
 
 
-    /*
-        Karşılaştırma kutularını alt alta getiriyoruz.
-    */
     .comparison {
         flex-direction: column;
     }
 
 
-    /*
-        Mimari akışı da küçük ekranlarda
-        dikey hale getiriyoruz.
-    */
     .architecture-flow {
         flex-direction: column;
     }
 }
 
-/*
-    7 temel ilkenin bulunduğu grid alanı
-*/
+
+/* 7 temel ilke kartları */
+
 .tenet-grid {
 
-    /*
-        Kartları iki sütun halinde gösteriyoruz.
-    */
+
     display: grid;
 
     grid-template-columns: repeat(2, 1fr);
@@ -765,9 +553,6 @@ body {
 }
 
 
-/*
-    Her temel ilkenin kartı
-*/
 .tenet-card {
 
     background-color: #101f34;
@@ -778,34 +563,21 @@ body {
 
     padding: 25px;
 
-    /*
-        Mouse üzerine geldiğinde yapılacak
-        hareket için yumuşak geçiş sağlar.
-    */
+
     transition: 0.3s;
 }
 
 
-/*
-    Mouse kartın üzerine geldiğinde
-*/
 .tenet-card:hover {
 
-    /*
-        Kart biraz yukarı hareket eder.
-    */
+
     transform: translateY(-6px);
 
-    /*
-        Kenarlık mavi olur.
-    */
+
     border-color: #2563eb;
 }
 
 
-/*
-    Kartların içindeki 01, 02, 03 gibi numaralar
-*/
 .tenet-number {
 
     color: #4da3ff;
@@ -820,9 +592,6 @@ body {
 }
 
 
-/*
-    Kart başlıkları
-*/
 .tenet-card h3 {
 
     font-size: 19px;
@@ -833,9 +602,6 @@ body {
 }
 
 
-/*
-    Kart açıklamaları
-*/
 .tenet-card p {
 
     font-size: 15px;
@@ -846,10 +612,6 @@ body {
 }
 
 
-/*
-    Küçük ekranlarda kartları
-    tek sütun haline getiriyoruz.
-*/
 @media (max-width: 850px) {
 
     .tenet-grid {
@@ -860,9 +622,9 @@ body {
 
 }
 
-/*
-    Hızlı kontrol sorusunun ana kutusu
-*/
+
+/* Hızlı kontrol alanı */
+
 .quick-check {
     margin-top: 35px;
 
@@ -876,9 +638,6 @@ body {
 }
 
 
-/*
-    Hızlı kontrol başlığı
-*/
 .quick-check h3 {
     margin-top: 0;
 
@@ -886,9 +645,6 @@ body {
 }
 
 
-/*
-    Cevap butonlarının bulunduğu alan
-*/
 .answer-buttons {
     display: flex;
 
@@ -898,9 +654,6 @@ body {
 }
 
 
-/*
-    Evet / Hayır butonları
-*/
 .answer-buttons button {
     padding: 12px 25px;
 
@@ -920,18 +673,11 @@ body {
 }
 
 
-/*
-    Mouse butonların üzerine geldiğinde
-*/
 .answer-buttons button:hover {
     background-color: #2563eb;
 }
 
 
-/*
-    JavaScript tarafından oluşturulan
-    sonuç kutusunun genel tasarımı.
-*/
 .result {
     margin-top: 20px;
 
@@ -941,9 +687,6 @@ body {
 }
 
 
-/*
-    Doğru cevap verilirse kullanılacak tasarım.
-*/
 .result.correct {
     background-color: rgba(34, 197, 94, 0.10);
 
@@ -951,17 +694,11 @@ body {
 }
 
 
-/*
-    Doğru cevabın başlığı
-*/
 .result.correct strong {
     color: #4ade80;
 }
 
 
-/*
-    Yanlış cevap verilirse kullanılacak tasarım.
-*/
 .result.wrong {
     background-color: rgba(239, 68, 68, 0.10);
 
@@ -969,23 +706,16 @@ body {
 }
 
 
-/*
-    Yanlış cevabın başlığı
-*/
 .result.wrong > strong {
     color: #f87171;
 }
 
-/*
-    Güven algoritmasında kullanılan
-    bilgi kartlarının bulunduğu alan.
-*/
+
+/* Güven algoritması girdileri */
+
 .trust-inputs {
 
-    /*
-        CSS Grid kullanıyoruz.
-        Üç eşit sütun oluşturur.
-    */
+
     display: grid;
 
     grid-template-columns: repeat(3, 1fr);
@@ -998,10 +728,6 @@ body {
 }
 
 
-/*
-    Kullanıcı, cihaz, kaynak vb.
-    her bilgi türünün kartı.
-*/
 .trust-input-card {
 
     background-color: #101f34;
@@ -1016,10 +742,6 @@ body {
 }
 
 
-/*
-    Mouse kartın üzerine geldiğinde
-    küçük bir hareket oluşturuyoruz.
-*/
 .trust-input-card:hover {
 
     transform: translateY(-5px);
@@ -1028,9 +750,6 @@ body {
 }
 
 
-/*
-    Kartların üstündeki ikonlar.
-*/
 .trust-icon {
 
     font-size: 28px;
@@ -1041,9 +760,6 @@ body {
 }
 
 
-/*
-    Kart başlıkları.
-*/
 .trust-input-card h3 {
 
     margin-top: 0;
@@ -1052,9 +768,6 @@ body {
 }
 
 
-/*
-    Kart açıklamaları.
-*/
 .trust-input-card p {
 
     font-size: 14px;
@@ -1063,10 +776,6 @@ body {
 }
 
 
-/*
-    Erişim kararının görsel olarak
-    gösterildiği ana kutu.
-*/
 .decision-flow {
 
     background-color: #081525;
@@ -1083,9 +792,6 @@ body {
 }
 
 
-/*
-    Erişim karar akışındaki her adım.
-*/
 .decision-step {
 
     max-width: 550px;
@@ -1104,10 +810,6 @@ body {
 }
 
 
-/*
-    Politika Motorunu diğer adımlardan
-    biraz daha belirgin gösteriyoruz.
-*/
 .decision-engine {
 
     border-color: #2563eb;
@@ -1116,9 +818,6 @@ body {
 }
 
 
-/*
-    Aşağı yönlü oklar.
-*/
 .decision-arrow {
 
     color: #4da3ff;
@@ -1129,10 +828,6 @@ body {
 }
 
 
-/*
-    İzin ve reddet sonuçlarını
-    yan yana yerleştiriyoruz.
-*/
 .decision-results {
 
     display: flex;
@@ -1145,9 +840,6 @@ body {
 }
 
 
-/*
-    İzin ver sonucu.
-*/
 .decision-allow {
 
     flex: 1;
@@ -1168,9 +860,6 @@ body {
 }
 
 
-/*
-    Reddet sonucu.
-*/
 .decision-deny {
 
     flex: 1;
@@ -1191,10 +880,6 @@ body {
 }
 
 
-/*
-    ALLOW ve DENY yazılarını
-    alt satırda daha küçük gösteriyoruz.
-*/
 .decision-results small {
 
     display: block;
@@ -1205,10 +890,6 @@ body {
 }
 
 
-/*
-    Tablet ve telefonlarda üç sütun
-    fazla sıkışacağı için tek sütun yapıyoruz.
-*/
 @media (max-width: 850px) {
 
     .trust-inputs {
@@ -1228,31 +909,17 @@ body {
 
 }
 
-/*
-    MODÜL 10
-    Politika Motorunun bilgi kaynakları
-*/
 
+/* Politika Motoru bilgi kaynakları */
 
-/*
-    Tüm bilgi kaynağı kartlarını
-    içerisinde tutan ana grid alanı.
-*/
 .source-grid {
 
-    /*
-        CSS Grid kullanıyoruz.
 
-        repeat(2, 1fr):
-        alanı iki eşit sütuna böler.
-    */
     display: grid;
 
     grid-template-columns: repeat(2, 1fr);
 
-    /*
-        Kartlar arasındaki boşluk.
-    */
+
     gap: 18px;
 
     margin-top: 30px;
@@ -1261,9 +928,6 @@ body {
 }
 
 
-/*
-    Her bir bilgi kaynağının kartı.
-*/
 .source-card {
 
     background-color: #101f34;
@@ -1274,18 +938,11 @@ body {
 
     padding: 22px;
 
-    /*
-        Hover efektinin yumuşak
-        gerçekleşmesini sağlar.
-    */
+
     transition: 0.3s;
 }
 
 
-/*
-    Mouse kartın üzerine geldiğinde
-    küçük bir hareket oluşturuyoruz.
-*/
 .source-card:hover {
 
     transform: translateY(-5px);
@@ -1294,9 +951,6 @@ body {
 }
 
 
-/*
-    Kartların üstündeki ikonlar.
-*/
 .source-icon {
 
     display: block;
@@ -1307,9 +961,6 @@ body {
 }
 
 
-/*
-    Bilgi kaynağı başlıkları.
-*/
 .source-card h3 {
 
     margin-top: 0;
@@ -1320,9 +971,6 @@ body {
 }
 
 
-/*
-    Bilgi kaynağı açıklamaları.
-*/
 .source-card p {
 
     font-size: 14px;
@@ -1331,10 +979,6 @@ body {
 }
 
 
-/*
-    Bilgi kaynaklarının Politika Motoruna
-    ulaştığı akış kutusu.
-*/
 .source-flow {
 
     background-color: #081525;
@@ -1351,10 +995,6 @@ body {
 }
 
 
-/*
-    CDM, Kimlik, SIEM gibi küçük
-    bilgi kaynağı kutularını tutar.
-*/
 .source-flow-inputs {
 
     display: flex;
@@ -1369,10 +1009,6 @@ body {
 }
 
 
-/*
-    Akış içerisindeki her küçük
-    bilgi kaynağı etiketi.
-*/
 .source-flow-inputs span {
 
     background-color: #14263d;
@@ -1389,11 +1025,6 @@ body {
 }
 
 
-/*
-    Küçük ekranlarda iki sütun
-    fazla dar olacağı için kartları
-    tek sütuna indiriyoruz.
-*/
 @media (max-width: 850px) {
 
     .source-grid {
@@ -1404,10 +1035,9 @@ body {
 
 }
 
-/*
-    MODÜL 11
-    Erişim kararının adımlarını gösteren alan.
-*/
+
+/* Erişim karar akışı */
+
 .access-decision-flow {
 
     background-color: #081525;
@@ -1422,9 +1052,6 @@ body {
 }
 
 
-/*
-    Erişim kararındaki her aşama.
-*/
 .access-step {
 
     display: flex;
@@ -1449,16 +1076,9 @@ body {
 }
 
 
-/*
-    1, 2, 3, 4 şeklindeki
-    adım numaraları.
-*/
 .access-step-number {
 
-    /*
-        flex-shrink: 0 sayesinde
-        sayı kutusunun küçülmesini engelliyoruz.
-    */
+
     flex-shrink: 0;
 
     display: flex;
@@ -1483,9 +1103,6 @@ body {
 }
 
 
-/*
-    Adım başlıkları.
-*/
 .access-step h3 {
 
     margin: 0 0 8px;
@@ -1494,9 +1111,6 @@ body {
 }
 
 
-/*
-    Adımların açıklamaları.
-*/
 .access-step p {
 
     margin: 0;
@@ -1507,10 +1121,6 @@ body {
 }
 
 
-/*
-    Politika Motorunun karar verdiği
-    adımı biraz daha belirgin gösteriyoruz.
-*/
 .access-step-engine {
 
     border-color: #2563eb;
@@ -1519,9 +1129,6 @@ body {
 }
 
 
-/*
-    Örnek senaryo alanı.
-*/
 .example-scenario {
 
     margin-top: 35px;
@@ -1536,10 +1143,6 @@ body {
 }
 
 
-/*
-    Senaryodaki kullanıcı, rol, MFA
-    gibi bilgileri kartlar halinde gösteriyoruz.
-*/
 .scenario-information {
 
     display: grid;
@@ -1552,9 +1155,6 @@ body {
 }
 
 
-/*
-    Her senaryo bilgisinin kutusu.
-*/
 .scenario-information div {
 
     background-color: #101f34;
@@ -1567,10 +1167,6 @@ body {
 }
 
 
-/*
-    Kullanıcı, Rol, MFA gibi
-    küçük başlıklar.
-*/
 .scenario-information span {
 
     display: block;
@@ -1583,10 +1179,6 @@ body {
 }
 
 
-/*
-   Senaryo için 
-   gerçek değerler.
-*/
 .scenario-information strong {
 
     color: white;
@@ -1595,10 +1187,6 @@ body {
 }
 
 
-/*
-    Küçük ekranlarda senaryo bilgilerini
-    tek sütuna indiriyoruz.
-*/
 @media (max-width: 850px) {
 
     .scenario-information {
@@ -1610,19 +1198,16 @@ body {
 }
 
 
+/* =====================================================
+   LAB ANA SAYFASI
+   ===================================================== */
 
-/*
-    Lab sayfasının tamamı.
-*/
 .lab-page {
 
     padding-bottom: 80px;
 }
 
 
-/*
-    Lab sayfasının üst başlık alanı.
-*/
 .lab-header {
 
     text-align: center;
@@ -1631,9 +1216,6 @@ body {
 }
 
 
-/*
-    Lab ana başlığı.
-*/
 .lab-header h1 {
 
     font-size: 44px;
@@ -1642,9 +1224,6 @@ body {
 }
 
 
-/*
-    Lab başlığının altındaki açıklama.
-*/
 .lab-header > p:last-child {
 
     max-width: 700px;
@@ -1659,11 +1238,8 @@ body {
 }
 
 
-/*
-    Lab araçlarının bulunduğu alan.
+/* Lab araç kartları */
 
-    CSS Grid ile üç sütun oluşturuyoruz.
-*/
 .lab-tools {
 
     display: grid;
@@ -1680,9 +1256,6 @@ body {
 }
 
 
-/*
-    Her bir Lab aracının kartı.
-*/
 .lab-tool-card {
 
     background-color: #0d1b2e;
@@ -1695,17 +1268,11 @@ body {
 
     text-align: left;
 
-    /*
-        Kart hover olduğunda geçişin
-        yumuşak görünmesini sağlar.
-    */
+
     transition: 0.3s;
 }
 
 
-/*
-    Mouse kartın üzerine geldiğinde.
-*/
 .lab-tool-card:hover {
 
     transform: translateY(-7px);
@@ -1714,9 +1281,6 @@ body {
 }
 
 
-/*
-    Kartların üzerindeki büyük ikon.
-*/
 .lab-tool-icon {
 
     font-size: 32px;
@@ -1725,9 +1289,6 @@ body {
 }
 
 
-/*
-    LAB 01, LAB 02 gibi küçük etiketler.
-*/
 .lab-tool-label {
 
     display: block;
@@ -1744,9 +1305,6 @@ body {
 }
 
 
-/*
-    Lab kartlarının başlıkları.
-*/
 .lab-tool-card h2 {
 
     font-size: 21px;
@@ -1757,9 +1315,6 @@ body {
 }
 
 
-/*
-    Lab kartlarının açıklamaları.
-*/
 .lab-tool-card p {
 
     font-size: 14px;
@@ -1770,9 +1325,6 @@ body {
 }
 
 
-/*
-    Lab kartlarının butonları.
-*/
 .lab-tool-button {
 
     margin-top: 15px;
@@ -1795,9 +1347,6 @@ body {
 }
 
 
-/*
-    Lab butonlarının hover durumu.
-*/
 .lab-tool-button:hover {
 
     background-color: #2563eb;
@@ -1806,10 +1355,8 @@ body {
 }
 
 
-/*
-    Lab'ın çalışma mantığını anlatan
-    ikinci ana bölüm.
-*/
+/* Lab çalışma süreci */
+
 .lab-info {
 
     max-width: 1100px;
@@ -1828,9 +1375,6 @@ body {
 }
 
 
-/*
-    Öğren → Uygula → Analiz Et başlığı.
-*/
 .lab-info h2 {
 
     margin-top: 5px;
@@ -1839,9 +1383,6 @@ body {
 }
 
 
-/*
-    Üç işlem adımını yan yana gösteriyoruz.
-*/
 .lab-process {
 
     display: flex;
@@ -1856,9 +1397,6 @@ body {
 }
 
 
-/*
-    Her bir işlem adımı.
-*/
 .lab-process-step {
 
     flex: 1;
@@ -1875,9 +1413,6 @@ body {
 }
 
 
-/*
-    01, 02, 03 numaraları.
-*/
 .lab-process-step > span {
 
     color: #4da3ff;
@@ -1890,18 +1425,12 @@ body {
 }
 
 
-/*
-    Adım başlıkları.
-*/
 .lab-process-step h3 {
 
     margin: 12px 0 8px;
 }
 
 
-/*
-    Adım açıklamaları.
-*/
 .lab-process-step p {
 
     font-size: 14px;
@@ -1912,9 +1441,6 @@ body {
 }
 
 
-/*
-    Adımlar arasındaki ok.
-*/
 .lab-process-arrow {
 
     color: #4da3ff;
@@ -1925,33 +1451,21 @@ body {
 }
 
 
-/*
-    Tablet ve telefon tasarımı.
-*/
 @media (max-width: 900px) {
 
-    /*
-        Üç Lab kartını tek sütuna indiriyoruz.
-    */
+
     .lab-tools {
 
         grid-template-columns: 1fr;
     }
 
 
-    /*
-        İşlem adımlarını da alt alta getiriyoruz.
-    */
     .lab-process {
 
         flex-direction: column;
     }
 
 
-    /*
-        Yatay ok yerine aşağı yönlü
-        bir görünüm sağlıyoruz.
-    */
     .lab-process-arrow {
 
         transform: rotate(90deg);
@@ -1965,28 +1479,18 @@ body {
 
 }
 
-/*
-    =====================================================
-    POLICY ENGINE SIMULATOR
-    =====================================================
-*/
 
+/* =====================================================
+   LAB 01 - POLİTİKA MOTORU SİMÜLATÖRÜ
+   ===================================================== */
 
-/*
-    Politika Motoru sayfasının genel alanı.
-*/
 .policy-engine-page {
 
-    /*
-        Sayfanın en altında biraz boşluk bırakıyoruz.
-    */
+
     padding-bottom: 80px;
 }
 
 
-/*
-    Simülatör sayfasının üst başlık alanı.
-*/
 .policy-engine-header {
 
     text-align: center;
@@ -1995,24 +1499,15 @@ body {
 }
 
 
-/*
-    Sayfanın ana başlığı.
-*/
 .policy-engine-header h1 {
 
-    /*
-        Genel h1 kuralımızdan bağımsız olarak
-        bu sayfadaki başlığın boyutunu belirliyoruz.
-    */
+
     font-size: 42px;
 
     margin: 10px 0;
 }
 
 
-/*
-    Başlığın altındaki açıklama.
-*/
 .policy-engine-header > p:last-child {
 
     max-width: 750px;
@@ -2027,28 +1522,20 @@ body {
 }
 
 
-/*
-    Simülatör formunun bulunduğu ana bölüm.
-*/
+/* Simülatör form alanı */
+
 .simulator-container {
 
-    /*
-        İçeriğin ekranın tamamına yayılmasını engelliyoruz.
-    */
+
     max-width: 850px;
 
-    /*
-        Sağ ve soldaki auto değeri kutuyu ortalar.
-    */
+
     margin: 0 auto;
 
     padding: 0 30px;
 }
 
 
-/*
-    Formu tuttuğumuz ana kart.
-*/
 .simulator-form-card {
 
     background-color: #0d1b2e;
@@ -2063,9 +1550,6 @@ body {
 }
 
 
-/*
-    Form kartının ana başlığı.
-*/
 .simulator-form-card h2 {
 
     margin-top: 0;
@@ -2074,9 +1558,6 @@ body {
 }
 
 
-/*
-    Form kartının açıklaması.
-*/
 .simulator-form-card > p {
 
     font-size: 16px;
@@ -2085,28 +1566,18 @@ body {
 }
 
 
-/*
-    Her label + select grubunun
-    kendi alanı.
-*/
+/* Form elemanları */
+
 .form-group {
 
-    /*
-        Grupların arasında boşluk bırakıyoruz.
-    */
+
     margin-top: 22px;
 }
 
 
-/*
-    Form alanlarının başlıkları.
-*/
 .form-group label {
 
-    /*
-        Label normalde satır içi elementtir.
-        block yaptığımızda kendi satırını kaplar.
-    */
+
     display: block;
 
     margin-bottom: 9px;
@@ -2119,9 +1590,6 @@ body {
 }
 
 
-/*
-    Açılır seçim kutuları.
-*/
 .form-group select {
 
     width: 100%;
@@ -2142,10 +1610,6 @@ body {
 }
 
 
-/*
-    Kullanıcı seçim kutusuna tıkladığında
-    kenarlığını belirgin hale getiriyoruz.
-*/
 .form-group select:focus {
 
     outline: none;
@@ -2154,9 +1618,6 @@ body {
 }
 
 
-/*
-    Değerlendirme butonu.
-*/
 #evaluate-button {
 
     width: 100%;
@@ -2167,19 +1628,12 @@ body {
 }
 
 
-/*
-    Butonun üzerine gelindiğinde.
-*/
 #evaluate-button:hover {
 
     background-color: #1d4ed8;
 }
 
 
-/*
-    NIST ile örnek kurum politikalarını
-    birbirinden ayıran bilgi kutusu.
-*/
 .simulator-note {
 
     margin-top: 30px;
@@ -2194,18 +1648,12 @@ body {
 }
 
 
-/*
-    Bilgi kutusunun başlığı.
-*/
 .simulator-note strong {
 
     color: #6eb1ff;
 }
 
 
-/*
-    Bilgi kutusundaki paragraflar.
-*/
 .simulator-note p {
 
     font-size: 14px;
@@ -2213,46 +1661,25 @@ body {
     line-height: 1.6;
 }
 
-/*
-    Form alanlarının altında gösterilen
-    küçük açıklama metinleri.
-*/
+
 .form-help-text {
 
-    /*
-        Normal form yazısından daha küçük
-        görünmesini sağlıyoruz.
-    */
+
     font-size: 13px;
 
-    /*
-        Açık gri renk kullanıyoruz.
-        Böylece ana form etiketinden daha az dikkat çeker.
-    */
+
     color: #8fa3bf;
 
-    /*
-        Select kutusu ile açıklama arasında
-        biraz boşluk bırakıyoruz.
-    */
+
     margin-top: 8px;
 
-    /*
-        Satırlar çok sıkışmasın.
-    */
+
     line-height: 1.5;
 }
 
-/*
-   
-    POLİTİKA MOTORU SONUÇ DETAYLARI
-   
-*/
 
+/* Politika Motoru sonuç alanı */
 
-/*
-    Sonuç kutusundaki ana başlık.
-*/
 #policy-result h3 {
 
     margin-top: 0;
@@ -2267,10 +1694,6 @@ body {
 }
 
 
-/*
-    Kullanıcının seçtiği erişim bilgilerinin
-    bulunduğu bölüm.
-*/
 .decision-details {
 
     margin-top: 20px;
@@ -2283,9 +1706,6 @@ body {
 }
 
 
-/*
-    Detay bölümündeki her satır.
-*/
 .decision-details p {
 
     margin: 8px 0;
@@ -2294,29 +1714,18 @@ body {
 }
 
 
-/*
-    Kullanıcı Rolü, MFA, Cihaz gibi
-    başlıkların daha belirgin görünmesini sağlar.
-*/
 .decision-details p strong {
 
     color: white;
 }
 
 
-/*
-    Kararın nedenini gösterdiğimiz bölüm.
-*/
 .decision-reason {
 
     margin-top: 20px;
 }
 
 
-/*
-    "Karar Nedeni" ve "Reddetme Nedenleri"
-    başlıklarının görünümü.
-*/
 .decision-reason h4 {
 
     margin-bottom: 10px;
@@ -2326,14 +1735,9 @@ body {
     color: white;
 }
 
-/*
-    POLİTİKA MOTORU - KULLANIM REHBERİ
-*/
 
+/* Lab kullanım rehberi */
 
-/*
-    Rehber bölümünün ana kutusu.
-*/
 .lab-guide {
 
     max-width: 1000px;
@@ -2352,9 +1756,6 @@ body {
 }
 
 
-/*
-    Rehber ana başlığı.
-*/
 .lab-guide h2 {
 
     margin-top: 10px;
@@ -2365,9 +1766,6 @@ body {
 }
 
 
-/*
-    Başlığın altındaki açıklama.
-*/
 .lab-guide-description {
 
     font-size: 15px;
@@ -2378,9 +1776,6 @@ body {
 }
 
 
-/*
-    Üç adımı yan yana gösteriyoruz.
-*/
 .lab-guide-steps {
 
     display: grid;
@@ -2391,9 +1786,6 @@ body {
 }
 
 
-/*
-    Her bir rehber adımı.
-*/
 .lab-guide-step {
 
     background-color: #101f34;
@@ -2406,9 +1798,6 @@ body {
 }
 
 
-/*
-    01, 02, 03 numaraları.
-*/
 .guide-number {
 
     color: #4da3ff;
@@ -2421,9 +1810,6 @@ body {
 }
 
 
-/*
-    Adım başlıkları.
-*/
 .lab-guide-step h3 {
 
     margin: 10px 0;
@@ -2432,9 +1818,6 @@ body {
 }
 
 
-/*
-    Adım açıklamaları.
-*/
 .lab-guide-step p {
 
     margin: 0;
@@ -2445,10 +1828,6 @@ body {
 }
 
 
-/*
-    Küçük ekranlarda adımları
-    alt alta gösteriyoruz.
-*/
 @media (max-width: 850px) {
 
     .lab-guide-steps {
@@ -2458,16 +1837,9 @@ body {
 
 }
 
-/*
-   
-    HAZIR TEST SENARYOLARI
 
-*/
+/* Hazır test senaryoları */
 
-
-/*
-    Hazır senaryoların bulunduğu ana alan.
-*/
 .preset-scenarios {
 
     max-width: 1000px;
@@ -2486,9 +1858,6 @@ body {
 }
 
 
-/*
-    Hazır senaryo bölümünün başlığı.
-*/
 .preset-scenarios h2 {
 
     margin-top: 10px;
@@ -2499,9 +1868,6 @@ body {
 }
 
 
-/*
-    Başlığın altındaki kısa açıklama.
-*/
 .preset-description {
 
     font-size: 15px;
@@ -2512,9 +1878,6 @@ body {
 }
 
 
-/*
-    Senaryo butonlarını yan yana getiriyoruz.
-*/
 .preset-scenario-buttons {
 
     display: flex;
@@ -2524,9 +1887,7 @@ body {
     flex-wrap: wrap;
 }
 
-/*
-    Hazır senaryo butonları.
-*/
+
 .preset-scenario-buttons button {
 
     padding: 11px 16px;
@@ -2547,9 +1908,6 @@ body {
 }
 
 
-/*
-    Mouse butonun üzerine geldiğinde.
-*/
 .preset-scenario-buttons button:hover {
 
     border-color: #2563eb;
@@ -2559,16 +1917,9 @@ body {
     background-color: #19304d;
 }
 
-/*
-   
-    FORM İŞLEM BUTONLARI
-   
-*/
 
+/* Form işlem butonları */
 
-/*
-    Değerlendir ve Sıfırla butonlarını aynı satırda göstermek için kullanıyoruz.
-*/
 .form-action-buttons {
 
     display: flex;
@@ -2578,11 +1929,7 @@ body {
     margin-top: 20px;
 }
 
-/*
-    Formu Sıfırla butonu.
 
-    Ana işlem butonundan daha az dikkat çekmesi  için koyu ve sade bir tasarım kullanıyoruz.
-*/
 #reset-button {
 
     background-color: #14263d;
@@ -2593,9 +1940,6 @@ body {
 }
 
 
-/*
-    Mouse üzerine geldiğinde.
-*/
 #reset-button:hover {
 
     background-color: #1b304a;
@@ -2614,44 +1958,28 @@ body {
 
 }
 
-/*
-    LAB 02 - POLİTİKA OLUŞTURUCU
-    
-*/
 
+/* =====================================================
+   LAB 02 - POLİTİKA OLUŞTURUCU
+   ===================================================== */
 
-/*
-    Politika Oluşturucu sayfasının genel alanı.
-*/
 .policy-builder-page {
 
-    /*
-        Sayfanın en altında biraz boşluk bırakıyoruz.
-    */
+
     padding-bottom: 80px;
 }
 
 
-/*
-    LAB 02 sayfasının üst başlık alanı.
-*/
 .policy-builder-header {
 
-    /*
-        Başlıkları yatay olarak ortalıyoruz.
-    */
+
     text-align: center;
 
-    /*
-        Üstten ve alttan boşluk bırakıyoruz.
-    */
+
     padding: 70px 20px 40px;
 }
 
 
-/*
-    Politika Oluşturucu sayfasının ana başlığı.
-*/
 .policy-builder-header h1 {
 
     font-size: 42px;
@@ -2660,19 +1988,12 @@ body {
 }
 
 
-/*
-    Ana başlığın altındaki açıklama.
-*/
 .policy-builder-header > p:last-child {
 
-    /*
-        Açıklamanın çok genişlemesini engelliyoruz.
-    */
+
     max-width: 750px;
 
-    /*
-        Sağ ve sol auto değeriyle ortalıyoruz.
-    */
+
     margin: 0 auto;
 
     font-size: 17px;
@@ -2683,35 +2004,17 @@ body {
 }
 
 
-/*
-    =====================================================
-    LAB 02 - POLİTİKA OLUŞTURUCU FORMU
-    =====================================================
-*/
+/* Politika oluşturucu form alanları */
 
-
-/*
-    Politika adı için kullandığımız
-    metin kutusunun görünümü.
-*/
 .form-group input {
 
-    /*
-        Form kartının kullanılabilir bütün
-        genişliğini kaplar.
-    */
+
     width: 100%;
 
-    /*
-        Kutunun içindeki yazıyla kenarlar
-        arasında boşluk oluşturur.
-    */
+
     padding: 13px 14px;
 
-    /*
-        LAB 01 seçim kutularıyla aynı
-        koyu arka plan rengini kullanıyoruz.
-    */
+
     background-color: #101f34;
 
     color: white;
@@ -2724,10 +2027,6 @@ body {
 }
 
 
-/*
-    Kullanıcı input alanına tıkladığında
-    kenarlığı mavi hale getiriyoruz.
-*/
 .form-group input:focus {
 
     outline: none;
@@ -2736,9 +2035,6 @@ body {
 }
 
 
-/*
-    Politika oluşturma butonu.
-*/
 #create-policy-button {
 
     width: 100%;
@@ -2749,26 +2045,14 @@ body {
 }
 
 
-/*
-    Mouse butonun üzerine geldiğinde.
-*/
 #create-policy-button:hover {
 
     background-color: #1d4ed8;
 }
 
 
-/*
-    =====================================================
-    LAB 02 - OLUŞTURULAN POLİTİKA KARTI
-    =====================================================
-*/
+/* Oluşturulan politika kartı */
 
-
-/*
-    JavaScript tarafından oluşturulan
-    politika kartının ana görünümü.
-*/
 .created-policy-card {
 
     margin-top: 30px;
@@ -2783,9 +2067,6 @@ body {
 }
 
 
-/*
-    "OLUŞTURULAN POLİTİKA" küçük etiketi.
-*/
 .created-policy-label {
 
     margin: 0;
@@ -2800,9 +2081,6 @@ body {
 }
 
 
-/*
-    Kullanıcının verdiği politika adı.
-*/
 .created-policy-card h3 {
 
     margin-top: 10px;
@@ -2815,10 +2093,6 @@ body {
 }
 
 
-/*
-    Politikanın MFA ve cihaz koşullarının
-    bulunduğu bölüm.
-*/
 .policy-conditions {
 
     margin-top: 20px;
@@ -2849,9 +2123,6 @@ body {
 }
 
 
-/*
-    Politika kararının bulunduğu bölüm.
-*/
 .policy-decision {
 
     margin-top: 20px;
@@ -2873,7 +2144,7 @@ body {
     font-size: 17px;
 }
 
-/* LAB 02 - Seçenekleri sıfırlama butonu */
+
 #reset-policy-button {
     margin-top: 10px;
     padding: 12px 20px;
@@ -2885,7 +2156,7 @@ body {
     font-size: 15px;
 }
 
-/* Fare butonun üzerine geldiğinde görünümü değiştirir. */
+
 #reset-policy-button:hover {
     background-color: #334155;
 }
@@ -2895,71 +2166,48 @@ body {
    LAB 03 - ERİŞİM SENARYOLARI
    ===================================================== */
 
-
-/*
-    LAB 03 sayfasının genel alanı.
-*/
 .access-scenarios-page {
     padding-bottom: 80px;
 }
 
 
-/*
-    LAB 03 üst başlık alanı.
-*/
 .access-scenarios-header {
     text-align: center;
     padding: 70px 20px 50px;
 }
 
 
-/*
-    LAB 03 ana başlığı.
-*/
 .access-scenarios-header h1 {
     font-size: 42px;
     margin: 10px 0;
 }
 
 
-/*
-    Başlığın altındaki açıklama.
-*/
 .access-scenarios-header > p:last-child {
     color: #aebbd0;
     font-size: 18px;
 }
 
 
-/*
-    Senaryoların bulunduğu ana alan.
-*/
+/* Senaryo listesi */
+
 .access-scenario-container {
 
     max-width: 900px;
 
-    /*
-        margin: 0 auto;
-        alanı yatay olarak ortalar.
-    */
+
     margin: 50px auto 0;
 
     padding: 0 30px;
 }
 
 
-/*
-    Senaryo alanının ana başlığı.
-*/
 .access-scenario-container > h2 {
     font-size: 30px;
     margin-top: 10px;
 }
 
 
-/*
-    Her bir erişim senaryosunun kartı.
-*/
 .access-scenario-card {
 
     background-color: #0d1b2e;
@@ -2976,9 +2224,6 @@ body {
 }
 
 
-/*
-    SENARYO 01 gibi küçük etiketi.
-*/
 .scenario-number {
 
     color: #4da3ff;
@@ -2991,9 +2236,6 @@ body {
 }
 
 
-/*
-    Senaryo başlığı.
-*/
 .access-scenario-card h3 {
 
     font-size: 26px;
@@ -3002,9 +2244,6 @@ body {
 }
 
 
-/*
-    Senaryonun kısa açıklaması.
-*/
 .scenario-description {
 
     font-size: 17px;
@@ -3013,10 +2252,8 @@ body {
 }
 
 
-/*
-    Kullanıcı, MFA, cihaz, kaynak ve risk
-    bilgilerinin bulunduğu alan.
-*/
+/* Senaryo bilgileri */
+
 .scenario-details {
 
     background-color: #091522;
@@ -3031,9 +2268,6 @@ body {
 }
 
 
-/*
-    Senaryo bilgilerindeki paragraflar.
-*/
 .scenario-details p {
 
     font-size: 16px;
@@ -3042,9 +2276,6 @@ body {
 }
 
 
-/*
-    Kullanıcının karar vereceği bölüm.
-*/
 .scenario-question {
 
     margin-top: 25px;
@@ -3055,9 +2286,6 @@ body {
 }
 
 
-/*
-    Soru başlığı.
-*/
 .scenario-question h4 {
 
     font-size: 19px;
@@ -3066,9 +2294,8 @@ body {
 }
 
 
-/*
-    ALLOW ve DENY butonlarını yan yana getiren alan.
-*/
+/* ALLOW / DENY karar butonları */
+
 .scenario-buttons {
 
     display: flex;
@@ -3077,9 +2304,6 @@ body {
 }
 
 
-/*
-    Senaryo butonları.
-*/
 .scenario-buttons button {
 
     flex: 1;
@@ -3090,16 +2314,8 @@ body {
 }
 
 
-/*
-    =====================================================
-    LAB 03 - SENARYO SONUÇLARINI SIFIRLAMA
-    =====================================================
-*/
+/* Senaryo sonuçlarını sıfırlama */
 
-
-/*
-    Sıfırlama butonunun bulunduğu alan.
-*/
 .scenario-reset-area {
 
     text-align: center;
@@ -3108,9 +2324,6 @@ body {
 }
 
 
-/*
-    Sıfırlama butonu.
-*/
 .scenario-reset-area button {
 
     background-color: transparent;
@@ -3129,10 +2342,6 @@ body {
 }
 
 
-/*
-    Mouse butonun üzerine geldiğinde
-    arka plan rengini değiştiriyoruz.
-*/
 .scenario-reset-area button:hover {
 
     background-color: #2563eb;
@@ -3140,24 +2349,16 @@ body {
     color: white;
 }
 
-/*
-    =====================================================
-    OYUNLAR SAYFASI
-    =====================================================
-*/
 
+/* =====================================================
+   OYUNLAR SAYFASI
+   ===================================================== */
 
-/*
-    Oyunlar sayfasının genel alanı.
-*/
 .games-page {
     padding-bottom: 80px;
 }
 
 
-/*
-    Oyunlar sayfasının üst başlık bölümü.
-*/
 .games-header {
 
     text-align: center;
@@ -3166,9 +2367,6 @@ body {
 }
 
 
-/*
-    Ana başlık.
-*/
 .games-header h1 {
 
     font-size: 42px;
@@ -3177,9 +2375,6 @@ body {
 }
 
 
-/*
-    Başlığın altındaki açıklama.
-*/
 .games-header > p:last-child {
 
     max-width: 700px;
@@ -3194,9 +2389,8 @@ body {
 }
 
 
-/*
-    Üç oyun kartının bulunduğu alan.
-*/
+/* Oyun kartları */
+
 .game-cards {
 
     display: flex;
@@ -3213,9 +2407,6 @@ body {
 }
 
 
-/*
-    Her oyun için kullanılan kart.
-*/
 .game-card {
 
     width: 340px;
@@ -3234,10 +2425,6 @@ body {
 }
 
 
-/*
-    Mouse kartın üzerine geldiğinde
-    kart biraz yukarı hareket eder.
-*/
 .game-card:hover {
 
     transform: translateY(-8px);
@@ -3246,9 +2433,6 @@ body {
 }
 
 
-/*
-    Kartın üstündeki emoji / ikon.
-*/
 .game-icon {
 
     font-size: 35px;
@@ -3257,9 +2441,6 @@ body {
 }
 
 
-/*
-    OYUN 01 gibi küçük etiket.
-*/
 .game-label {
 
     color: #4da3ff;
@@ -3272,9 +2453,6 @@ body {
 }
 
 
-/*
-    Oyun kartının başlığı.
-*/
 .game-card h2 {
 
     font-size: 23px;
@@ -3283,9 +2461,6 @@ body {
 }
 
 
-/*
-    Oyun açıklaması.
-*/
 .game-card p {
 
     font-size: 16px;
@@ -3294,9 +2469,6 @@ body {
 }
 
 
-/*
-    Oyun başlatma butonları.
-*/
 .game-card button {
 
     margin-top: 15px;
@@ -3308,43 +2480,28 @@ body {
     font-size: 15px;
 }
 
+
 /* =====================================================
    OYUN 01 - ZERO TRUST BİLGİ TESTİ
    ===================================================== */
 
-
-/*
-    Quiz sayfasının ana alanı.
-
-    padding-bottom:
-    Sayfanın alt kısmında boşluk bırakır.
-*/
 .quiz-page {
     padding-bottom: 80px;
 }
 
 
-/*
-    Quiz sayfasının üst başlık alanı.
-*/
 .quiz-header {
     text-align: center;
     padding: 70px 20px 40px;
 }
 
 
-/*
-    Quiz ana başlığının boyutu.
-*/
 .quiz-header h1 {
     font-size: 42px;
     margin: 10px 0;
 }
 
 
-/*
-    Başlığın altındaki açıklama metni.
-*/
 .quiz-header > p:last-child {
     max-width: 650px;
     margin: 0 auto;
@@ -3353,102 +2510,54 @@ body {
 }
 
 
-/* =====================================================
-   QUIZ KARTI
-   ===================================================== */
+/* Quiz alanı */
 
-
-/*
-    Sorunun ve cevapların bulunduğu ana kart.
-*/
 .quiz-container {
 
-    /*
-        Kartın çok fazla genişlemesini engeller.
-    */
+
     max-width: 800px;
 
-    /*
-        Kartı yatay olarak ortalar.
-    */
+
     margin: 0 auto;
 
-    /*
-        Kartın iç kısmında boşluk bırakır.
-    */
+
     padding: 35px;
 
-    /*
-        Koyu kart arka planı.
-    */
+
     background-color: #0d1b2e;
 
-    /*
-        Kartın çevresindeki ince çerçeve.
-    */
+
     border: 1px solid #1d3553;
 
-    /*
-        Kart köşelerini yuvarlatır.
-    */
+
     border-radius: 14px;
 
-    /*
-        Kart içindeki yazıları sola hizalar.
-    */
+
     text-align: left;
 }
 
 
-/* =====================================================
-   SORU NUMARASI VE SKOR
-   ===================================================== */
-
-
-/*
-    Soru numarası ile skoru aynı satırda gösteriyoruz.
-*/
 .quiz-status {
 
-    /*
-        Flexbox:
-        Elemanları düzenli şekilde yan yana yerleştirmemizi sağlar.
-    */
+
     display: flex;
 
-    /*
-        İlk elemanı sola,
-        ikinci elemanı sağa gönderir.
-    */
+
     justify-content: space-between;
 
-    /*
-        Dikey olarak aynı hizaya getirir.
-    */
+
     align-items: center;
 
-    /*
-        Soru ile arasında boşluk bırakır.
-    */
+
     margin-bottom: 30px;
 
-    /*
-        Yazıyı belirginleştirir.
-    */
+
     font-weight: bold;
 
     color: #4da3ff;
 }
 
 
-/* =====================================================
-   SORU
-   ===================================================== */
-
-
-/*
-    Quiz sorusunun görünümü.
-*/
 #quiz-question {
 
     font-size: 26px;
@@ -3459,38 +2568,23 @@ body {
 }
 
 
-/* =====================================================
-   CEVAP BUTONLARI
-   ===================================================== */
+/* Quiz cevap butonları */
 
-
-/*
-    Cevap butonlarını tutan alan.
-*/
 .quiz-answers {
 
-    /*
-        Cevapları dikey olarak alt alta sıralıyoruz.
-    */
+
     display: flex;
 
     flex-direction: column;
 
-    /*
-        Butonların arasında boşluk bırakır.
-    */
+
     gap: 15px;
 }
 
 
-/*
-    Yalnızca quiz cevap butonlarını etkiler.
-*/
 .quiz-answers button {
 
-    /*
-        Yazıları sola hizalıyoruz.
-    */
+
     text-align: left;
 
     padding: 16px 20px;
@@ -3507,40 +2601,22 @@ body {
 
     cursor: pointer;
 
-    /*
-        Hover efektinin daha yumuşak
-        görünmesini sağlar.
-    */
+
     transition: 0.2s;
 }
 
 
-/*
-    Kullanıcı cevap seçeneğinin üzerine
-    mouse ile geldiğinde.
-*/
 .quiz-answers button:hover {
 
     border-color: #4da3ff;
 
     background-color: #142a46;
 
-    /*
-        Butonu çok hafif sağa kaydırır.
-    */
+
     transform: translateX(4px);
 }
 
 
-/* =====================================================
-   OYUNLAR SAYFASI - OYUN BUTONU
-   ===================================================== */
-
-
-/*
-    games.html içinde <button> yerine <a> kullandığımız
-    Quiz'i Başlat bağlantısının buton gibi görünmesini sağlar.
-*/
 .game-button {
 
     display: inline-block;
@@ -3563,31 +2639,17 @@ body {
 }
 
 
-/*
-    Mouse bağlantının üzerine geldiğinde.
-*/
 .game-button:hover {
 
     background-color: #1d4ed8;
 }
 
-/* =====================================================
-   QUIZ SONUÇ MESAJLARI
-   ===================================================== */
 
-
-/*
-    Doğru veya yanlış cevap sonrasında
-    gösterilecek sonuç kutusunun ortak görünümü.
-*/
 #quiz-result {
     margin-top: 25px;
 }
 
 
-/*
-    Sonuç kutusunun temel tasarımı.
-*/
 #quiz-result .result {
     padding: 18px 20px;
     border-radius: 10px;
@@ -3595,50 +2657,29 @@ body {
 }
 
 
-/*
-    Doğru cevap kutusu.
-*/
 #quiz-result .correct {
     background-color: rgba(34, 197, 94, 0.12);
     border: 1px solid #22c55e;
 }
 
 
-/*
-    Yanlış cevap kutusu.
-*/
 #quiz-result .wrong {
     background-color: rgba(239, 68, 68, 0.12);
     border: 1px solid #ef4444;
 }
 
 
-/*
-    Sonuç başlığını biraz daha belirgin yapar.
-*/
 #quiz-result strong {
     font-size: 18px;
 }
 
 
-/*
-    Sonuç açıklamasının alt boşluğunu kaldırır.
-*/
 #quiz-result p {
     margin-bottom: 0;
     font-size: 16px;
 }
 
-/* =====================================================
-   QUIZ - SONRAKİ SORU BUTONU
-   ===================================================== */
 
-
-/*
-    Sonraki Soru / Sonucu Gör butonu.
-
-    Başlangıçta gizlidir.
-*/
 #next-question-button {
     display: none;
 
@@ -3660,39 +2701,20 @@ body {
 }
 
 
-/*
-    JavaScript "show" sınıfını eklediğinde
-    buton görünür olur.
-*/
 #next-question-button.show {
     display: inline-block;
 }
 
 
-/*
-    Mouse butonun üzerine geldiğinde
-    biraz daha koyu görünür.
-*/
 #next-question-button:hover {
     background-color: #1d4ed8;
 }
 
-/* =====================================================
-   QUIZ BİTİŞ EKRANI
-   ===================================================== */
 
-
-/*
-    Quiz tamamlandığında gösterilen
-    final sonuç kartı.
-*/
 .quiz-final-result {
     text-align: center;
 
-    /*
-        Kartın üst-alt ve sağ-sol iç boşluğunu artırıyoruz.
-        Böylece içerik dip dibe görünmez.
-    */
+
     padding: 40px 35px;
 
     background-color: #101f34;
@@ -3701,16 +2723,11 @@ body {
 
     border-radius: 12px;
 
-    /*
-        Sonuç kartını üst bölümden biraz ayırıyoruz.
-    */
+
     margin-top: 30px;
 }
 
 
-/*
-    Kullanıcının 5 üzerinden aldığı skor.
-*/
 .quiz-final-result h2 {
     margin: 0 0 20px;
 
@@ -3720,16 +2737,10 @@ body {
 }
 
 
-/*
-    Sonuç açıklaması.
-*/
 .quiz-final-result p {
     max-width: 600px;
 
-    /*
-        Açıklamayı ortalıyoruz ve
-        butonla arasına daha fazla boşluk koyuyoruz.
-    */
+
     margin: 0 auto 30px;
 
     font-size: 17px;
@@ -3738,9 +2749,6 @@ body {
 }
 
 
-/*
-    Quiz'i Tekrar Başlat butonu.
-*/
 .quiz-final-result button {
     margin-top: 5px;
 
@@ -3749,12 +2757,6 @@ body {
     font-size: 16px;
 }
 
-
-/*
-    =====================================================
-    OYUN 02 - ANA EŞLEŞTİRME ALANI
-    =====================================================
-*/
 
 .matching-header {
 
@@ -3782,154 +2784,85 @@ body {
 }
 
 
+/* =====================================================
+   OYUN 02 - BİLEŞENLERİ EŞLEŞTİR
+   ===================================================== */
+
 .matching-game-container {
 
-    /*
-        Grid kullanarak oyun alanını
-        iki sütuna ayırıyoruz.
-    */
+
     display: grid;
 
-    /*
-        İki eşit genişlikte sütun oluşturuyoruz.
 
-        1fr = kullanılabilir alanın bir parçası.
-        1fr 1fr = alanı iki eşit parçaya böl.
-    */
     grid-template-columns: 1fr 1fr;
 
-    /*
-        Bileşenler ile görevler arasındaki boşluk.
-    */
+
     gap: 40px;
 
-    /*
-        Oyun alanının aşırı genişlemesini engelliyoruz.
-    */
+
     max-width: 1100px;
 
-    /*
-        Alanı sayfanın ortasına getiriyoruz.
-    */
+
     margin: 0 auto;
 
-    /*
-        Kenarlardan ve alttan boşluk.
-    */
+
      padding: 20px 40px 80px;
 }
 
 
-/*
-    =====================================================
-    OYUN 02 - BİLEŞEN KARTLARI
-    =====================================================
-*/
-
-
-/*
-    Sürüklenecek bileşen kartlarının görünümü.
-*/
 .matching-card {
 
-    /*
-        Koyu kart arka planı.
-    */
+
     background-color: #0d1b2e;
 
-    /*
-        Kartın etrafına ince çerçeve ekliyoruz.
-    */
+
     border: 1px solid #2563eb;
 
-    /*
-        Köşeleri yuvarlatıyoruz.
-    */
+
     border-radius: 10px;
 
-    /*
-        Kartın içindeki yazı ile kenarlar
-        arasında boşluk bırakıyoruz.
-    */
+
     padding: 20px;
 
-    /*
-        Kartların birbirine yapışmasını engeller.
-    */
+
     margin-bottom: 15px;
 
-    /*
-        Yazıyı ortalıyoruz.
-    */
+
     text-align: center;
 }
 
 
-/*
-    =====================================================
-    OYUN 02 - BIRAKMA ALANLARI
-    =====================================================
-*/
-
-
-/*
-    Kullanıcının bileşenleri bırakacağı alanlar.
-*/
 .matching-drop-zone {
 
-    /*
-        Bırakma alanını kartlardan biraz farklı
-        göstermek için daha koyu arka plan kullanıyoruz.
-    */
+
     background-color: #0b1729;
 
-    /*
-        Kesikli çerçeve, buranın bir bırakma alanı
-        olduğunu görsel olarak anlatır.
-    */
+
     border: 2px dashed #4da3ff;
 
-    /*
-        Köşeleri yuvarlatıyoruz.
-    */
+
     border-radius: 10px;
 
-    /*
-        İçeride boşluk oluşturuyoruz.
-    */
+
     padding: 20px;
 
-    /*
-        Alanların birbirine yapışmasını engelliyoruz.
-    */
+
    margin-bottom: 30px;
 
-    /*
-        Bırakma alanlarının çok küçük görünmesini engeller.
-    */
+
     min-height: 90px;
 
-    /*
-        İçeriği dikey olarak daha dengeli göstermek için.
-    */
+
     display: flex;
 
-    /*
-        İçeriği dikey eksende ortalar.
-    */
+
     align-items: center;
 
-    /*
-        İçeriği yatay eksende ortalar.
-    */
+
     justify-content: center;
 }
 
 
-
-/*
-    Bileşenler ve Görevler başlıkları.
-*/
 .matching-components h3,
 .matching-tasks h3 {
 
@@ -3941,31 +2874,18 @@ body {
 }
 
 
-
-/*
-    Kart bir bırakma alanının üzerine geldiğinde
-    alanı görsel olarak vurguluyoruz.
-*/
 .matching-drop-zone.drag-over {
 
     border-color: #60a5fa;
 
     background-color: #10294a;
 
-    /*
-        Alanı çok hafif büyüterek
-        kullanıcıya görsel geri bildirim veriyoruz.
-    */
+
     transform: scale(1.02);
 
 }
 
 
-
-
-/*
-    Kart sürüklenirken kullanılan görünüm.
-*/
 .matching-card.dragging {
 
     opacity: 0.85;
@@ -3973,10 +2893,6 @@ body {
 }
 
 
-/*
-    Sürükleme sırasında görünen
-    özel küçük kart.
-*/
 .custom-drag-image {
 
     position: absolute;
@@ -4002,119 +2918,71 @@ body {
     white-space: nowrap;
 }
 
-/*
-    Doğru eşleşmeden sonra görev kutusunun içindeki
-    görev metni ve bileşen kartını alt alta düzenliyoruz.
-*/
+
 .matching-drop-zone.correct-match {
 
-    /*
-        İçerikleri alt alta göstermek için flex kullanıyoruz.
-    */
+
     display: flex;
 
-    /*
-        Elemanları dikey sıraya koyuyoruz.
-    */
+
     flex-direction: column;
 
-    /*
-        İçerikler arasına boşluk ekliyoruz.
-    */
+
     gap: 15px;
 
-    /*
-        İçeriği ortalıyoruz.
-    */
+
     align-items: center;
 
-    /*
-        Dikey ortalamayı koruyoruz.
-    */
+
     justify-content: center;
 
-    /*
-        Doğru eşleşme görünümü.
-    */
+
     border: 2px solid #22c55e;
 
     background-color: #0f2a22;
 }
 
 
-/*
-    Doğru eşleşmeden sonra görev kutusunun içine
-    taşınan bileşen kartının görünümü.
-*/
 .matching-drop-zone .matching-card {
 
-    /*
-        Kutunun tamamını kaplamasını sağlıyoruz.
-    */
+
     width: 100%;
 
-    /*
-        Alt boşluğu kaldırıyoruz.
-        Çünkü artık eski listedeki gibi kartlar
-        alt alta durmuyor.
-    */
+
     margin-bottom: 0;
 
-    /*
-        Doğru eşleşmede yeşil tonlu çerçeve kullanıyoruz.
-    */
+
     border-color: #22c55e;
 
-    /*
-        Biraz daha kompakt görünmesi için.
-    */
+
     padding: 14px;
 }
 
-/*
-    Görev kutusundaki açıklama metni.
-*/
+
 .matching-drop-zone > p {
 
-    /*
-        Varsayılan paragraf boşluğunu azaltıyoruz.
-    */
+
     margin: 0;
 
-    /*
-        Metni ortalıyoruz.
-    */
+
     text-align: center;
 
-    /*
-        Okunabilirlik.
-    */
+
     line-height: 1.5;
 
     font-size: 17px;
 }
 
 
-/*
-    =====================================================
-    OYUN 02 - YANLIŞ EŞLEŞTİRME
-    =====================================================
-*/
-
 .matching-drop-zone.wrong-match {
 
-    /*
-        Yanlış görev kutusunu kırmızı yapıyoruz.
-    */
+
     border: 2px solid #ef4444;
 
     background-color: #2a1218;
 }
 
 
-/*
-    Yanlış eşleştirme mesajının görünümü.
-*/
 #matching-result-1 .result.wrong,
 #matching-result-2 .result.wrong,
 #matching-result-3 .result.wrong {
@@ -4133,18 +3001,6 @@ body {
 }
 
 
-/*
-    =====================================================
-    OYUN 02 - SONUÇ ALANLARI ARASI BOŞLUK
-    =====================================================
-*/
-
-/*
-    Her görevin altındaki doğru / yanlış sonuç alanına
-    alttan boşluk veriyoruz.
-
-    Böylece mesaj kutusu bir sonraki göreve yapışmaz.
-*/
 #matching-result-1,
 #matching-result-2,
 #matching-result-3 {
@@ -4152,20 +3008,9 @@ body {
     margin-bottom: 30px;
 }
 
-/*
-    =====================================================
-    OYUN 02 - OYUN REHBER KARTI
-    =====================================================
-*/
 
-/* =====================================================
-   OYUN 02 - NASIL OYNANIR REHBERİ
-   ===================================================== */
+/* Oyun kullanım rehberi */
 
-
-/*
-    Rehberin ana kartı.
-*/
 .matching-game-info {
 
     max-width: 950px;
@@ -4222,10 +3067,7 @@ body {
 
     flex: 1;
 
-    /*
-        Önceki 155px değerini kaldırıyoruz.
-        Kartların gereksiz yere uzun olmasını engeller.
-    */
+
     min-height: 115px;
 
     padding: 14px;
@@ -4261,10 +3103,7 @@ body {
     font-size: 22px;
 }
 
-/*
-    OYUN 02 sonuç mesajlarını daha kompakt yapıyoruz.
-    Böylece sayfa gereksiz yere fazla uzamaz.
-*/
+
 #matching-result-1 .result,
 #matching-result-2 .result,
 #matching-result-3 .result {
@@ -4278,10 +3117,6 @@ body {
 }
 
 
-/*
-    Sonuç mesajlarının içindeki açıklamayı
-    biraz küçültüyoruz.
-*/
 #matching-result-1 .result p,
 #matching-result-2 .result p,
 #matching-result-3 .result p {
@@ -4295,19 +3130,12 @@ body {
 }
 
 
-/*
-    Görevler arasında yeterli boşluk bırakıyoruz
-    ama sayfayı gereksiz yere uzatmıyoruz.
-*/
 .matching-drop-zone {
 
     margin-bottom: 18px;
 }
 
 
-/*
-    Sonuç alanının altında da küçük bir boşluk.
-*/
 #matching-result-1,
 #matching-result-2,
 #matching-result-3 {
@@ -4316,40 +3144,22 @@ body {
 }
 
 
-
-/* =====================================================
-   OYUN 02 - TEKRAR BAŞLAT ALANI
-   ===================================================== */
-
-
-/*
-    Tekrar başlat butonunun bulunduğu alan.
-*/
 .matching-restart-area {
 
-    /*
-        Butonu yatay olarak ortalıyoruz.
-    */
+
     display: flex;
 
     justify-content: center;
 
     align-items: center;
 
-    /*
-        Oyun alanına çok uzak olmamasını sağlıyoruz.
-    */
+
     margin: 5px 0 15px;
 
     min-height: 50px;
 }
 
 
-/*
-    Oyun başlangıcında buton görünmez.
-    JavaScript üç görevde eşleştirme yapıldığında
-    display değerini block olarak değiştirecek.
-*/
 #matching-restart-button {
 
     display: none;
@@ -4372,32 +3182,15 @@ body {
 }
 
 
-/*
-    Fare butonun üzerine geldiğinde
-    biraz daha koyu görünmesini sağlıyoruz.
-*/
 #matching-restart-button:hover {
 
     background-color: #1d4ed8;
 }
 
-/*
-    =====================================================
-    ANA SAYFA - KART BAĞLANTI BUTONLARI
-    =====================================================
-*/
 
-/*
-    Derslere Git, Lab'a Git ve Oyunlara Git
-    bağlantılarını buton görünümüne getiriyoruz.
-*/
 .card-button {
 
-    /*
-        <a> etiketi normalde satır içi bir elemandır.
-        inline-block sayesinde padding ve buton
-        görünümü daha düzgün çalışır.
-    */
+
     display: inline-block;
 
     margin-top: 15px;
@@ -4412,9 +3205,7 @@ body {
 
     border-radius: 7px;
 
-    /*
-        Linklerin varsayılan alt çizgisini kaldırıyoruz.
-    */
+
     text-decoration: none;
 
     font-size: 15px;
@@ -4425,10 +3216,6 @@ body {
 }
 
 
-/*
-    Fare butonun üzerine geldiğinde
-    arka planı mavi yapıyoruz.
-*/
 .card-button:hover {
 
     background-color: #2563eb;
@@ -4436,11 +3223,11 @@ body {
     color: white;
 }
 
+
 /* =====================================================
    OYUN 03 - ERİŞİM AKIŞINI SIRALA
    ===================================================== */
 
-/* Oyun 03 sayfasının genel alanı */
 .access-flow-page {
     max-width: 1100px;
     margin: 0 auto;
@@ -4448,7 +3235,6 @@ body {
 }
 
 
-/* Sayfa başlığı */
 .access-flow-header {
     text-align: center;
     margin-bottom: 30px;
@@ -4465,10 +3251,6 @@ body {
     line-height: 1.6;
 }
 
-
-/* =====================================================
-   NASIL OYNANIR ALANI
-   ===================================================== */
 
 .access-flow-guide {
     max-width: 850px;
@@ -4495,10 +3277,6 @@ body {
     line-height: 1.6;
 }
 
-
-/* =====================================================
-   ANA OYUN KARTI
-   ===================================================== */
 
 .access-flow-game {
     max-width: 850px;
@@ -4534,26 +3312,19 @@ body {
 }
 
 
-/* =====================================================
-   ERİŞİM ADIMLARI
-   ===================================================== */
+/* Sıralanabilir erişim kartları */
 
 .access-flow-list {
     display: flex;
 
-    /*
-        Kartları dikey olarak alt alta dizer.
-    */
+
     flex-direction: column;
 
-    /*
-        Kartların arasına boşluk bırakır.
-    */
+
     gap: 14px;
 }
 
 
-/* Her bir erişim adımı */
 .access-flow-card {
     position: relative;
 
@@ -4570,20 +3341,16 @@ body {
 }
 
 
-/* Kartın üzerine gelindiğinde */
 .access-flow-card:hover {
     border-color: #4da3ff;
 
-    /*
-        Kartı çok hafif sağa hareket ettiriyoruz.
-    */
+
     transform: translateX(4px);
 
     background-color: #10233b;
 }
 
 
-/* Kart başlığı */
 .access-flow-card strong {
     display: block;
 
@@ -4595,7 +3362,6 @@ body {
 }
 
 
-/* Kart açıklaması */
 .access-flow-card p {
     margin: 0;
 
@@ -4606,26 +3372,16 @@ body {
     color: #aebbd0;
 }
 
-/* =====================================================
-   OYUN 03 - SÜRÜKLEME GÖSTERGESİ
-   ===================================================== */
 
-/*
-    Kartın sol tarafındaki ↕ simgesini küçük bir kontrol kutusu gibi gösteriyoruz.
-*/
 .access-flow-drag-icon {
 
-    /*
-        Kartın içine göre konumlandıracağız.
-    */
+
     position: absolute;
 
     left: 18px;
     top: 50%;
 
-    /*
-        Simgeyi dikey olarak tam ortaya getirir.
-    */
+
     transform: translateY(-50%);
 
     width: 34px;
@@ -4647,34 +3403,21 @@ body {
 }
 
 
-/* Kart sürüklenirken kullanılan görünüm */
 .access-flow-card.access-flow-dragging {
 
-    /*
-        Kartı hafif şeffaf yapıyoruz.
-    */
+
     opacity: 0.55;
 
-    /*
-        Sürükleme sırasında biraz küçültüyoruz.
-    */
+
     transform: scale(0.98);
 
-    /*
-        Tutulmuş olduğunu belli etmek için
-        imleci değiştiriyoruz.
-    */
+
     cursor: grabbing;
 }
 
-/* =====================================================
-   OYUN 03 - DOĞRU / YANLIŞ KART GÖRÜNÜMÜ
-   ===================================================== */
 
+/* Doğru / yanlış kart durumları */
 
-/*
-    Doğru konumda bulunan erişim adımı.
-*/
 .access-flow-card.access-flow-correct {
 
     border-color: #22c55e;
@@ -4683,10 +3426,6 @@ body {
 }
 
 
-/*
-    Doğru kartın sürükleme simgesini de
-    yeşil tonlara getiriyoruz.
-*/
 .access-flow-card.access-flow-correct
 .access-flow-drag-icon {
 
@@ -4698,9 +3437,6 @@ body {
 }
 
 
-/*
-    Yanlış konumda bulunan erişim adımı.
-*/
 .access-flow-card.access-flow-wrong {
 
     border-color: #ef4444;
@@ -4709,9 +3445,6 @@ body {
 }
 
 
-/*
-    Yanlış kartın sürükleme simgesi.
-*/
 .access-flow-card.access-flow-wrong
 .access-flow-drag-icon {
 
@@ -4722,9 +3455,8 @@ body {
     background-color: #35151c;
 }
 
-/* =====================================================
-   OYUN 03 - KONTROL BUTONLARI
-   ===================================================== */
+
+/* Kontrol ve karıştırma butonları */
 
 .access-flow-check-area {
 
@@ -4751,10 +3483,6 @@ body {
 }
 
 
-/*
-    Karıştır butonunu biraz daha
-    ikincil bir buton gibi gösteriyoruz.
-*/
 #access-flow-shuffle-button {
 
     background-color: transparent;
@@ -4770,9 +3498,8 @@ body {
     background-color: #14263d;
 }
 
-/* =====================================================
-   OYUN 03 - TEKRAR BAŞLAT BUTONU
-   ===================================================== */
+
+/* Oyunu tekrar başlatma */
 
 #access-flow-restart-button {
 
@@ -4803,14 +3530,17 @@ body {
     background-color: #1d4ed8;
 }
 
-/* Oyun başarıyla tamamlandığında  sürükleme simgesini biraz geri plana alıyoruz.
-*/
+
 .access-flow-card.access-flow-correct
 .access-flow-drag-icon {
 
     opacity: 0.65;
 }
 
+
+/* =====================================================
+   MOBİL NAVBAR
+   ===================================================== */
 
 @media (max-width: 768px) {
 
