@@ -4,16 +4,13 @@
 
 <head>
 
-    <!-- Türkçe karakterlerin düzgün görüntülenmesini sağlar -->
+   
     <meta charset="UTF-8">
 
-    <!-- Sayfanın mobil cihazlarda düzgün ölçeklenmesini sağlar -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Tarayıcı sekmesinde görünecek başlık -->
     <title>Erişim Senaryoları | Zero Trust Lab</title>
 
-    <!-- Projenin ortak CSS dosyasını bağlıyoruz -->
     <link rel="stylesheet" href="style.css">
 
 </head>
@@ -22,9 +19,7 @@
 <body>
 
 
-    <!-- =====================================================
-         ÜST MENÜ
-         ===================================================== -->
+    
 
     <header class="navbar">
 
@@ -53,16 +48,12 @@
 
 
 
-    <!-- =====================================================
-         LAB 03 ANA İÇERİĞİ
-         ===================================================== -->
+
 
     <main class="access-scenarios-page">
 
 
-        <!-- =================================================
-             SAYFA BAŞLIĞI
-             ================================================= -->
+        
 
         <section class="access-scenarios-header">
 
@@ -84,10 +75,6 @@
         </section>
 
 
-
-        <!-- =================================================
-             NASIL KULLANILIR?
-             ================================================= -->
 
         <section class="lab-guide">
 
@@ -112,7 +99,6 @@
             <div class="lab-guide-steps">
 
 
-                <!-- 1. ADIM -->
                 <div class="lab-guide-step">
 
                     <span class="guide-number">
@@ -133,7 +119,7 @@
 
 
 
-                <!-- 2. ADIM -->
+                
                 <div class="lab-guide-step">
 
                     <span class="guide-number">
@@ -153,7 +139,7 @@
 
 
 
-                <!-- 3. ADIM -->
+               
                 <div class="lab-guide-step">
 
                     <span class="guide-number">
@@ -178,9 +164,6 @@
 
 
 
-        <!-- =================================================
-             SENARYOLAR
-             ================================================= -->
 
         <section class="access-scenario-container">
 
@@ -202,35 +185,28 @@
 
 
             
-            <!-- =================================================
-     SENARYO 01 - NORMAL ÇALIŞAN ERİŞİMİ
-     ================================================= -->
+            <!-- SENARYO 01 - NORMAL ÇALIŞAN ERİŞİMİ  -->
 
 <div class="access-scenario-card">
 
-    <!-- Senaryonun numarası -->
+   
     <span class="scenario-number">
         SENARYO 01
     </span>
 
 
-    <!-- Senaryonun başlığı -->
+
     <h3>
         Normal Çalışan Erişimi
     </h3>
 
 
-    <!-- Kullanıcıya senaryonun kısa açıklamasını veriyoruz -->
     <p class="scenario-description">
         Bir çalışan, kurum tarafından yönetilen güvenli
         cihazından Dosya Sunucusuna erişmek istiyor.
     </p>
 
 
-    <!--
-        Senaryoya ait erişim koşullarını
-        ayrı bir alan içerisinde gösteriyoruz.
-    -->
     <div class="scenario-details">
 
 
@@ -267,7 +243,6 @@
     </div>
 
 
-    <!-- Kullanıcıdan erişim kararı vermesini istiyoruz -->
     <div class="scenario-question">
 
         <h4>
@@ -277,11 +252,8 @@
 
        <div class="scenario-buttons">
 
-    <!--
-        Kullanıcı ALLOW butonuna bastığında
-        senaryoBirKontrol() fonksiyonuna
-        "allow" değerini gönderiyoruz.
-    -->
+
+
     <button
         type="button"
         onclick="senaryoBirKontrol('allow')"
@@ -290,10 +262,7 @@
     </button>
 
 
-    <!--
-        Kullanıcı DENY butonuna bastığında
-        aynı fonksiyona "deny" değerini gönderiyoruz.
-    -->
+
     <button
         type="button"
         onclick="senaryoBirKontrol('deny')"
@@ -304,23 +273,19 @@
 </div>
 
 
-<!--
-    JavaScript tarafından oluşturulan
-    doğru / yanlış sonucu burada gösterilecek.
--->
+
+
+
 <div id="scenario-1-result"></div>
 
 
 </div>
-<!-- scenario-question burada kapanıyor -->
 
 
 </div>
-<!-- access-scenario-card burada kapanıyor -->
 
-<!-- =================================================
-     SENARYO 02 - GÜVENSİZ CİHAZDAN ERİŞİM
-     ================================================= -->
+
+<!-- SENARYO 02 - GÜVENSİZ CİHAZDAN ERİŞİM -->
 
 <div class="access-scenario-card">
 
@@ -396,18 +361,13 @@
     </div>
 
 
-    <!--
-        JavaScript sonucu buraya yazacak.
-    -->
     <div id="scenario-2-result"></div>
 
 
 </div>
-<!-- Senaryo 02 kartı burada kapanıyor -->
 
-<!-- =================================================
-     SENARYO 03 - YETKİSİZ YÖNETİM PANELİ ERİŞİMİ
-     ================================================= -->
+
+<!-- SENARYO 03 - YETKİSİZ YÖNETİM PANELİ ERİŞİMİ -->
 
 <div class="access-scenario-card">
 
@@ -483,27 +443,19 @@
     </div>
 
 
-    <!--
-        JavaScript sonucu buraya yazacak.
-    -->
     <div id="scenario-3-result"></div>
 
 
 </div>
-<!-- Senaryo 03 kartı burada kapanıyor -->
 
 
 
-<!-- =================================================
-     SENARYO SONUÇLARINI SIFIRLAMA
-     ================================================= -->
+
+
 
 <div class="scenario-reset-area">
 
-    <!--
-        Kullanıcı bu butona bastığında
-        üç senaryonun da sonuç alanı temizlenir.
-    -->
+   
     <button
         type="button"
         onclick="senaryoSonuclariniSifirla()"
@@ -522,7 +474,7 @@
 </main>
 
 
-    <!-- JavaScript dosyamızı bağlıyoruz -->
+    
     <script src="script.js"></script>
 
 

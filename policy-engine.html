@@ -4,16 +4,16 @@
 
 <head>
 
-    <!-- Türkçe karakterlerin düzgün görünmesini sağlar -->
+   
     <meta charset="UTF-8">
 
-    <!-- Mobil cihazlarda sayfanın düzgün ölçeklenmesini sağlar -->
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Tarayıcı sekmesinde görünen başlık -->
+    
     <title>Politika Motoru Simülatörü | Zero Trust Lab</title>
 
-    <!-- Mevcut ortak tasarım dosyamızı bağlıyoruz -->
+
     <link rel="stylesheet" href="style.css">
 
 </head>
@@ -21,12 +21,7 @@
 <body>
 
 
-    <!--
-        ÜST MENÜ
-
-        Diğer sayfalardaki navbar yapısını burada da
-        kullanıyoruz. Böylece site tasarımı tutarlı kalır.
-    -->
+  
     <header class="navbar">
 
         <div class="logo">
@@ -57,11 +52,11 @@
     </header>
 
 
-    <!-- Politika Motoru Simülatörünün ana içeriği -->
+
+
     <main class="policy-engine-page">
 
 
-        <!-- SAYFA BAŞLIĞI -->
         <section class="policy-engine-header">
 
             <p class="hero-label">
@@ -81,14 +76,12 @@
 
         </section>
 
-        <!--
-    =====================================================
-    LAB KULLANIM REHBERİ
-    =====================================================
+     
 
-    Kullanıcı simülatörü ilk açtığında
-    ne yapması gerektiğini burada açıklıyoruz.
--->
+
+
+
+
 <section class="lab-guide">
 
     <span class="lab-tool-label">
@@ -108,7 +101,9 @@
 
     <div class="lab-guide-steps">
 
-        <!-- 1. ADIM -->
+
+
+       
         <div class="lab-guide-step">
 
             <span class="guide-number">
@@ -128,7 +123,8 @@
         </div>
 
 
-        <!-- 2. ADIM -->
+
+
         <div class="lab-guide-step">
 
             <span class="guide-number">
@@ -148,7 +144,7 @@
         </div>
 
 
-        <!-- 3. ADIM -->
+        
         <div class="lab-guide-step">
 
             <span class="guide-number">
@@ -170,14 +166,10 @@
 
 </section>
 
-<!--
-    =====================================================
-    HAZIR TEST SENARYOLARI
-    =====================================================
 
-    Kullanıcı isterse formu tek tek doldurmak yerine
-    aşağıdaki hazır senaryolardan birini seçebilir.
--->
+<!--  HAZIR TEST SENARYOLARI -->
+
+
 <section class="preset-scenarios">
 
     <span class="lab-tool-label">
@@ -197,7 +189,6 @@
 
     <div class="preset-scenario-buttons">
 
-        <!-- Güvenli ve normal erişim örneği -->
         <button
             type="button"
             onclick="guvenliCalisanSenaryosu()"
@@ -206,7 +197,6 @@
         </button>
 
 
-        <!-- Çalışanın yetkisi olmayan kaynağa erişim örneği -->
         <button
             type="button"
             onclick="yetkisizYonetimSenaryosu()"
@@ -215,7 +205,7 @@
         </button>
 
 
-        <!-- Birden fazla güvenlik sorunu bulunan örnek -->
+       
         <button
             type="button"
             onclick="riskliHariciSenaryosu()"
@@ -228,14 +218,7 @@
 </section>
 
 
-        <!--
-    =====================================================
-    ERİŞİM İSTEĞİ FORMU
-    =====================================================
-
-    Kullanıcı Politika Motoruna gönderilecek
-    erişim koşullarını burada belirleyecek.
--->
+        
 <section class="simulator-container">
 
     <div class="simulator-form-card">
@@ -250,12 +233,7 @@
         </p>
 
 
-        <!--
-            FORM
-
-            Kullanıcıdan aldığımız bütün seçimleri
-            tek bir form içerisinde topluyoruz.
-        -->
+        
         <form id="policy-form">
 
 
@@ -285,7 +263,7 @@
             </div>
 
 
-            <!-- MFA DURUMU -->
+           
             <div class="form-group">
 
                 <label for="mfa-status">
@@ -306,92 +284,93 @@
 
             </div>
 
-            <!-- CİHAZ GÜVENLİĞİ -->
-<div class="form-group">
-
-    <label for="device-status">
-        Cihaz Güvenliği
-    </label>
-
-    <select id="device-status">
-
-        <option value="secure">
-            Güvenli
-        </option>
-
-        <option value="unsafe">
-            Güvenli Değil
-        </option>
-
-    </select>
-
-</div>
 
 
-<!-- ERİŞİLMEK İSTENEN KAYNAK -->
-<div class="form-group">
+           
+            <div class="form-group">
 
-    <label for="resource">
-        Erişilmek İstenen Kaynak
-    </label>
+                <label for="device-status">
+                    Cihaz Güvenliği
+                </label>
 
-    <select id="resource">
+                <select id="device-status">
 
-        <option value="intranet">
-            Kurum İçi Portal
-        </option>
+                    <option value="secure">
+                        Güvenli
+                    </option>
 
-        <option value="file-server">
-            Dosya Sunucusu
-        </option>
+                    <option value="unsafe">
+                        Güvenli Değil
+                    </option>
 
-        <option value="admin-panel">
-            Yönetim Paneli
-        </option>
+                </select>
 
-    </select>
-
-</div>
+            </div>
 
 
-<!-- RİSK SEVİYESİ -->
-<div class="form-group">
 
-    <label for="risk-level">
-        Risk Seviyesi
-    </label>
 
-    <select id="risk-level">
 
-        <option value="low">
-            Düşük
-        </option>
+            <div class="form-group">
 
-        <option value="medium">
-            Orta
-        </option>
+                <label for="resource">
+                    Erişilmek İstenen Kaynak
+                </label>
 
-        <option value="high">
-            Yüksek
-        </option>
+                <select id="resource">
 
-    </select>
+                    <option value="intranet">
+                        Kurum İçi Portal
+                    </option>
 
-   
-    <p class="form-help-text">
-        Bu değer, güvenlik sisteminin erişim isteği için
-        belirlediği örnek risk seviyesini temsil eder.
-    </p>
+                    <option value="file-server">
+                        Dosya Sunucusu
+                    </option>
 
-</div>
+                    <option value="admin-panel">
+                        Yönetim Paneli
+                    </option>
 
-<!--
-    Form işlemlerinde kullanacağımız
-    iki butonu aynı alanda topluyoruz.
--->
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="risk-level">
+                    Risk Seviyesi
+                </label>
+
+                <select id="risk-level">
+
+                    <option value="low">
+                        Düşük
+                    </option>
+
+                    <option value="medium">
+                        Orta
+                    </option>
+
+                    <option value="high">
+                        Yüksek
+                    </option>
+
+                </select>
+
+            
+                <p class="form-help-text">
+                    Bu değer, güvenlik sisteminin erişim isteği için
+                    belirlediği örnek risk seviyesini temsil eder.
+                </p>
+
+            </div>
+
+
+
 <div class="form-action-buttons">
 
-    <!-- Politika Motorunu çalıştırır -->
+    
     <button
         type="button"
         id="evaluate-button"
@@ -401,7 +380,7 @@
     </button>
 
 
-    <!-- Formu başlangıç durumuna döndürür -->
+    
     <button
         type="button"
         id="reset-button"
@@ -412,19 +391,13 @@
 
 </div>
 
-<!--
-    JavaScript tarafından oluşturulan
-    değerlendirme sonucu burada gösterilecek.
--->
+
 <div id="policy-result"></div>
 
         </form>
 
 
-        <!--
-    Simülatörde kullanacağımız kuralların
-    NIST'in zorunlu kuralları olmadığını açıkça belirtiyoruz.
--->
+
 <div class="simulator-note">
 
     <strong>
@@ -455,7 +428,6 @@
     </main>
 
 
-    <!-- JavaScript dosyamızı bağlıyoruz -->
     <script src="script.js"></script>
 
 </body>

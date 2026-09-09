@@ -4,16 +4,15 @@
 
 <head>
 
-    <!-- Türkçe karakterlerin düzgün görünmesini sağlar -->
+   
     <meta charset="UTF-8">
 
-    <!-- Mobil cihazlarda sayfanın düzgün ölçeklenmesini sağlar -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Tarayıcı sekmesinde görünecek başlık -->
+    
     <title>Politika Oluşturucu | Zero Trust Lab</title>
 
-    <!-- Ortak tasarım dosyamızı bağlıyoruz -->
+    
     <link rel="stylesheet" href="style.css">
 
 </head>
@@ -21,15 +20,8 @@
 <body>
 
 
-    <!--
-        =====================================================
-        ÜST MENÜ
-        =====================================================
-
-        Diğer sayfalardaki navbar yapısını burada da
-        kullanıyoruz. Böylece bütün site aynı tasarım
-        dilini koruyor.
-    -->
+   
+    
     <header class="navbar">
 
         <div class="logo">
@@ -56,19 +48,12 @@
     </header>
 
 
-    <!--
-        =====================================================
-        LAB 02 ANA İÇERİĞİ
-        =====================================================
-    -->
+   
+
+
     <main class="policy-builder-page">
 
 
-        <!--
-            =================================================
-            SAYFA BAŞLIĞI
-            =================================================
-        -->
         <section class="policy-builder-header">
 
             <p class="hero-label">
@@ -89,14 +74,9 @@
         </section>
 
 
-        <!--
-            =================================================
-            LAB KULLANIM REHBERİ
-            =================================================
+       
 
-            LAB 01'de kullandığımız rehber yapısını
-            burada tekrar kullanıyoruz.
-        -->
+
         <section class="lab-guide">
 
             <span class="lab-tool-label">
@@ -178,21 +158,13 @@
             </div>
 
         </section>
-        <!--
-    =====================================================
-    POLİTİKA OLUŞTURMA FORMU
-    =====================================================
 
-    Kullanıcı eğitim amaçlı erişim politikasının
-    koşullarını bu form üzerinden belirleyecek.
--->
+
+
+       
 <section class="simulator-container">
 
 
-    <!--
-        LAB 01'de kullandığımız form kartı
-        tasarımını burada tekrar kullanıyoruz.
-    -->
     <div class="simulator-form-card">
 
         <h2>
@@ -206,18 +178,12 @@
         </p>
 
 
-        <!--
-            Bütün politika alanlarını tek bir form
-            içerisinde topluyoruz.
-        -->
+        
+
         <form id="policy-builder-form">
 
 
-            <!--
-                =================================================
-                POLİTİKA ADI
-                =================================================
-            -->
+            
             <div class="form-group">
 
                 <label for="policy-name">
@@ -240,11 +206,9 @@
             </div>
 
 
-            <!--
-                =================================================
-                KULLANICI ROLÜ
-                =================================================
-            -->
+
+
+
             <div class="form-group">
 
                 <label for="builder-user-role">
@@ -270,11 +234,10 @@
             </div>
 
 
-            <!--
-                =================================================
-                KAYNAK
-                =================================================
-            -->
+            
+
+
+
             <div class="form-group">
 
                 <label for="builder-resource">
@@ -300,11 +263,9 @@
             </div>
 
 
-            <!--
-                =================================================
-                MFA GEREKSİNİMİ
-                =================================================
-            -->
+            
+
+
             <div class="form-group">
 
                 <label for="builder-mfa">
@@ -326,11 +287,8 @@
             </div>
 
 
-            <!--
-                =================================================
-                CİHAZ GEREKSİNİMİ
-                =================================================
-            -->
+
+
             <div class="form-group">
 
                 <label for="builder-device">
@@ -352,11 +310,9 @@
             </div>
 
 
-            <!--
-                =================================================
-                POLİTİKA KARARI
-                =================================================
-            -->
+            
+
+
             <div class="form-group">
 
                 <label for="builder-decision">
@@ -378,10 +334,9 @@
             </div>
 
 
-             <!--
-                Kullanıcı butona bastığında
-                politikaOlustur() JavaScript fonksiyonu çalışır.
-            -->
+             
+
+
             <button
                 type="button"
                 id="create-policy-button"
@@ -390,7 +345,9 @@
                 Politikayı Oluştur
             </button>
 
-            <!-- LAB 02 formundaki seçimleri başlangıç durumuna döndürür. -->
+
+
+
             <button
                 type="button"
                 id="reset-policy-button"
@@ -399,10 +356,6 @@
                 Seçenekleri Sıfırla
             </button>
 
-            <!--
-                JavaScript tarafından oluşturulan
-             politika kartı bu alanın içine yazılacak.
-            -->
 
         <div id="created-policy-result"></div>
 

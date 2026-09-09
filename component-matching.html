@@ -4,16 +4,14 @@
 
 <head>
 
-    <!-- Türkçe karakterlerin düzgün görünmesini sağlar -->
     <meta charset="UTF-8">
 
-    <!-- Sayfanın mobil cihazlarda düzgün ölçeklenmesini sağlar -->
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Tarayıcı sekmesinde görünecek başlık -->
+    
     <title>Bileşenleri Eşleştir | Zero Trust Lab</title>
 
-    <!-- Projenin ortak CSS dosyasını bağlıyoruz -->
     <link rel="stylesheet" href="style.css">
 
 </head>
@@ -22,9 +20,7 @@
 <body>
 
 
-    <!-- =====================================================
-         ÜST MENÜ
-         ===================================================== -->
+  
 
     <header class="navbar">
 
@@ -55,14 +51,11 @@
     </header>
 
 
-    <!-- =====================================================
-         OYUN 02 ANA İÇERİĞİ
-         ===================================================== -->
 
     <main>
 
-        <!-- Oyun sayfasının başlık alanı -->
-        <section>
+        
+        <section class="matching-header">
 
             <p class="hero-label">
                 OYUN 02
@@ -80,14 +73,9 @@
         </section>
 
 
-        <!-- =====================================================
-     EŞLEŞTİRME OYUN ALANI
-     ===================================================== -->
+   
 
 
-   <!-- =====================================================
-     OYUN 02 KULLANIM REHBERİ
-     ===================================================== -->
 
 <section class="matching-game-info">
 
@@ -105,11 +93,13 @@
     </p>
 
 
-    <!-- Üç adımlı oyun rehberi -->
+    
+
+
     <div class="matching-guide-steps">
 
 
-        <!-- 1. ADIM -->
+        
         <div class="matching-guide-step">
 
             <span class="matching-guide-number">
@@ -134,7 +124,9 @@
         </div>
 
 
-        <!-- 2. ADIM -->
+
+
+     
         <div class="matching-guide-step">
 
             <span class="matching-guide-number">
@@ -153,13 +145,14 @@
         </div>
 
 
-        <!-- Adımlar arasındaki ok -->
+       
         <div class="matching-guide-arrow">
             →
         </div>
 
 
-        <!-- 3. ADIM -->
+
+
         <div class="matching-guide-step">
 
             <span class="matching-guide-number">
@@ -182,7 +175,9 @@
 
 </section>
 
-   <!-- Oyun tamamlandığında gösterilecek tekrar başlat butonu -->
+
+
+  
     <div class="matching-restart-area">
 
     <button
@@ -199,9 +194,7 @@
 <section class="matching-game-container">
 
     
-    <!-- =================================================
-         BİLEŞENLER
-         ================================================= -->
+    
 
   <div class="matching-components">
 
@@ -210,7 +203,7 @@
     </h3>
 
 
-    <!-- Politika Motoru -->
+   
     <div
         class="matching-card"
         draggable="true"
@@ -224,7 +217,7 @@
     </div>
 
 
-    <!-- Politika Yöneticisi -->
+   
     <div
         class="matching-card"
         draggable="true"
@@ -238,7 +231,6 @@
     </div>
 
 
-    <!-- Politika Uygulama Noktası -->
     <div
         class="matching-card"
         draggable="true"
@@ -254,12 +246,9 @@
 
 </div>
 
-<!-- matching-components TAM BURADA kapanmalı -->
 
 
-<!-- =================================================
-     GÖREVLER
-     ================================================= -->
+
 
 <div class="matching-tasks">
 
@@ -268,7 +257,8 @@
     </h3>
             
 
-        <!-- Görev 1 - Politika Motoru (PE) -->
+       
+    
          <div
     id="matching-zone-1"
     class="matching-drop-zone"
@@ -285,7 +275,6 @@
 
         </div>
 
-        <!-- Görev 1 sonucu -->
          <div id="matching-result-1"></div>
 
 
@@ -305,11 +294,10 @@
 
         </div>
 
-        <!-- Görev 2 sonucu -->
         <div id="matching-result-2"></div>
 
 
-                <!-- Görev 3 - Politika Uygulama Noktası (PEP) -->
+                
         <div
     id="matching-zone-3"
     class="matching-drop-zone"
@@ -326,7 +314,7 @@
 
         </div>
 
-        <!-- Görev 3 sonucu -->
+
         <div id="matching-result-3"></div>
 
     </div>
@@ -337,7 +325,6 @@
     </main>
 
 
-    <!-- Ortak JavaScript dosyamızı bağlıyoruz -->
     <script src="script.js"></script>
 
 

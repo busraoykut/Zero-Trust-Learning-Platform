@@ -1,36 +1,4 @@
 
-
-
-
-body {
-
-    /*
-        Tarayıcının varsayılan kenar boşluğunu kaldırıyoruz.
-    */
-    margin: 0;
-
-    /*
-        Yazı tipi belirliyoruz.
-    */
-    font-family: Arial, sans-serif;
-
-    /*
-        Arka plan rengini koyu yapıyoruz.
-    */
-    background-color: #0b1120;
-
-    /*
-        Yazı rengini beyaz yapıyoruz.
-    */
-    color: white;
-
-    /*
-        Yazıları ortalıyoruz.
-    */
-    text-align: center;
-}
-
-
 /*
     Ana başlığımızın görünümü.
 */
@@ -124,6 +92,7 @@ body {
     font-family: Arial, sans-serif;
     background-color: #07111f;
     color: white;
+    text-align: center;
 }
 
 
@@ -2275,9 +2244,9 @@ body {
 }
 
 /*
-    =====================================================
+   
     POLİTİKA MOTORU SONUÇ DETAYLARI
-    =====================================================
+   
 */
 
 
@@ -2358,9 +2327,7 @@ body {
 }
 
 /*
-    =====================================================
     POLİTİKA MOTORU - KULLANIM REHBERİ
-    =====================================================
 */
 
 
@@ -2492,9 +2459,9 @@ body {
 }
 
 /*
-    =====================================================
+   
     HAZIR TEST SENARYOLARI
-    =====================================================
+
 */
 
 
@@ -2593,15 +2560,14 @@ body {
 }
 
 /*
-    =====================================================
+   
     FORM İŞLEM BUTONLARI
-    =====================================================
+   
 */
 
 
 /*
-    Değerlendir ve Sıfırla butonlarını
-    aynı satırda göstermek için kullanıyoruz.
+    Değerlendir ve Sıfırla butonlarını aynı satırda göstermek için kullanıyoruz.
 */
 .form-action-buttons {
 
@@ -2615,8 +2581,7 @@ body {
 /*
     Formu Sıfırla butonu.
 
-    Ana işlem butonundan daha az dikkat çekmesi
-    için koyu ve sade bir tasarım kullanıyoruz.
+    Ana işlem butonundan daha az dikkat çekmesi  için koyu ve sade bir tasarım kullanıyoruz.
 */
 #reset-button {
 
@@ -2650,9 +2615,8 @@ body {
 }
 
 /*
-    =====================================================
     LAB 02 - POLİTİKA OLUŞTURUCU
-    =====================================================
+    
 */
 
 
@@ -3791,6 +3755,33 @@ body {
     OYUN 02 - ANA EŞLEŞTİRME ALANI
     =====================================================
 */
+
+.matching-header {
+
+    text-align: center;
+
+    padding: 70px 20px 35px;
+}
+
+
+.matching-header h1 {
+
+    margin: 10px 0 15px;
+
+    font-size: 42px;
+}
+
+
+.matching-header p {
+
+    max-width: 700px;
+
+    margin: 0 auto;
+
+    line-height: 1.6;
+}
+
+
 .matching-game-container {
 
     /*
@@ -4818,4 +4809,36 @@ body {
 .access-flow-drag-icon {
 
     opacity: 0.65;
+}
+
+
+@media (max-width: 768px) {
+
+    .navbar {
+
+        flex-direction: column;
+
+        gap: 15px;
+
+        padding: 20px;
+    }
+
+
+    .navbar nav {
+
+        display: flex;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 15px;
+    }
+
+
+    .navbar nav a {
+
+        margin-left: 0;
+    }
+
 }

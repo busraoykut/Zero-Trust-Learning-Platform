@@ -1,35 +1,14 @@
-/*
-    cevapKontrol isimli bir fonksiyon oluşturuyoruz.
 
-    Fonksiyon = belirli bir işi yapan kod bloğu.
-
-    kullaniciCevabi parametresi:
-    true  → kullanıcı "Evet" dedi.
-    false → kullanıcı "Hayır" dedi.
-*/
 function cevapKontrol(kullaniciCevabi) {
 
-    /*
-        HTML içerisinde id="quick-result"
-        olan alanı buluyoruz.
-
-        Daha sonra sonucu bu alanın içine yazacağız.
-    */
+   
     const sonucAlani = document.getElementById("quick-result");
 
 
-    /*
-        Bu sorunun doğru cevabı "Hayır".
-
-        Yani kullaniciCevabi false ise
-        kullanıcı doğru cevap vermiştir.
-    */
+   
     if (kullaniciCevabi === false) {
 
-        /*
-            innerHTML ile HTML elementinin
-            içerisine yeni içerik yazabiliyoruz.
-        */
+        
         sonucAlani.innerHTML = `
             <div class="result correct">
 
@@ -52,10 +31,7 @@ function cevapKontrol(kullaniciCevabi) {
 
     }
 
-    /*
-        Eğer kullanıcı "Evet" seçeneğine bastıysa
-        yanlış cevap vermiş olur.
-    */
+   
     else {
 
         sonucAlani.innerHTML = `
@@ -79,58 +55,33 @@ function cevapKontrol(kullaniciCevabi) {
 
 }
 
-/*
-    =====================================================
-    LAB 01 - POLİTİKA MOTORU SİMÜLATÖRÜ
-    =====================================================
 
-    Kullanıcı "Erişim İsteğini Değerlendir"
-    butonuna bastığında bu fonksiyon çalışacak.
-*/
+/* LAB 01 - POLİTİKA MOTORU SİMÜLATÖRÜ */
+
+
 function erisimiDegerlendir() {
 
-    /*
-        HTML'deki Kullanıcı Rolü seçim kutusunu buluyoruz.
-
-        .value sayesinde kullanıcının seçtiği
-        seçeneğin value değerini alıyoruz.
-    */
+    
     const kullaniciRolu =
         document.getElementById("user-role").value;
 
 
-    /*
-        Çok Faktörlü Kimlik Doğrulama (MFA)
-        seçiminden seçilen değeri alıyoruz.
-    */
     const mfaDurumu =
         document.getElementById("mfa-status").value;
 
 
-    /*
-        Cihaz güvenliği bilgisini alıyoruz.
-    */
     const cihazDurumu =
         document.getElementById("device-status").value;
 
 
-    /*
-        Kullanıcının erişmek istediği kaynağı alıyoruz.
-    */
+   
     const kaynak =
         document.getElementById("resource").value;
 
 
-    /*
-        Risk seviyesini alıyoruz.
-    */
     const riskSeviyesi =
         document.getElementById("risk-level").value;
 
-
-    /*
-        Sonucu göstereceğimiz HTML alanını buluyoruz.
-    */
 
     
 
@@ -141,24 +92,14 @@ const cihazGuvenli = cihazDurumu === "secure";
     const sonucAlani =
         document.getElementById("policy-result");
 
-        /*
-    =====================================================
-    SONUÇ EKRANINDA GÖSTERİLECEK TÜRKÇE DEĞERLER
-    =====================================================
-*/
 
 
-/*
 
-    let kullanıyoruz çünkü aşağıdaki if yapısında
-    bu değişkenin değerini değiştireceğiz.
-*/
+  
 let kullaniciRoluMetni = "";
 
 
-/*
-    Seçilen role göre Türkçe karşılığı belirliyoruz.
-*/
+
 if (kullaniciRolu === "admin") {
 
     kullaniciRoluMetni = "Yönetici";
@@ -174,9 +115,8 @@ if (kullaniciRolu === "admin") {
 }
 
 
-/*
-    MFA bilgisinin ekranda gösterilecek metni.
-*/
+
+
 let mfaMetni = "";
 
 if (mfaDurumu === "success") {
@@ -190,9 +130,8 @@ if (mfaDurumu === "success") {
 }
 
 
-/*
-    Cihaz durumunun ekranda gösterilecek metni.
-*/
+
+
 let cihazMetni = "";
 
 if (cihazDurumu === "secure") {
@@ -206,9 +145,8 @@ if (cihazDurumu === "secure") {
 }
 
 
-/*
-    Kaynağın ekranda gösterilecek metni.
-*/
+
+
 let kaynakMetni = "";
 
 if (kaynak === "intranet") {
@@ -226,9 +164,9 @@ if (kaynak === "intranet") {
 }
 
 
-/*
-    Risk seviyesinin ekranda gösterilecek metni.
-*/
+
+
+
 let riskMetni = "";
 
 if (riskSeviyesi === "low") {
@@ -248,18 +186,11 @@ if (riskSeviyesi === "low") {
 
  
 
-     /*
-        hataMesaji başlangıçta boş.
-
-        Bir erişim problemi buldukça
-        bu metnin sonuna yeni açıklama ekleyeceğiz.
-    */
+    
     let hataMesaji = "";
 
 
-    /*
-        MFA başarısızsa hata mesajına ekle.
-    */
+   
     if (mfaBasarili === false) {
 
         hataMesaji += `
@@ -272,10 +203,8 @@ if (riskSeviyesi === "low") {
     }
 
 
-    /*
-        Cihaz güvenli değilse
-        ayrı olarak kontrol ediyoruz.
-    */
+    
+    
     if (cihazGuvenli === false) {
 
         hataMesaji += `
@@ -288,9 +217,9 @@ if (riskSeviyesi === "low") {
     }
 
 
-    /*
-        Risk yüksekse hata mesajına ekle.
-    */
+    
+
+
     if (riskSeviyesi === "high") {
 
         hataMesaji += `
@@ -302,10 +231,9 @@ if (riskSeviyesi === "low") {
     }
 
 
-    /*
-        Harici Kullanıcı (Guest),
-        Dosya Sunucusu veya Yönetim Paneline erişemez.
-    */
+    
+
+
     if (
         kullaniciRolu === "guest" &&
         (
@@ -324,9 +252,10 @@ if (riskSeviyesi === "low") {
     }
 
 
-    /*
-        Çalışan Yönetim Paneline erişemez.
-    */
+   
+
+
+
     if (
         kullaniciRolu === "employee" &&
         kaynak === "admin-panel"
@@ -342,10 +271,10 @@ if (riskSeviyesi === "low") {
     }
 
 
-    /*
-        hataMesaji boş değilse en az bir
-        güvenlik problemi bulunmuş demektir.
-    */
+    
+
+
+
     if (hataMesaji !== "") {
 
     sonucAlani.innerHTML = `
@@ -407,10 +336,7 @@ if (riskSeviyesi === "low") {
 }
 
 
-    /*
-        Hiçbir problem bulunmadıysa
-        erişime izin veriyoruz.
-    */
+   
     else {
 
     sonucAlani.innerHTML = `
@@ -477,14 +403,9 @@ if (riskSeviyesi === "low") {
 
 }
 
-/*
-    =====================================================
-    HAZIR SENARYO 1 - GÜVENLİ ÇALIŞAN
-    =====================================================
+/* HAZIR SENARYO 1 - GÜVENLİ ÇALIŞAN */
 
-    Form alanlarını normal ve izin verilebilir
-    bir erişim isteğine göre otomatik doldurur.
-*/
+
 function guvenliCalisanSenaryosu() {
 
     document.getElementById("user-role").value =
@@ -504,61 +425,41 @@ function guvenliCalisanSenaryosu() {
 
 
     /*
-        Önceki bir senaryodan kalan
-        ALLOW / DENY sonucunu temizliyoruz.
-    */
+        Önceki bir senaryodan kalan sonucunu temizleme */
     document.getElementById("policy-result").innerHTML = "";
 
 }
 
-/*
-    =====================================================
-    HAZIR SENARYO 2 - YETKİSİZ YÖNETİM ERİŞİMİ
-    =====================================================
+/* HAZIR SENARYO 2 - YETKİSİZ YÖNETİM ERİŞİMİ */
 
-    Çalışan kullanıcının Yönetim Paneline
-    erişmeye çalıştığı örnek senaryo.
-*/
+
+
 function yetkisizYonetimSenaryosu() {
 
-    /*
-        Kullanıcı rolü Çalışan.
-    */
     document.getElementById("user-role").value =
         "employee";
 
 
-    /*
-        Kimlik doğrulama başarılı.
-    */
+    
     document.getElementById("mfa-status").value =
         "success";
 
 
-    /*
-        Cihaz güvenli.
-    */
+   
     document.getElementById("device-status").value =
         "secure";
 
 
-    /*
-        Ancak kullanıcı Yönetim Paneline
-        erişmeye çalışıyor.
-    */
+    
     document.getElementById("resource").value =
         "admin-panel";
 
 
-    /*
-        Risk düşük.
-    */
+    
     document.getElementById("risk-level").value =
         "low";
 
-         /*
-        Eski değerlendirme sonucunu temizliyoruz.
-    */
+    
     document.getElementById("policy-result").innerHTML = "";
 
 
@@ -566,49 +467,31 @@ function yetkisizYonetimSenaryosu() {
 }
 
 
-/*
-    =====================================================
-    HAZIR SENARYO 3 - RİSKLİ HARİCİ ERİŞİM
-    =====================================================
+/*   HAZIR SENARYO 3 - RİSKLİ HARİCİ ERİŞİM */
 
-    Birden fazla güvenlik probleminin
-    aynı erişim isteğinde bulunabileceğini gösterir.
-*/
+
 function riskliHariciSenaryosu() {
 
-    /*
-        Harici Kullanıcı (Guest)
-    */
+    
     document.getElementById("user-role").value =
         "guest";
 
 
-    /*
-        MFA başarısız.
-    */
+    
     document.getElementById("mfa-status").value =
         "failed";
 
 
-    /*
-        Cihaz güvenli değil.
-    */
+
     document.getElementById("device-status").value =
         "unsafe";
 
 
-    /*
-        Harici kullanıcının erişmesine izin vermediğimiz
-        Dosya Sunucusunu seçiyoruz.
-    */
+    
     document.getElementById("resource").value =
         "file-server";
 
 
-    /*
-        Güvenlik sistemi tarafından belirlenmiş
-        örnek risk seviyesi yüksek.
-    */
     document.getElementById("risk-level").value =
         "high";
 
@@ -616,100 +499,62 @@ function riskliHariciSenaryosu() {
 
 }
 
-/*
 
-    Kullanıcı "Formu Sıfırla" butonuna bastığında
-    formu başlangıç değerlerine döndürür
-    ve eski değerlendirme sonucunu temizler.
-*/
+
+
+
 function formuSifirla() {
 
   
     document.getElementById("policy-form").reset();
 
 
-    /*
-        Daha önce gösterilmiş bir
-        ALLOW / DENY sonucu varsa siliyoruz.
-    */
     document.getElementById("policy-result").innerHTML = "";
 
 }
 
 
-/*
-    =====================================================
-    LAB 02 - POLİTİKA OLUŞTURUCU
-    =====================================================
+/*  LAB 02 - POLİTİKA OLUŞTURUCU */
 
-    Kullanıcı "Politikayı Oluştur" butonuna bastığında
-    bu fonksiyon çalışacak.
-*/
+
 function politikaOlustur() {
 
-    /*
-    Kullanıcının Politika Adı alanına yazdığı metni alıyoruz.
-    .value: Form alanının mevcut değerini verir.
-*/
+    
 
 const politikaAdi =
     document.getElementById("policy-name").value;
 
-    /*
-    Politikanın hangi kullanıcı rolü için tanımlandığını alıyoruz.
-*/
+   
+
 const kullaniciRolu =
     document.getElementById("builder-user-role").value;
-    
-    /*
-    Politikanın geçerli olacağı kaynağı alıyoruz.
-*/
+  
+
 const kaynak =
     document.getElementById("builder-resource").value;
 
 
-/*
-    MFA gereksinimini alıyoruz.
-*/
+
 const mfaGereksinimi =
     document.getElementById("builder-mfa").value;
 
 
-/*
-    Cihaz güvenliği gereksinimini alıyoruz.
-*/
+
 const cihazGereksinimi =
     document.getElementById("builder-device").value;
 
 
-/*
-    Kullanıcının politika için belirlediği
-    ALLOW / DENY kararını alıyoruz.
-*/
+
 const politikaKarari =
     document.getElementById("builder-decision").value;
 
-    /*
-    Oluşturulan politika kartını göstereceğimiz
-    HTML alanını buluyoruz.
-*/
+    
 const sonucAlani =
     document.getElementById("created-policy-result");
 
-    /*
-    =====================================================
-    EKRANDA GÖSTERİLECEK TÜRKÇE DEĞERLER
-    =====================================================
-*/
+   
 
 
-/*
-    Kullanıcı rolünün ekranda gösterilecek
-    Türkçe karşılığını hazırlıyoruz.
-
-    let kullanıyoruz çünkü aşağıdaki
-    if yapılarında değer değişecek.
-*/
 let kullaniciRoluMetni = "";
 
 
@@ -727,10 +572,9 @@ if (kullaniciRolu === "employee") {
 
 }
 
-/*
-    Kaynak değerini kullanıcıya gösterilecek
-    metne çeviriyoruz.
-*/
+
+
+
 let kaynakMetni = "";
 
 
@@ -748,10 +592,9 @@ if (kaynak === "intranet") {
 
 }
 
-/*
-    MFA gereksiniminin ekranda
-    gösterilecek açıklamasını belirliyoruz.
-*/
+
+
+
 let mfaMetni = "";
 
 
@@ -765,10 +608,10 @@ if (mfaGereksinimi === "required") {
 
 }
 
-/*
-    Cihaz güvenliği gereksiniminin
-    ekranda gösterilecek açıklamasını belirliyoruz.
-*/
+
+
+
+
 let cihazMetni = "";
 
 
@@ -782,9 +625,9 @@ if (cihazGereksinimi === "required") {
 
 }
 
-/*
-    Politika kararının kullanıcıya gösterilecek metnini hazırlıyoruz.
-*/
+
+
+
 let kararMetni = "";
 
 
@@ -798,9 +641,8 @@ if (politikaKarari === "allow") {
 
 }
 
-    /*
-        Politika adı boş bırakılmışsa politika oluşturmuyoruz.
-    */
+    /* Politika adı boş bırakılmışsa politika oluşturmuyoruz.*/
+
     if (politikaAdi.trim() === "") {
 
         sonucAlani.innerHTML =
@@ -811,9 +653,7 @@ if (politikaKarari === "allow") {
 
     
     
-/*
-    Hazırladığımız bütün bilgileri sonuç alanının içerisine HTML olarak yazıyoruz.
-*/
+
 sonucAlani.innerHTML = `
 
     <div class="created-policy-card">
@@ -877,39 +717,28 @@ sonucAlani.innerHTML = `
 
 }
 
-/*
-    =====================================================
-    LAB 02 - POLİTİKA FORMUNU SIFIRLAMA
-    =====================================================
-*/
+/*  LAB 02 - POLİTİKA FORMUNU SIFIRLAMA */
+
 function politikaFormunuSifirla() {
 
-    /*
-        Formu ilk açıldığı durumuna döndürüyoruz.
-        Metin alanı temizlenir ve select alanları
-        başlangıç seçeneklerine geri döner.
-    */
+    
     document.getElementById("policy-builder-form").reset();
 
-    /*
-        Daha önce oluşturulmuş politika kartını
-        sonuç alanından kaldırıyoruz.
-    */
+    
     document.getElementById("created-policy-result").innerHTML = "";
 }
 
 /*
-    =====================================================
+   
     LAB 03 - ERİŞİM SENARYOLARI
-    SENARYO 01
-    =====================================================
+   
 */
+
+
 function senaryoBirKontrol(kullaniciKarari) {
 
 
-    /*
-        HTML içerisinde id="scenario-1-result" olan sonuç alanını buluyoruz.
-    */
+   
     const sonucAlani =
         document.getElementById("scenario-1-result");
 
@@ -972,13 +801,10 @@ function senaryoBirKontrol(kullaniciKarari) {
 
 }
 
-/*
-    =====================================================
-    LAB 03 - ERİŞİM SENARYOLARI
-    SENARYO 02
-    =====================================================
 
-*/
+
+
+
 function senaryoIkiKontrol(kullaniciKarari) {
 
 
@@ -1029,10 +855,7 @@ function senaryoIkiKontrol(kullaniciKarari) {
     }
 
 
-    /*
-        Kullanıcı ALLOW seçtiyse
-        yanlış karar vermiştir.
-    */
+    
     else {
 
 
@@ -1066,14 +889,9 @@ function senaryoIkiKontrol(kullaniciKarari) {
 
 }
 
-/*
-    =====================================================
-    LAB 03 - ERİŞİM SENARYOLARI
-    SENARYO 03
-    =====================================================
 
 
-*/
+
 function senaryoUcKontrol(kullaniciKarari) {
 
 
@@ -1121,9 +939,7 @@ function senaryoUcKontrol(kullaniciKarari) {
     }
 
 
-    /*
-        Kullanıcı ALLOW seçtiyse  yanlış karar vermiştir.
-    */
+   
     else {
 
 
@@ -1159,12 +975,7 @@ function senaryoUcKontrol(kullaniciKarari) {
 
 }
 
-/*
-    =====================================================
-    LAB 03 - SENARYO SONUÇLARINI SIFIRLAMA
-    =====================================================
 
-*/
 function senaryoSonuclariniSifirla() {
 
 
@@ -1178,31 +989,20 @@ function senaryoSonuclariniSifirla() {
 
 }
 
-/*
-    =====================================================
-    OYUN 01 - ZERO TRUST BİLGİ TESTİ
-    =====================================================
-*/
 
-/*
-    Kullanıcının quiz boyunca kazandığı puanı tutar.
-    Başlangıçta henüz doğru cevap verilmediği için skor değeri 0'dır.
-*/
+
+/* OYUN 01 - ZERO TRUST BİLGİ TESTİ */
+
+
 
 let quizSkoru = 0;
 
 let soruCevaplandiMi = false;
 
-/*
-    Şu anda kullanıcının hangi soruda olduğunu takip eder.
-    Quiz ilk açıldığında 1. sorudayız.
-*/
 
 let mevcutSoru = 1;
 
-/*
-    Mevcut sorunun doğru cevap numarasını tutar.Soru 1'de doğru cevap ikinci seçenektir.
-*/
+
 let dogruCevap = 2;
 
 function quizCevapKontrol(secilenCevap) {
@@ -1244,9 +1044,9 @@ function quizCevapKontrol(secilenCevap) {
 
     }
 
-     /*
-    Soru 3 için açıklama.
-    */
+     
+
+
 else if (mevcutSoru === 3) {
 
     cevapAciklamasi =
@@ -1255,9 +1055,8 @@ else if (mevcutSoru === 3) {
 
 }
 
-/*
-    Soru 4 için açıklama.
-*/
+
+
 else if (mevcutSoru === 4) {
 
     cevapAciklamasi =
@@ -1266,9 +1065,7 @@ else if (mevcutSoru === 4) {
 }
 
 
-/*
-    Soru 5 için açıklama.
-*/
+
 else if (mevcutSoru === 5) {
 
     cevapAciklamasi =
@@ -1321,56 +1118,29 @@ else if (mevcutSoru === 5) {
 
 }
 
-/*
-    =====================================================
-    SONRAKİ SORUYA GEÇİŞ
-    =====================================================
-*/
+
 
 
 function sonrakiSoru() {
 
-    /*
-        =====================================================
-        ÖNCE HTML ELEMANLARINI BULUYORUZ
-        =====================================================
-    */
-
-
-    /*
-        HTML'deki soru numarası alanını buluyoruz.
-    */
+   
     const soruNumarasiAlani =
         document.getElementById("question-number");
 
 
-    /*
-        HTML'deki soru metnini buluyoruz.
-    */
+    
     const soruAlani =
         document.getElementById("quiz-question");
 
 
-    /*
-        Sonuç mesajının bulunduğu alanı buluyoruz.
-    */
     const sonucAlani =
         document.getElementById("quiz-result");
 
 
-    /*
-        Sonraki Soru butonunu buluyoruz.
-    */
     const sonrakiSoruButonu =
         document.getElementById("next-question-button");
 
 
-    /*
-        Dört cevap butonunu ayrı ayrı buluyoruz.
-
-        Böylece yeni soruya geçtiğimizde
-        cevapların yazılarını değiştirebiliriz.
-    */
     const cevapBir =
         document.getElementById("answer-1");
 
@@ -1384,49 +1154,26 @@ function sonrakiSoru() {
         document.getElementById("answer-4");
 
 
-    /*
-        =====================================================
-        HANGİ SORUYA GEÇECEĞİMİZİ BELİRLİYORUZ
-        =====================================================
-    */
-
-
-    /*
-        Eğer şu anda Soru 1'deysek
-        Soru 2'ye geçiyoruz.
-    */
+    
     if (mevcutSoru === 1) {
 
-        /*
-            Artık mevcut soru 2.
-        */
+       
         mevcutSoru = 2;
 
 
-        /*
-            Soru 2'nin doğru cevabı
-            ikinci seçenektir.
-        */
         dogruCevap = 2;
 
 
-        /*
-            Soru numarasını güncelliyoruz.
-        */
         soruNumarasiAlani.textContent =
             "Soru 2 / 5";
 
 
-        /*
-            Soru 2'nin metni.
-        */
+        
         soruAlani.textContent =
             "Politika Motorunun (Policy Engine - PE) temel görevi nedir?";
 
 
-        /*
-            Soru 2'nin cevap seçenekleri.
-        */
+        
         cevapBir.textContent =
             "Ağ kablolarını yönetmek";
 
@@ -1442,42 +1189,25 @@ function sonrakiSoru() {
     }
 
 
-    /*
-        Eğer şu anda Soru 2'deysek
-        Soru 3'e geçiyoruz.
-    */
+   
     else if (mevcutSoru === 2) {
 
-        /*
-            Artık mevcut soru 3.
-        */
         mevcutSoru = 3;
 
 
-        /*
-            Soru 3'ün doğru cevabı
-            üçüncü seçenektir.
-        */
+        
         dogruCevap = 3;
 
 
-        /*
-            Soru numarasını güncelliyoruz.
-        */
         soruNumarasiAlani.textContent =
             "Soru 3 / 5";
 
 
-        /*
-            Soru 3'ün metni.
-        */
+        
         soruAlani.textContent =
             "Politika Uygulama Noktasının (Policy Enforcement Point - PEP) temel görevi nedir?";
 
 
-        /*
-            Soru 3'ün cevap seçenekleri.
-        */
         cevapBir.textContent =
             "Yeni kullanıcı hesapları oluşturmak";
 
@@ -1492,42 +1222,26 @@ function sonrakiSoru() {
 
     }
 
-    /*
-    Eğer şu anda Soru 3'teysek
-    Soru 4'e geçiyoruz.
-*/
+   
 else if (mevcutSoru === 3) {
 
-    /*
-        Artık mevcut soru 4.
-    */
+    
     mevcutSoru = 4;
 
 
-    /*
-        Soru 4'ün doğru cevabı
-        birinci seçenektir.
-    */
     dogruCevap = 1;
 
 
-    /*
-        Soru numarasını güncelliyoruz.
-    */
     soruNumarasiAlani.textContent =
         "Soru 4 / 5";
 
 
-    /*
-        Soru 4'ün metni.
-    */
+   
     soruAlani.textContent =
         "Sıfır Güven yaklaşımında Çok Faktörlü Kimlik Doğrulama (MFA) neden kullanılır?";
 
 
-    /*
-        Soru 4'ün cevap seçenekleri.
-    */
+    
     cevapBir.textContent =
         "Kullanıcının kimliğini doğrulama sürecini güçlendirmek";
 
@@ -1542,42 +1256,26 @@ else if (mevcutSoru === 3) {
 
 }
 
-/*
-    Eğer şu anda Soru 4'teysek
-    Soru 5'e geçiyoruz.
-*/
+
+
 else if (mevcutSoru === 4) {
 
-    /*
-        Artık mevcut soru 5.
-    */
+    
     mevcutSoru = 5;
 
 
-    /*
-        Soru 5'in doğru cevabı
-        üçüncü seçenektir.
-    */
     dogruCevap = 3;
 
 
-    /*
-        Soru numarasını güncelliyoruz.
-    */
     soruNumarasiAlani.textContent =
         "Soru 5 / 5";
 
 
-    /*
-        Soru 5'in metni.
-    */
     soruAlani.textContent =
         "Sıfır Güven yaklaşımında bir cihaz güvenlik gereksinimlerini karşılamıyorsa ne yapılabilir?";
 
 
-    /*
-        Soru 5'in cevap seçenekleri.
-    */
+    
     cevapBir.textContent =
         "Cihaza otomatik olarak tam erişim verilir";
 
@@ -1589,79 +1287,41 @@ else if (mevcutSoru === 4) {
 
     cevapDort.textContent =
         "Kullanıcının parolası kaldırılır";
-        /*
-    Son soruya geçtiğimiz için
-    butonun görevini kullanıcıya belirtiyoruz.
-*/
+   
+
 sonrakiSoruButonu.textContent =
     "Sonucu Gör";
 
 }
 
-  /*
-    Eğer şu anda Soru 5'teysek
-    artık quiz tamamlanmıştır.
-*/
+  
+
 else if (mevcutSoru === 5) {
 
-    /*
-        Quiz bitiş ekranını gösterecek
-        fonksiyonu çalıştırıyoruz.
-    */
     quizSonucunuGoster();
 
-    /*
-        Fonksiyonu burada durduruyoruz.
-
-        Çünkü artık yeni bir soruya
-        geçmeyeceğiz.
-    */
+    
     return;
 
 }
 
-    /*
-        =====================================================
-        YENİ SORU İÇİN EKRANI HAZIRLIYORUZ
-        =====================================================
-    */
-
-
-    /*
-        Önceki sorunun doğru / yanlış
-        sonucunu temizliyoruz.
-    */
+   
     sonucAlani.innerHTML = "";
 
 
-    /*
-        Yeni soruya geçtiğimiz için
-        henüz cevap verilmedi.
-    */
     soruCevaplandiMi = false;
 
 
-    /*
-        Kullanıcı yeni soruyu cevaplamadan
-        Sonraki Soru butonu görünmemeli.
-    */
     sonrakiSoruButonu.classList.remove("show");
 
 }
 
-/*
-    =====================================================
-    QUIZ SONUÇ EKRANI
-    =====================================================
-*/
+
 
 
 function quizSonucunuGoster() {
 
-    /*
-        Quiz sayfasındaki gerekli HTML
-        elemanlarını buluyoruz.
-    */
+    
     const soruNumarasiAlani =
         document.getElementById("question-number");
 
@@ -1678,16 +1338,12 @@ function quizSonucunuGoster() {
         document.getElementById("next-question-button");
 
 
-    /*
-        Kullanıcının skoruna göre
-        farklı bir değerlendirme mesajı göstereceğiz.
-    */
+    
     let sonucMesaji = "";
 
 
-    /*
-        5 sorunun tamamı doğruysa.
-    */
+   
+    
     if (quizSkoru === 5) {
 
         sonucMesaji =
@@ -1696,9 +1352,7 @@ function quizSonucunuGoster() {
     }
 
 
-    /*
-        3 veya 4 doğru cevap varsa.
-    */
+    
     else if (quizSkoru >= 3) {
 
         sonucMesaji =
@@ -1707,9 +1361,7 @@ function quizSonucunuGoster() {
     }
 
 
-    /*
-        0, 1 veya 2 doğru cevap varsa.
-    */
+    
     else {
 
         sonucMesaji =
@@ -1718,36 +1370,25 @@ function quizSonucunuGoster() {
     }
 
 
-    /*
-        Soru numarası yerine quiz'in tamamlandığını gösteriyoruz.
-    */
+    
     soruNumarasiAlani.textContent =
         "Quiz Tamamlandı";
 
 
-    /*
-        Soru başlığını sonuç başlığıyla değiştiriyoruz.
-    */
+    
     soruAlani.textContent =
         "Sonucun";
 
 
-    /*
-        Artık cevap seçeneklerine ihtiyacımız yok. Bu nedenle cevap alanını gizliyoruz.
-    */
+
     cevapAlani.style.display =
         "none";
 
 
-    /*
-        Sonraki Soru / Sonucu Gör butonunu artık göstermiyoruz.
-    */
+    
     sonrakiSoruButonu.classList.remove("show");
 
 
-    /*
-        Kullanıcının final skorunu ve değerlendirme mesajını gösteriyoruz.
-    */
     sonucAlani.innerHTML = `
         <div class="quiz-final-result">
 
@@ -1771,19 +1412,12 @@ function quizSonucunuGoster() {
 
 }
 
-/*
-    =====================================================
-    QUIZ'İ TEKRAR BAŞLAT
-    =====================================================
-*/
+
 
 
 function quizTekrarBaslat() {
 
-    /*
-        Quiz değişkenlerini başlangıç
-        değerlerine döndürüyoruz.
-    */
+    
     quizSkoru = 0;
 
     mevcutSoru = 1;
@@ -1793,9 +1427,6 @@ function quizTekrarBaslat() {
     soruCevaplandiMi = false;
 
 
-    /*
-        Gerekli HTML elemanlarını buluyoruz.
-    */
     const soruNumarasiAlani =
         document.getElementById("question-number");
 
@@ -1828,30 +1459,22 @@ function quizTekrarBaslat() {
         document.getElementById("answer-4");
 
 
-    /*
-        Soru numarasını başlangıca döndürüyoruz.
-    */
+    
     soruNumarasiAlani.textContent =
         "Soru 1 / 5";
 
 
-    /*
-        Skoru sıfırlıyoruz.
-    */
+    
     skorAlani.textContent =
         "Skor: 0";
 
 
-    /*
-        İlk soruyu tekrar ekrana getiriyoruz.
-    */
+   
     soruAlani.textContent =
         "Sıfır Güven yaklaşımında aşağıdakilerden hangisi doğrudur?";
 
 
-    /*
-        İlk sorunun cevaplarını tekrar yazıyoruz.
-    */
+    
     cevapBir.textContent =
         "Kullanıcı kurum ağındaysa otomatik olarak güvenilmelidir.";
 
@@ -1865,90 +1488,49 @@ function quizTekrarBaslat() {
         "MFA kullanılıyorsa başka kontrol yapılmasına gerek yoktur.";
 
 
-    /*
-        Quiz bittiğinde gizlediğimiz
-        cevap alanını tekrar gösteriyoruz.
-    */
-    cevapAlani.style.display =
-        "flex";
+    
+    cevapAlani.style.display = "flex";
 
 
-    /*
-        Eski sonuç ekranını temizliyoruz.
-    */
-    sonucAlani.innerHTML =
-        "";
+    sonucAlani.innerHTML = "";
 
 
-    /*
-        Buton yazısını tekrar normal
-        haline getiriyoruz.
-    */
-    sonrakiSoruButonu.textContent =
-        "Sonraki Soru";
+    sonrakiSoruButonu.textContent = "Sonraki Soru";
 
 
-    /*
-        Buton başlangıçta görünmemeli.
-    */
+   
     sonrakiSoruButonu.classList.remove("show");
 
 }
 
-/*
-    =====================================================
-    OYUN 02 - BİLEŞENLERİ EŞLEŞTİR
-    =====================================================
-*/
+/*  OYUN 02 - BİLEŞENLERİ EŞLEŞTİR */
 
 
-/*
-    Kullanıcının hangi bileşeni sürüklediğini geçici olarak saklamak için değişken oluşturuyoruz.
-*/
+
 let suruklenenBilesen = "";
 
-/*
-    Sürüklenen HTML kartının kendisini geçici olarak saklayacağız.
-*/
+
 let suruklenenKart = null;
 
-/*
-    Kullanıcının kaç doğru eşleştirme yaptığını takip etmek için sayaç oluşturuyoruz.
-*/
+
 let dogruEslesmeSayisi = 0;
 
-/*
-    Kullanıcının toplam kaç eşleştirme yaptığını
-    takip ediyoruz.
 
-    Doğru veya yanlış olması önemli değil.
-*/
 let toplamEslesmeSayisi = 0;
 
 
 function suruklemeyiBaslat(event, bilesen, kart) {
 
-    /*
-        Hangi bileşenin sürüklendiğini saklıyoruz.
-    */
     suruklenenBilesen = bilesen;
 
-    /*
-    Sürüklenen kartın HTML elemanını daha sonra kullanabilmek için saklıyoruz.
-*/
+ 
 suruklenenKart = kart;
 
 
-    /*
-        Sürükleme sırasında göstereceğimiz
-        geçici küçük kutuyu oluşturuyoruz.
-    */
+   
     const suruklemeGoruntusu = document.createElement("div");
 
 
-    /*
-        Bileşene göre kısa isim gösteriyoruz.
-    */
     if (bilesen === "pe") {
 
         suruklemeGoruntusu.innerText = "Politika Motoru - PE";
@@ -1964,23 +1546,15 @@ suruklenenKart = kart;
     }
 
 
-    /*
-        Bu geçici elemana CSS sınıfı veriyoruz.
-    */
+    
     suruklemeGoruntusu.classList.add("custom-drag-image");
 
 
-    /*
-        Tarayıcının bu elemanı görebilmesi için
-        geçici olarak sayfaya ekliyoruz.
-    */
+    
     document.body.appendChild(suruklemeGoruntusu);
 
 
-    /*
-        Artık varsayılan büyük kart yerine
-        bu küçük özel kutuyu gösteriyoruz.
-    */
+    
     event.dataTransfer.setDragImage(
         suruklemeGoruntusu,
         90,
@@ -1988,10 +1562,6 @@ suruklenenKart = kart;
     );
 
 
-    /*
-        Tarayıcı sürükleme görüntüsünü aldıktan sonra
-        geçici elemanı sayfadan kaldırıyoruz.
-    */
     setTimeout(function () {
 
         suruklemeGoruntusu.remove();
@@ -2000,131 +1570,68 @@ suruklenenKart = kart;
 
 }
 
-/*
-    Kullanıcı kartı sürüklemeyi bıraktığında
-    bu fonksiyon çalışır.
-*/
+
 function suruklemeyiBitir(kart) {
 
-    /*
-        Sürükleme görünümünü kaldırıyoruz.
-    */
     kart.classList.remove("dragging");
 
 }
 
 
-/*
-    Sürüklenen kart bir bırakma alanının üzerine geldiğinde bu fonksiyon çalışır.
-*/
+
+
 function birakmayaIzinVer(event) {
 
-    /*
-        Tarayıcının varsayılan davranışını engelliyoruz.
-
-        Bu sayede sürüklenen kartın bu alan üzerine bırakılmasına izin veriyoruz.
-    */
+    
     event.preventDefault();
 
 }
 
 
-/*
-    Kullanıcı bir bileşeni görev kutusuna  bıraktığında bu fonksiyon çalışır.
-    dogruBilesen:Bu görev kutusunun doğru bileşeni.
-    sonucAlaniId:Doğru / yanlış sonucunun yazılacağı HTML alanının id bilgisidir.
-*/
 
-/*
-    Kullanıcı bir bileşeni görev kutusuna
-    bıraktığında bu fonksiyon çalışır.
-*/
-/*
-    Kullanıcı bir bileşeni görev kutusuna
-    bıraktığında bu fonksiyon çalışır.
-*/
 function bileseniBirak(dogruBilesen, sonucAlaniId, gorevAlaniId) {
 
-    /*
-        Sonucun gösterileceği alanı buluyoruz.
-    */
+   
     const sonucAlani =
         document.getElementById(sonucAlaniId);
 
 
-    /*
-        Kartın bırakıldığı görev kutusunu buluyoruz.
-    */
+    
     const gorevAlani =
         document.getElementById(gorevAlaniId);
 
 
-    /*
-        Sürükleme sırasında oluşan
-        mavi vurguyu kaldırıyoruz.
-    */
     gorevAlani.classList.remove("drag-over");
 
 
-    /*
-        Bu görev alanında daha önce eşleştirme
-        yapılmadıysa toplam eşleştirme sayısını artırıyoruz.
-
-        Böylece aynı görev kutusuna tekrar tekrar
-        kart bırakılması sayacı artırmaz.
-    */
     if (gorevAlani.dataset.eslestirildi !== "true") {
 
         toplamEslesmeSayisi++;
 
-        /*
-            Bu görev alanının artık kullanıldığını
-            işaretliyoruz.
-        */
+       
         gorevAlani.dataset.eslestirildi = "true";
     }
 
 
-    /*
-        Kullanıcının sürüklediği bileşen ile
-        görev kutusunun doğru bileşenini karşılaştırıyoruz.
-    */
+    
     if (suruklenenBilesen === dogruBilesen) {
 
-        /*
-            Önceki yanlış görünümü kaldırıyoruz.
-        */
+       
         gorevAlani.classList.remove("wrong-match");
 
 
-        /*
-            Doğru eşleşme görünümünü ekliyoruz.
-        */
         gorevAlani.classList.add("correct-match");
 
-
-        /*
-            Doğru kartı görev kutusunun içine taşıyoruz.
-        */
         gorevAlani.appendChild(suruklenenKart);
 
 
-        /*
-            Doğru eşleşen kart artık tekrar
-            sürüklenemez.
-        */
+       
         suruklenenKart.draggable = false;
 
 
-        /*
-            Doğru eşleşme sayısını artırıyoruz.
-        */
         dogruEslesmeSayisi++;
 
 
-        /*
-            Doğru eşleştirme mesajını gösteriyoruz.
-        */
         sonucAlani.innerHTML = `
             <div class="result correct">
 
@@ -2138,10 +1645,7 @@ function bileseniBirak(dogruBilesen, sonucAlaniId, gorevAlaniId) {
         `;
 
 
-        /*
-            Doğru eşleşmeden sonra
-            sıradaki görevi görünür hale getiriyoruz.
-        */
+        
         setTimeout(function () {
 
             if (dogruBilesen === "pe") {
@@ -2169,27 +1673,18 @@ function bileseniBirak(dogruBilesen, sonucAlaniId, gorevAlaniId) {
     }
 
 
-    /*
-        Eğer sürüklenen bileşen
-        doğru bileşen değilse burası çalışır.
-    */
+    
     else {
 
-        /*
-            Doğru görünümü kaldırıyoruz.
-        */
+       
         gorevAlani.classList.remove("correct-match");
 
 
-        /*
-            Yanlış eşleştirme görünümünü ekliyoruz.
-        */
+        
         gorevAlani.classList.add("wrong-match");
 
 
-        /*
-            Yanlış eşleştirme mesajını gösteriyoruz.
-        */
+      
         sonucAlani.innerHTML = `
             <div class="result wrong">
 
@@ -2206,17 +1701,7 @@ function bileseniBirak(dogruBilesen, sonucAlaniId, gorevAlaniId) {
     }
 
 
-    /*
-        =================================================
-        OYUN TAMAMLANDI KONTROLÜ
-        =================================================
-
-        Üç farklı görev alanının tamamında
-        eşleştirme yapıldıysa tekrar başlat
-        butonunu gösteriyoruz.
-
-        Burada doğru veya yanlış olması önemli değildir.
-    */
+    
     if (toplamEslesmeSayisi === 3) {
 
         const tekrarBaslatButonu =
@@ -2228,25 +1713,18 @@ function bileseniBirak(dogruBilesen, sonucAlaniId, gorevAlaniId) {
 
 }
 
-/*
-    =====================================================
-    OYUN 02 - OYUNU TEKRAR BAŞLAT
-    =====================================================
-*/
+
+
+
+
 
 function eslestirmeOyununuTekrarBaslat() {
 
-    /*
-        Bileşen kartlarının bulunduğu
-        sol alanı buluyoruz.
-    */
+   
     const bilesenAlani =
         document.querySelector(".matching-components");
 
 
-    /*
-        Üç görev kutusunu buluyoruz.
-    */
     const gorevBir =
         document.getElementById("matching-zone-1");
 
@@ -2257,42 +1735,25 @@ function eslestirmeOyununuTekrarBaslat() {
         document.getElementById("matching-zone-3");
 
 
-    /*
-        Üç bileşen kartını buluyoruz.
-
-        Burada matching-card sınıfına sahip
-        bütün kartları alıyoruz.
-    */
     const kartlar =
         document.querySelectorAll(".matching-card");
 
 
-    /*
-        Her kartı tekrar sol taraftaki
-        bileşen alanına taşıyoruz.
-    */
+    
     kartlar.forEach(function (kart) {
 
         bilesenAlani.appendChild(kart);
 
-        /*
-            Kartları tekrar sürüklenebilir yapıyoruz.
-        */
+        
         kart.draggable = true;
 
-        /*
-            Sürükleme sırasında kalmış olabilecek
-            görünüm sınıfını temizliyoruz.
-        */
+        
         kart.classList.remove("dragging");
 
     });
 
 
-    /*
-        Görev kutularındaki doğru / yanlış
-        renklerini temizliyoruz.
-    */
+   
     gorevBir.classList.remove(
         "correct-match",
         "wrong-match",
@@ -2312,72 +1773,50 @@ function eslestirmeOyununuTekrarBaslat() {
     );
 
 
-    /*
-        Görev kutularının daha önce kullanıldığını
-        belirten bilgileri siliyoruz.
-    */
+    
     delete gorevBir.dataset.eslestirildi;
     delete gorevIki.dataset.eslestirildi;
     delete gorevUc.dataset.eslestirildi;
 
 
-    /*
-        Doğru / yanlış mesajlarını temizliyoruz.
-    */
+    
     document.getElementById("matching-result-1").innerHTML = "";
     document.getElementById("matching-result-2").innerHTML = "";
     document.getElementById("matching-result-3").innerHTML = "";
 
 
-    /*
-        Sayaçları başlangıç değerlerine döndürüyoruz.
-    */
+    
     dogruEslesmeSayisi = 0;
     toplamEslesmeSayisi = 0;
 
 
-    /*
-        Sürükleme bilgilerini de temizliyoruz.
-    */
+    
     suruklenenBilesen = "";
     suruklenenKart = null;
 
 
-    /*
-        Oyun yeniden başladığı için
-        tekrar başlat butonunu gizliyoruz.
-    */
     document.getElementById(
         "matching-restart-button"
     ).style.display = "none";
 
 }
 
-/* =====================================================
-   OYUN 03 - ERİŞİM AKIŞINI SIRALA
-   ===================================================== 
 
-    Kullanıcı bir erişim adımı kartını sürüklemeye başladığında çalışır.
-*/
+
+
+
 
 
 let suruklenenAkisKarti = null;
 function akisKartiniSurukle(event, kart) {
 
-    /*
-        Sürüklenen kartı saklıyoruz.
-    */
+    
     suruklenenAkisKarti = kart;
 
-    /*
-    Kullanıcı yeni bir denemeye başladığında önceki doğru / yanlış kart renklerini temizliyoruz.
-*/
+   
 const tumAkisKartlari =
     document.querySelectorAll(".access-flow-card");
 
- /*
-  Önceki kontrol sonucunu da ekrandan kaldırıyoruz.
-*/
 const sonucAlani =
     document.getElementById("access-flow-result");
 
@@ -2398,45 +1837,32 @@ tumAkisKartlari.forEach(function (akisKarti) {
 });
 
 
-    /*
-        Tarayıcıya bunun bir taşıma işlemi olduğunu söylüyoruz.
-    */
     event.dataTransfer.effectAllowed = "move";
 
 
-    /*
-        Bazı tarayıcıların drag & drop işlemini düzgün başlatabilmesi için geçici veri ekliyoruz.
-    */
     event.dataTransfer.setData(
         "text/plain",
         "access-flow-card"
     );
 
 
-    /*
-        Sürüklenen kartın görünümünü değiştiriyoruz.
-    */
+    
     kart.classList.add("access-flow-dragging");
 
 }
 
 
-/*
-    Kullanıcı kartı sürüklemeyi bıraktığında çalışır.
-*/
+
 function akisKartiniBirak(kart) {
 
-    /*
-        Sürükleme görünümünü kaldırıyoruz.
-    */
+   
     kart.classList.remove("access-flow-dragging");
 
-    /*
-        Sürükleme tamamlandığı için geçici kart bilgisini temizliyoruz.
-    */
     suruklenenAkisKarti = null;
 
 }
+
+
 
 
 /*
@@ -2444,75 +1870,51 @@ function akisKartiniBirak(kart) {
 */
 function akisKartininUzerineGel(event) {
 
-    /*
-        Tarayıcının varsayılan davranışını engelliyoruz. Böylece buraya kart bırakılabilir.
-    */
     event.preventDefault();
 
-
-    /*
-        Bırakma işleminin bir taşıma işlemi  olduğunu belirtiyoruz.
-    */
     event.dataTransfer.dropEffect = "move";
 
 }
 
-/*
-    Kullanıcı sürüklediği kartı başka bir   erişim kartının üzerine bıraktığında çalışır.
-*/
+
+
+
 function akisKartiniTasi(hedefKart) {
 
-    /*
-        Kart kendi üzerine bırakıldıysa
-        herhangi bir işlem yapmıyoruz.
-    */
+   
     if (suruklenenAkisKarti === hedefKart) {
         return;
     }
 
 
-    /*
-        Kartların bulunduğu ana alanı buluyoruz.
-    */
     const akisListesi =
         document.querySelector(".access-flow-list");
 
 
-    /*
-        Listedeki bütün erişim kartlarını alıyoruz.
-    */
     const kartlar =
         Array.from(
             akisListesi.querySelectorAll(".access-flow-card")
         );
 
 
-    /*
-        Sürüklenen kartın mevcut sıra numarasını buluyoruz.
-    */
     const suruklenenIndex =
         kartlar.indexOf(suruklenenAkisKarti);
 
 
-    /*
-        Üzerine bırakılan hedef kartın mevcut sıra numarasını buluyoruz.
-    */
+    
     const hedefIndex =
         kartlar.indexOf(hedefKart);
 
 
-    /*
-        Eğer kart yukarıdan aşağıya taşınıyorsa, hedef kartın SONRASINA yerleştiriyoruz.
-    */
+  
     if (suruklenenIndex < hedefIndex) {
 
         hedefKart.after(suruklenenAkisKarti);
 
     }
 
-    /*
-        Kart aşağıdan yukarıya taşınıyorsa, hedef kartın ÖNÜNE yerleştiriyoruz.
-    */
+    
+   
     else {
 
         akisListesi.insertBefore(
@@ -2524,65 +1926,45 @@ function akisKartiniTasi(hedefKart) {
 
 }
 
-/*
-    =====================================================
-    OYUN 03 - SIRALAMAYI KONTROL ET
-    =====================================================
-*/
+
+
+
+
+
 
 function akisSiralamasiKontrolEt() {
 
-    /*
-        O anda ekranda bulunan bütün erişim akışı kartlarını alıyoruz.
-    */
+    
     const kartlar =
         document.querySelectorAll(".access-flow-card");
 
 
-    /*
-        Sonucu göstereceğimiz alanı buluyoruz.
-    */
+   
     const sonucAlani =
         document.getElementById("access-flow-result");
 
-
-    /*
-        Başlangıçta sıralamanın doğru olduğunu varsayıyoruz.
-    */
     let siralamaDogru = true;
 
 
-    /*
-        Her kartı sırayla kontrol ediyoruz.
-    */
 kartlar.forEach(function (kart, index) {
 
-    /*
-        Önce önceki kontrolden kalmış yeşil veya kırmızı görünümü temizliyoruz.
-    */
+    
     kart.classList.remove(
         "access-flow-correct",
         "access-flow-wrong"
     );
 
 
-    /*
-        Kartın olması gereken doğru sırayı alıyoruz.
-    */
+   
     const dogruSira =
         Number(kart.dataset.order);
 
 
-    /*
-        Kartın şu anda bulunduğu sırayı hesaplıyoruz.
-    */
     const mevcutSira =
         index + 1;
 
 
-    /*
-        Kart doğru yerdeyse  yeşil görünüm ekliyoruz.
-    */
+    
     if (dogruSira === mevcutSira) {
 
         kart.classList.add("access-flow-correct");
@@ -2590,25 +1972,20 @@ kartlar.forEach(function (kart, index) {
     }
 
 
-    /*
-        Kart yanlış yerdeyse kırmızı görünüm ekliyoruz.
-    */
+    
     else {
 
         kart.classList.add("access-flow-wrong");
 
-        /*
-            En az bir yanlış kart olduğu için genel sıralama da yanlıştır.
-        */
+       
         siralamaDogru = false;
 
     }
 
 });
 
-    /*
-    Eğer bütün kartlar doğru sıradaysa  kullanıcıya başarılı sonuç gösteriyoruz.
-*/
+    
+
 if (siralamaDogru === true) {
 
     sonucAlani.innerHTML = `
@@ -2626,19 +2003,15 @@ if (siralamaDogru === true) {
         </div>
     `;
 
-    /*
-    Doğru sıralama tamamlandığı için
-    kartları artık sürüklenemez hale getiriyoruz.
-    */
+
+
         kartlar.forEach(function (kart) {
 
             kart.draggable = false;
 
         }); 
 
-     /*
-    Kullanıcı doğru sıralamayı bulduğunda  tekrar başlat butonunu gösteriyoruz.
-    */
+    
         document.getElementById(
             "access-flow-restart-button"
         ).style.display = "block";
@@ -2646,10 +2019,7 @@ if (siralamaDogru === true) {
 }
 
 
-/*
-    En az bir kart yanlış yerdeyse
-    kullanıcıya tekrar denemesi gerektiğini söylüyoruz.
-*/
+
 else {
 
     sonucAlani.innerHTML = `
@@ -2675,36 +2045,26 @@ else {
 
 }
 
-/*
-    =====================================================
-    OYUN 03 - KARTLARI KARIŞTIR
-    =====================================================
-*/
+
+
+
+
+
 
 function akisKartlariniKaristir() {
 
-    /*
-        Kartların bulunduğu ana alanı buluyoruz.
-    */
+   
     const akisListesi =
         document.querySelector(".access-flow-list");
 
 
-    /*
-        Bütün erişim kartlarını alıyoruz.
-
-        querySelectorAll normalde NodeList döndürür.
-        Array.from() ile bunu diziye çeviriyoruz.
-    */
+    
     const kartlar =
         Array.from(
             akisListesi.querySelectorAll(".access-flow-card")
         );
 
 
-    /*
-        Kartların sırasını rastgele değiştiriyoruz.
-    */
     kartlar.sort(function () {
 
         return Math.random() - 0.5;
@@ -2719,9 +2079,8 @@ function akisKartlariniKaristir() {
 
     });
 
-    /*
-    Yeni oyun başladığı için bütün kartları tekrar sürüklenebilir yapıyoruz.
-*/
+  
+
     kartlar.forEach(function (kart) {
 
         kart.draggable = true;
@@ -2729,9 +2088,8 @@ function akisKartlariniKaristir() {
     });
 
 
-    /*
-        Önceki doğru / yanlış renklerini temizliyoruz.
-    */
+    
+
     kartlar.forEach(function (kart) {
 
         kart.classList.remove(
@@ -2742,32 +2100,29 @@ function akisKartlariniKaristir() {
     });
 
 
-    /*
-        Önceki sonuç mesajını temizliyoruz.
-    */
+    
+
     const sonucAlani =
         document.getElementById("access-flow-result");
 
 
     sonucAlani.innerHTML = "";
 
+    document.getElementById(
+    "access-flow-restart-button").style.display = "none";
+
 }
 
-/* =====================================================
-   OYUN 03 - OYUNU TEKRAR BAŞLAT
-   ===================================================== */
+
+
+
 
 function akisOyununuTekrarBaslat() {
 
-    /*
-        Kartları tekrar rastgele sıraya getiriyoruz.
-    */
+   
     akisKartlariniKaristir();
 
 
-    /*
-        Tekrar başlat butonunu gizliyoruz.
-    */
     document.getElementById(
         "access-flow-restart-button"
     ).style.display = "none";
